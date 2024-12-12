@@ -1,0 +1,615 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>算法分析与设计复习 | JJXxXLL</title><meta name="author" content="JJxXxLL"><meta name="copyright" content="JJxXxLL"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="考试复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法分析与设计复习">
+<meta property="og:url" content="http://blog.jxlll.cc/2024/11/23/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/index.html">
+<meta property="og:site_name" content="JJXxXLL">
+<meta property="og:description" content="考试复习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.jxlll.cc/image/1.jpg">
+<meta property="article:published_time" content="2024-11-23T15:42:32.000Z">
+<meta property="article:modified_time" content="2024-12-12T06:00:18.988Z">
+<meta property="article:author" content="JJxXxLL">
+<meta property="article:tag" content="考试复习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.jxlll.cc/image/1.jpg"><link rel="shortcut icon" href="/image/blog.png"><link rel="canonical" href="http://blog.jxlll.cc/2024/11/23/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: JJxXxLL","link":"链接: ","source":"来源: JJXxXLL","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '算法分析与设计复习',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-12-12 14:00:18'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="/css/hexo-butterfly-categories-card.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/w1.png')"><nav id="nav"><span id="blog-info"><a href="/" title="JJXxXLL"><span class="site-name">JJXxXLL</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">算法分析与设计复习</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2024-12-12T06:00:18.988Z" title="更新于 2024-12-12 14:00:18">2024-12-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/">考试复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="算法分析与设计复习"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第一章相关考试内容"><a href="#第一章相关考试内容" class="headerlink" title="第一章相关考试内容"></a><strong>第一章相关考试内容</strong></h1><ol>
+<li><strong>算法和程序的区别</strong>：<ul>
+<li>复习大纲明确提到需要理解算法和程序的差别。</li>
+<li>PPT中指出：<ul>
+<li><strong>算法</strong>是供人阅读的，解决问题的逻辑过程。</li>
+<li><strong>程序</strong>是具体实现，用于计算机执行。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>判断问题和优化问题</strong>：<ul>
+<li>复习大纲提到需要理解这两类问题。</li>
+<li>PPT中列出了三种问题类型：<ul>
+<li>判断问题：输出是Yes/No，例如某路径长度是否小于k。</li>
+<li>优化问题：寻找最优解或最佳值，例如最大独立集问题。</li>
+<li>数值计算问题：计算具体数值，例如$\pi$的精确值。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>算法的目标</strong>：<ul>
+<li>设计目标：<ul>
+<li>易于理解、编写和调试。</li>
+<li>高效利用资源。</li>
+</ul>
+</li>
+<li>需要在理解性与高效性之间找到平衡。</li>
+</ul>
+</li>
+<li><strong>问题分类</strong>：<ul>
+<li>PPT中对P、NP、NPC等问题的分类有详细描述，特别强调了以下内容：<ul>
+<li><strong>P</strong>：多项式时间内可解的问题。</li>
+<li><strong>NP</strong>：多项式时间内可验证的问题。</li>
+<li><strong>NPC</strong>：所有NP问题都能规约到它的问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h1 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h1><h2 id="五个渐进分析符号的内容："><a href="#五个渐进分析符号的内容：" class="headerlink" title="五个渐进分析符号的内容："></a>五个渐进分析符号的内容：</h2><hr>
+<h3 id="1-渐近上界符号-O-g-n"><a href="#1-渐近上界符号-O-g-n" class="headerlink" title="1. 渐近上界符号 $O(g(n))$"></a><strong>1. 渐近上界符号 $O(g(n))$</strong></h3><ul>
+<li><strong>定义</strong>：表示函数 $f(n)$ 的增长速度不会超过 $g(n)$ 的一个常数倍，定义为： $O(g(n)) = { f(n) \mid \exists c &gt; 0, \exists n_0 &gt; 0, \forall n \geq n_0, 0 \leq f(n) \leq c \cdot g(n) }$。</li>
+<li><strong>直观理解</strong>：$f(n)$ 的增长速度在 $g(n)$ 的范围内或更慢。</li>
+<li><strong>例子</strong>：$f(n) = 3n^2 + 2n + 1 \in O(n^2)$。</li>
+</ul>
+<hr>
+<h3 id="2-渐近下界符号-Omega-g-n"><a href="#2-渐近下界符号-Omega-g-n" class="headerlink" title="2. 渐近下界符号 $\Omega(g(n))$"></a><strong>2. 渐近下界符号 $\Omega(g(n))$</strong></h3><ul>
+<li><strong>定义</strong>：表示函数 $f(n)$ 的增长速度不会低于 $g(n)$ 的一个常数倍，定义为： $\Omega(g(n)) = { f(n) \mid \exists c &gt; 0, \exists n_0 &gt; 0, \forall n \geq n_0, 0 \leq c \cdot g(n) \leq f(n) }$。</li>
+<li><strong>直观理解</strong>：$f(n)$ 的增长速度至少和 $g(n)$ 一样快。</li>
+<li><strong>例子</strong>：$f(n) = 3n^2 + 2n + 1 \in \Omega(n^2)$。</li>
+</ul>
+<hr>
+<h3 id="3-紧渐近界符号-Theta-g-n"><a href="#3-紧渐近界符号-Theta-g-n" class="headerlink" title="3. 紧渐近界符号 $\Theta(g(n))$"></a><strong>3. 紧渐近界符号 $\Theta(g(n))$</strong></h3><ul>
+<li><strong>定义</strong>：表示函数 $f(n)$ 的增长速度既不会快于也不会慢于 $g(n)$ 的常数倍，定义为： $\Theta(g(n)) = { f(n) \mid \exists c_1, c_2 &gt; 0, \exists n_0 &gt; 0, \forall n \geq n_0, c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot g(n) }$。</li>
+<li><strong>直观理解</strong>：$f(n)$ 的增长速度和 $g(n)$ 是同一个量级。</li>
+<li><strong>例子</strong>：$f(n) = 3n^2 + 2n + 1 \in \Theta(n^2)$。</li>
+</ul>
+<hr>
+<h3 id="4-非紧上界符号-o-g-n"><a href="#4-非紧上界符号-o-g-n" class="headerlink" title="4. 非紧上界符号 $o(g(n))$"></a><strong>4. 非紧上界符号 $o(g(n))$</strong></h3><ul>
+<li><strong>定义</strong>：表示函数 $f(n)$ 的增长速度比 $g(n)$ 慢得多，$f(n)$ 是 $g(n)$ 的“小无穷小”，定义为： $o(g(n)) = { f(n) \mid \forall c &gt; 0, \exists n_0 &gt; 0, \forall n \geq n_0, 0 \leq f(n) &lt; c \cdot g(n) }$。</li>
+<li><strong>等价于</strong>：$\lim_{n \to \infty} \frac{f(n)}{g(n)} = 0$。</li>
+<li><strong>直观理解</strong>：$f(n)$ 的增长速度远远小于 $g(n)$。</li>
+<li><strong>例子</strong>：$f(n) = n \in o(n^2)$。</li>
+</ul>
+<hr>
+<h3 id="5-非紧下界符号-omega-g-n"><a href="#5-非紧下界符号-omega-g-n" class="headerlink" title="5. 非紧下界符号 $\omega(g(n))$"></a><strong>5. 非紧下界符号 $\omega(g(n))$</strong></h3><ul>
+<li><strong>定义</strong>：表示函数 $f(n)$ 的增长速度比 $g(n)$ 快得多，$f(n)$ 是 $g(n)$ 的“大无穷大”，定义为： $\omega(g(n)) = { f(n) \mid \forall c &gt; 0, \exists n_0 &gt; 0, \forall n \geq n_0, 0 \leq c \cdot g(n) &lt; f(n) }$。</li>
+<li><strong>等价于</strong>：$\lim_{n \to \infty} \frac{f(n)}{g(n)} = \infty$。</li>
+<li><strong>直观理解</strong>：$f(n)$ 的增长速度远远大于 $g(n)$。</li>
+<li><strong>例子</strong>：$f(n) = n^2 \in \omega(n)$。</li>
+</ul>
+<hr>
+<h3 id="符号关系"><a href="#符号关系" class="headerlink" title="符号关系"></a><strong>符号关系</strong></h3><ul>
+<li><strong>包含关系</strong>： $o(g(n)) \subseteq O(g(n)) \subseteq \Theta(g(n)) \subseteq \Omega(g(n)) \subseteq \omega(g(n))$。</li>
+<li>直观图示：<ul>
+<li>$O$ 和 $o$ 表示增长速度的上界（松紧程度不同）。</li>
+<li>$\Omega$ 和 $\omega$ 表示增长速度的下界（松紧程度不同）。</li>
+<li>$\Theta$ 表示紧确的增长范围。</li>
+</ul>
+</li>
+</ul>
+<h2 id="渐进分析记号的性质"><a href="#渐进分析记号的性质" class="headerlink" title="渐进分析记号的性质"></a>渐进分析记号的性质</h2><h4 id="1-传递性"><a href="#1-传递性" class="headerlink" title="1. 传递性"></a>1. <strong>传递性</strong></h4><ul>
+<li>$f(n) = \Theta(g(n))$ 且 $g(n) = \Theta(h(n)) \Rightarrow f(n) = \Theta(h(n))$</li>
+<li>$f(n) = O(g(n))$ 且 $g(n) = O(h(n)) \Rightarrow f(n) = O(h(n))$</li>
+<li>$f(n) = \Omega(g(n))$ 且 $g(n) = \Omega(h(n)) \Rightarrow f(n) = \Omega(h(n))$</li>
+<li>$f(n) = o(g(n))$ 且 $g(n) = o(h(n)) \Rightarrow f(n) = o(h(n))$</li>
+<li>$f(n) = \omega(g(n))$ 且 $g(n) = \omega(h(n)) \Rightarrow f(n) = \omega(h(n))$</li>
+</ul>
+<h4 id="2-反身性"><a href="#2-反身性" class="headerlink" title="2. 反身性"></a>2. <strong>反身性</strong></h4><ul>
+<li>$f(n) = \Theta(f(n))$</li>
+<li>$f(n) = O(f(n))$</li>
+<li>$f(n) = \Omega(f(n))$</li>
+</ul>
+<h4 id="3-对称性"><a href="#3-对称性" class="headerlink" title="3. 对称性"></a>3. <strong>对称性</strong></h4><ul>
+<li>$f(n) = \Theta(g(n)) \iff g(n) = \Theta(f(n))$</li>
+</ul>
+<h4 id="4-互对称性"><a href="#4-互对称性" class="headerlink" title="4. 互对称性"></a>4. <strong>互对称性</strong></h4><ul>
+<li>$f(n) = O(g(n)) \iff g(n) = \Omega(f(n))$</li>
+<li>$f(n) = o(g(n)) \iff g(n) = \omega(f(n))$</li>
+</ul>
+<h4 id="5-算术运算"><a href="#5-算术运算" class="headerlink" title="5. 算术运算"></a>5. <strong>算术运算</strong></h4><ul>
+<li>加法：<ul>
+<li>$O(f(n)) + O(g(n)) = O(\max{f(n), g(n)})$</li>
+<li>$\Theta(f(n)) + \Theta(g(n)) = \Theta(\max{f(n), g(n)})$</li>
+</ul>
+</li>
+<li>乘法：<ul>
+<li>$O(f(n)) \cdot O(g(n)) = O(f(n) \cdot g(n))$</li>
+</ul>
+</li>
+<li>常数因子：<ul>
+<li>$c \cdot O(f(n)) = O(f(n)) \quad (\text{其中 } c &gt; 0)$</li>
+</ul>
+</li>
+<li>若 $g(n) = O(f(n))$，则：<ul>
+<li>$O(f(n)) + O(g(n)) = O(f(n))$</li>
+</ul>
+</li>
+</ul>
+<h4 id="6-常见公式"><a href="#6-常见公式" class="headerlink" title="6. 常见公式"></a>6. <strong>常见公式</strong></h4><ol>
+<li>多项式：<ul>
+<li>$a_0 + a_1n + \dots + a_d n^d = \Theta(n^d) \quad (\text{其中 } a_d &gt; 0)$</li>
+</ul>
+</li>
+<li>对数：<ul>
+<li>$O(\log_a n) = O(\log_b n) \quad (\text{其中 } a, b &gt; 0)$</li>
+<li>$\log n = O(n^x) \quad (\text{其中 } x &gt; 0)$</li>
+</ul>
+</li>
+<li>指数：<ul>
+<li>$n^d = O(r^n) \quad (\text{其中 } r &gt; 1, d &gt; 0)$</li>
+</ul>
+</li>
+</ol>
+<hr>
+<p>以下是根据您提供的PPT中<strong>2.3节</strong>部分内容的详细总结和讲解，使用内联公式表示公式部分：</p>
+<hr>
+<h3 id="2-3-三种算法设计技术"><a href="#2-3-三种算法设计技术" class="headerlink" title="2.3 三种算法设计技术"></a><strong>2.3 三种算法设计技术</strong></h3><h4 id="1-贪心算法-Greedy-Algorithm"><a href="#1-贪心算法-Greedy-Algorithm" class="headerlink" title="1. 贪心算法 (Greedy Algorithm)"></a><strong>1. 贪心算法 (Greedy Algorithm)</strong></h4><ul>
+<li><strong>基本思想</strong>：在每一步中选择“当前最优解”，即局部最优解，期望通过一系列局部最优选择达到全局最优。</li>
+<li>局部最优与全局最优的关系：<ul>
+<li>贪心算法仅在某些特定问题中有效，即局部最优选择能导出全局最优解。</li>
+<li>贪心算法通常简单且高效，但并不总是正确。</li>
+</ul>
+</li>
+<li><strong>优点</strong>：算法简单、执行效率高。</li>
+<li><strong>缺点</strong>：可能产生错误结果或次优解。</li>
+</ul>
+<h5 id="案例：区间调度问题-Interval-Scheduling"><a href="#案例：区间调度问题-Interval-Scheduling" class="headerlink" title="案例：区间调度问题 (Interval Scheduling)"></a><strong>案例：区间调度问题 (Interval Scheduling)</strong></h5><ul>
+<li>问题描述：<ul>
+<li>给定 $n$ 个任务，每个任务有一个开始时间 $s_j$ 和结束时间 $f_j$。</li>
+<li>两个任务相容当且仅当它们不重叠。</li>
+<li>目标：选择最多数量的相容任务。</li>
+</ul>
+</li>
+<li>贪心策略：<ul>
+<li>按任务的结束时间 $f_j$ 升序排序。</li>
+<li>每次选择当前最早结束且与已选任务不冲突的任务。</li>
+</ul>
+</li>
+<li>时间复杂度：<ul>
+<li>排序：$O(n \log n)$。</li>
+<li>遍历：$O(n)$。</li>
+<li>总时间复杂度：$O(n \log n)$。</li>
+</ul>
+</li>
+</ul>
+<p>以下是区间调度问题 (Interval Scheduling) 的贪心算法伪代码：</p>
+<hr>
+<h3 id="区间调度问题的伪代码"><a href="#区间调度问题的伪代码" class="headerlink" title="区间调度问题的伪代码"></a><strong>区间调度问题的伪代码</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">Algorithm Interval_Scheduling</span><br><span class="line">Input: 一个任务集合 S = &#123;(s_1, f_1), (s_2, f_2), ..., (s_n, f_n)&#125;，</span><br><span class="line">       每个任务 i 有开始时间 s_i 和结束时间 f_i</span><br><span class="line">Output: 最多的相容任务集合 A</span><br><span class="line"></span><br><span class="line">1. 将任务按照结束时间 f_i 升序排序</span><br><span class="line">2. 初始化相容任务集合 A = &#123;&#125;</span><br><span class="line">3. 初始化上一个任务的结束时间 last_finish_time = 0</span><br><span class="line">4. for each task (s, f) in S do</span><br><span class="line">5.     if s &gt;= last_finish_time then</span><br><span class="line">6.         将任务 (s, f) 添加到集合 A 中</span><br><span class="line">7.         更新 last_finish_time = f</span><br><span class="line">8.     end if</span><br><span class="line">9. end for</span><br><span class="line">10. return A</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="时间复杂度分析"><a href="#时间复杂度分析" class="headerlink" title="时间复杂度分析"></a><strong>时间复杂度分析</strong></h3><ol>
+<li><strong>排序</strong>：将任务按照结束时间排序需要 $O(n \log n)$ 时间。</li>
+<li><strong>遍历</strong>：检查所有任务需要 $O(n)$ 时间。</li>
+<li><strong>总复杂度</strong>：$O(n \log n)$。</li>
+</ol>
+<p>对 <strong>区间调度问题 (Interval Scheduling)</strong> 的 <strong>贪心算法正确性证明</strong> 的详细解释。</p>
+<hr>
+<h3 id="定理：贪心算法是最优的"><a href="#定理：贪心算法是最优的" class="headerlink" title="定理：贪心算法是最优的"></a><strong>定理：贪心算法是最优的</strong></h3><h4 id="证明方法：反证法-Proof-by-Contradiction"><a href="#证明方法：反证法-Proof-by-Contradiction" class="headerlink" title="证明方法：反证法 (Proof by Contradiction)"></a><strong>证明方法：反证法 (Proof by Contradiction)</strong></h4><ol>
+<li><strong>假设贪心算法不是最优的</strong>：<ul>
+<li>设 $i_1, i_2, \dots, i_k$ 是贪心算法选择的任务集合。</li>
+<li>设 $j_1, j_2, \dots, j_m$ 是最优解选择的任务集合，且 $m &gt; k$。</li>
+<li>假设两个集合的前 $r$ 个任务是相同的，即 $i<em>1 = j_1, i_2 = j_2, \dots, i_r = j_r$，但 $i</em>{r+1} \neq j_{r+1}$。</li>
+</ul>
+</li>
+<li><strong>分析任务 $i<em>{r+1}$ 和 $j</em>{r+1}$ 的关系</strong>：<ul>
+<li>根据贪心算法的选择策略，任务 $i<em>{r+1}$ 的结束时间比 $j</em>{r+1}$ 的结束时间早，即 $f<em>{i</em>{r+1}} \leq f<em>{j</em>{r+1}}$。</li>
+<li>因为贪心算法优先选择结束时间最早的任务，所以任务 $i_{r+1}$ 不与前 $r$ 个任务冲突。</li>
+</ul>
+</li>
+<li><strong>替换分析</strong>：<ul>
+<li>由于任务 $i<em>{r+1}$ 比 $j</em>{r+1}$ 更早结束，且它与前 $r$ 个任务相容，可以用 $i<em>{r+1}$ 替换 $j</em>{r+1}$。</li>
+<li>替换后，新的任务集合仍然是合法的解，且任务数量不变，但结束时间更早。</li>
+</ul>
+</li>
+<li><strong>矛盾</strong>：<ul>
+<li>根据上述替换操作，可以构造一个比最优解更优的解（即任务数量相同但结束时间更早），这与最优解的定义矛盾。</li>
+<li>因此，假设贪心算法不是最优的成立不了。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="关键结论"><a href="#关键结论" class="headerlink" title="关键结论"></a><strong>关键结论</strong></h3><ul>
+<li><strong>贪心选择性质</strong>：每一步选择结束时间最早的任务不会影响全局最优解。</li>
+<li><strong>最优子结构</strong>：贪心算法的解是最优解的一部分，且每一步选择后剩余问题仍然是原问题的子问题。</li>
+</ul>
+<hr>
+<hr>
+<h4 id="2-分治算法-Divide-and-Conquer"><a href="#2-分治算法-Divide-and-Conquer" class="headerlink" title="2. 分治算法 (Divide and Conquer)"></a><strong>2. 分治算法 (Divide and Conquer)</strong></h4><ul>
+<li><strong>基本思想</strong>：将问题分解为多个小规模子问题，递归解决这些子问题，最后合并它们的解以获得原问题的解。</li>
+<li>步骤：<ol>
+<li><strong>分解 (Divide)</strong>：将规模为 $n$ 的问题分解为若干个规模较小的子问题。</li>
+<li><strong>解决 (Conquer)</strong>：递归地解决子问题。</li>
+<li><strong>合并 (Combine)</strong>：将子问题的解合并为原问题的解。</li>
+</ol>
+</li>
+<li><strong>优点</strong>：结构清晰、易于递归实现。</li>
+<li><strong>缺点</strong>：合并步骤可能复杂，导致效率下降。</li>
+</ul>
+<h3 id="分治法乘法-Divide-and-Conquer-Multiplication"><a href="#分治法乘法-Divide-and-Conquer-Multiplication" class="headerlink" title="分治法乘法 (Divide-and-Conquer Multiplication)"></a><strong>分治法乘法 (Divide-and-Conquer Multiplication)</strong></h3><h4 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a><strong>问题描述</strong></h4><p>如何计算两个 $n$ 位整数的乘积？将问题分解为更小的子问题，通过分治法递归求解。</p>
+<h3 id="公式推导"><a href="#公式推导" class="headerlink" title="公式推导"></a><strong>公式推导</strong></h3><p>将 $x$ 和 $y$ 分解：设 $x = 2^{n/2} \cdot x_1 + x_0$，其中 $x_1$ 是高位部分，$x_0$ 是低位部分；类似地，设 $y = 2^{n/2} \cdot y_1 + y_0$。</p>
+<p>两数乘积公式：<br> $x \cdot y = (2^{n/2} \cdot x_1 + x_0)(2^{n/2} \cdot y_1 + y_0)$。<br> 展开公式：<br> $x \cdot y = 2^n \cdot x_1y_1 + 2^{n/2} \cdot (x_1y_0 + x_0y_1) + x_0y_0$。<br> 需要计算以下四个部分：</p>
+<ol>
+<li>$x_1y_1$：高位部分的乘积；</li>
+<li>$x_0y_0$：低位部分的乘积；</li>
+<li>$x_1y_0$：交叉部分的乘积；</li>
+<li>$x_0y_1$：另一交叉部分的乘积。</li>
+</ol>
+<h3 id="分治法递归"><a href="#分治法递归" class="headerlink" title="分治法递归"></a><strong>分治法递归</strong></h3><p>子问题分解：将原问题分解为四个规模为 $n/2$ 的子问题。递归求解：对每个子问题递归计算，直到子问题的规模足够小（例如，$n = 1$）。合并结果：按公式将结果组合起来，最终得到完整的乘积。</p>
+<h3 id="时间复杂度分析-1"><a href="#时间复杂度分析-1" class="headerlink" title="时间复杂度分析"></a><strong>时间复杂度分析</strong></h3><p>递归关系为 $T(n) = 4T(n/2) + \Theta(n)$，其中 $4T(n/2)$ 是四次递归调用的代价，$\Theta(n)$ 是加法和移位操作的代价。使用主方法（Master Method）解递归：$a = 4$，$b = 2$，$\log_b a = \log_2 4 = 2$，时间复杂度为 $T(n) = \Theta(n^2)$</p>
+<h3 id="优化：Karatsuba-算法"><a href="#优化：Karatsuba-算法" class="headerlink" title="优化：Karatsuba 算法"></a><strong>优化：Karatsuba 算法</strong></h3><p>基本思想是通过减少乘法的次数优化递归步骤。传统方法需要 4 次乘法，而 Karatsuba 方法通过巧妙分组减少为 3 次乘法。Karatsuba 公式为：<br> $x \cdot y = 2^n \cdot x_1y_1 + 2^{n/2} \cdot (z - x_1y_1 - x_0y_0) + x_0y_0$，其中 $z = (x_1 + x_0)(y_1 + y_0)$。</p>
+<p>时间复杂度递归关系为 $T(n) = 3T(n/2) + \Theta(n)$，使用主方法解得 $T(n) = \Theta(n^{\log_2 3}) \approx \Theta(n^{1.585})$。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><p>基本分治法的时间复杂度为 $\Theta(n^2)$，适合初步理解分治法思想；Karatsuba 算法进一步优化，将时间复杂度降为 $\Theta(n^{1.585})$；对于大规模整数乘法，可以使用更高级算法（如傅里叶变换法）进一步优化。</p>
+<hr>
+<hr>
+<h4 id="3-动态规划-Dynamic-Programming"><a href="#3-动态规划-Dynamic-Programming" class="headerlink" title="3. 动态规划 (Dynamic Programming)"></a><strong>3. 动态规划 (Dynamic Programming)</strong></h4><ul>
+<li><strong>基本思想</strong>：将问题分解为一系列重叠子问题，记录子问题的解以避免重复计算。</li>
+<li>步骤：<ol>
+<li><strong>分解子问题</strong>：将问题分解为若干个相互依赖的子问题。</li>
+<li><strong>状态定义</strong>：定义用于表示子问题解的状态。</li>
+<li><strong>状态转移方程</strong>：描述子问题之间的关系。</li>
+<li><strong>边界条件</strong>：定义初始状态。</li>
+</ol>
+</li>
+</ul>
+<h5 id="案例：背包问题-Knapsack-Problem"><a href="#案例：背包问题-Knapsack-Problem" class="headerlink" title="案例：背包问题 (Knapsack Problem)"></a><strong>案例：背包问题 (Knapsack Problem)</strong></h5><ul>
+<li>问题描述：<ul>
+<li>给定 $n$ 个物品，每个物品有重量 $w_i$ 和价值 $v_i$，背包容量为 $W$。</li>
+<li>目标：在不超过容量 $W$ 的前提下，使总价值最大。</li>
+</ul>
+</li>
+<li>状态定义：<ul>
+<li>$M[i, w]$ 表示前 $i$ 个物品中，总重量不超过 $w$ 时的最大价值。</li>
+</ul>
+</li>
+<li>状态转移方程：<ul>
+<li>如果不选第 $i$ 个物品：$M[i, w] = M[i-1, w]$。</li>
+<li>如果选第 $i$ 个物品：$M[i, w] = \max{M[i-1, w], v_i + M[i-1, w-w_i]}$。</li>
+</ul>
+</li>
+<li><strong>时间复杂度</strong>：$O(nW)$（伪多项式时间）。</li>
+</ul>
+<hr>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a><strong>总结</strong></h3><ul>
+<li><strong>贪心算法</strong>适合局部最优能够导出全局最优的问题。</li>
+<li><strong>分治算法</strong>适合子问题独立且可以合并的问题。</li>
+<li><strong>动态规划</strong>适合存在重叠子问题且最优解可由子问题组合的问题。</li>
+</ul>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>算法分析与设计复习</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://blog.jxlll.cc/2024/11/23/%E7%AE%97%E6%B3%95%E5%88%86%E6%9E%90%E4%B8%8E%E8%AE%BE%E8%AE%A1/">http://blog.jxlll.cc/2024/11/23/算法分析与设计/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>JJxXxLL</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-11-23</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2024-12-12</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/">考试复习</a></div><div class="post_share"><div class="social-share" data-image="/image/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/11/24/RQGNN/" title="Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection Detection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection Detection</div></div></a></div><div class="next-post pull-right"><a href="/2024/11/13/HOGRL/" title="Effective High-order Graph Representation Learning for Credit Card Fraud Detection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Effective High-order Graph Representation Learning for Credit Card Fraud Detection</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/12/02/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划复习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-02</div><div class="title">动态规划复习</div></div></a></div><div><a href="/2024/11/24/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" title="贪心算法复习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-24</div><div class="title">贪心算法复习</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">JJxXxLL</div><div class="author-info__description">记录学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">40</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJxXxLL"><i class="fa-solid fa-eye"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJxXxLL" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:jxl552082093@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E7%AB%A0%E7%9B%B8%E5%85%B3%E8%80%83%E8%AF%95%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">第一章相关考试内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E7%AB%A0"><span class="toc-number">2.</span> <span class="toc-text">第二章</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E4%B8%AA%E6%B8%90%E8%BF%9B%E5%88%86%E6%9E%90%E7%AC%A6%E5%8F%B7%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9A"><span class="toc-number">2.1.</span> <span class="toc-text">五个渐进分析符号的内容：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%B8%90%E8%BF%91%E4%B8%8A%E7%95%8C%E7%AC%A6%E5%8F%B7-O-g-n"><span class="toc-number">2.1.1.</span> <span class="toc-text">1. 渐近上界符号 $O(g(n))$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E6%B8%90%E8%BF%91%E4%B8%8B%E7%95%8C%E7%AC%A6%E5%8F%B7-Omega-g-n"><span class="toc-number">2.1.2.</span> <span class="toc-text">2. 渐近下界符号 $\Omega(g(n))$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%B4%A7%E6%B8%90%E8%BF%91%E7%95%8C%E7%AC%A6%E5%8F%B7-Theta-g-n"><span class="toc-number">2.1.3.</span> <span class="toc-text">3. 紧渐近界符号 $\Theta(g(n))$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%9D%9E%E7%B4%A7%E4%B8%8A%E7%95%8C%E7%AC%A6%E5%8F%B7-o-g-n"><span class="toc-number">2.1.4.</span> <span class="toc-text">4. 非紧上界符号 $o(g(n))$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E9%9D%9E%E7%B4%A7%E4%B8%8B%E7%95%8C%E7%AC%A6%E5%8F%B7-omega-g-n"><span class="toc-number">2.1.5.</span> <span class="toc-text">5. 非紧下界符号 $\omega(g(n))$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%A6%E5%8F%B7%E5%85%B3%E7%B3%BB"><span class="toc-number">2.1.6.</span> <span class="toc-text">符号关系</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B8%90%E8%BF%9B%E5%88%86%E6%9E%90%E8%AE%B0%E5%8F%B7%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">2.2.</span> <span class="toc-text">渐进分析记号的性质</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BC%A0%E9%80%92%E6%80%A7"><span class="toc-number">2.2.0.1.</span> <span class="toc-text">1. 传递性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%8F%8D%E8%BA%AB%E6%80%A7"><span class="toc-number">2.2.0.2.</span> <span class="toc-text">2. 反身性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">2.2.0.3.</span> <span class="toc-text">3. 对称性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E4%BA%92%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">2.2.0.4.</span> <span class="toc-text">4. 互对称性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97"><span class="toc-number">2.2.0.5.</span> <span class="toc-text">5. 算术运算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E5%B8%B8%E8%A7%81%E5%85%AC%E5%BC%8F"><span class="toc-number">2.2.0.6.</span> <span class="toc-text">6. 常见公式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-%E4%B8%89%E7%A7%8D%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E6%8A%80%E6%9C%AF"><span class="toc-number">2.2.1.</span> <span class="toc-text">2.3 三种算法设计技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95-Greedy-Algorithm"><span class="toc-number">2.2.1.1.</span> <span class="toc-text">1. 贪心算法 (Greedy Algorithm)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E5%8C%BA%E9%97%B4%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98-Interval-Scheduling"><span class="toc-number">2.2.1.1.1.</span> <span class="toc-text">案例：区间调度问题 (Interval Scheduling)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%BA%E9%97%B4%E8%B0%83%E5%BA%A6%E9%97%AE%E9%A2%98%E7%9A%84%E4%BC%AA%E4%BB%A3%E7%A0%81"><span class="toc-number">2.2.2.</span> <span class="toc-text">区间调度问题的伪代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90"><span class="toc-number">2.2.3.</span> <span class="toc-text">时间复杂度分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E7%90%86%EF%BC%9A%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95%E6%98%AF%E6%9C%80%E4%BC%98%E7%9A%84"><span class="toc-number">2.2.4.</span> <span class="toc-text">定理：贪心算法是最优的</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E6%96%B9%E6%B3%95%EF%BC%9A%E5%8F%8D%E8%AF%81%E6%B3%95-Proof-by-Contradiction"><span class="toc-number">2.2.4.1.</span> <span class="toc-text">证明方法：反证法 (Proof by Contradiction)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E9%94%AE%E7%BB%93%E8%AE%BA"><span class="toc-number">2.2.5.</span> <span class="toc-text">关键结论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%88%86%E6%B2%BB%E7%AE%97%E6%B3%95-Divide-and-Conquer"><span class="toc-number">2.2.5.1.</span> <span class="toc-text">2. 分治算法 (Divide and Conquer)</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%B2%BB%E6%B3%95%E4%B9%98%E6%B3%95-Divide-and-Conquer-Multiplication"><span class="toc-number">2.2.6.</span> <span class="toc-text">分治法乘法 (Divide-and-Conquer Multiplication)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.2.6.1.</span> <span class="toc-text">问题描述</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AC%E5%BC%8F%E6%8E%A8%E5%AF%BC"><span class="toc-number">2.2.7.</span> <span class="toc-text">公式推导</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%B2%BB%E6%B3%95%E9%80%92%E5%BD%92"><span class="toc-number">2.2.8.</span> <span class="toc-text">分治法递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%E5%88%86%E6%9E%90-1"><span class="toc-number">2.2.9.</span> <span class="toc-text">时间复杂度分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%EF%BC%9AKaratsuba-%E7%AE%97%E6%B3%95"><span class="toc-number">2.2.10.</span> <span class="toc-text">优化：Karatsuba 算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">2.2.11.</span> <span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-Dynamic-Programming"><span class="toc-number">2.2.11.1.</span> <span class="toc-text">3. 动态规划 (Dynamic Programming)</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%EF%BC%9A%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98-Knapsack-Problem"><span class="toc-number">2.2.11.1.1.</span> <span class="toc-text">案例：背包问题 (Knapsack Problem)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93-1"><span class="toc-number">2.2.12.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/12/RQGNN%E5%91%A8%E6%8A%A5/" title="无题">无题</a><time datetime="2024-12-12T06:00:18.987Z" title="发表于 2024-12-12 14:00:18">2024-12-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/12/VCPDGNN/" title="无题">无题</a><time datetime="2024-12-12T06:00:18.987Z" title="发表于 2024-12-12 14:00:18">2024-12-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/12/%E5%88%86%E6%B2%BB/" title="无题">无题</a><time datetime="2024-12-12T06:00:18.987Z" title="发表于 2024-12-12 14:00:18">2024-12-12</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/12/02/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/" title="动态规划复习">动态规划复习</a><time datetime="2024-12-02T05:25:34.000Z" title="发表于 2024-12-02 13:25:34">2024-12-02</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2024/11/24/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" title="贪心算法复习">贪心算法复习</a><time datetime="2024-11-24T15:42:32.000Z" title="发表于 2024-11-24 23:42:32">2024-11-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 By JJxXxLL</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer src="/js/cursor.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/编程训练/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 训练营记录 (17)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/文献学习/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 读文献 (17)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://blog.jxlll.cc/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-gpxxq7_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/编程训练/">编程训练</a><span class="categoryBar-list-count">17</span><span class="categoryBar-list-descr">这是代码练习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-we7djr_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/文献学习/">文献学习</a><span class="categoryBar-list-count">17</span><span class="categoryBar-list-descr">这是文献学习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-o5revm_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/考试复习/">考试复习</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr">这里还没想好</span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = '0ad15caa1a204ee89c6ad151329a6b50';
+  var gaud_map_key = 'ee76386f15646eecea6cffc073dfbff6';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '113.34532,23.15624';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/08/26/GraphCL/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-08-26</span><a class="blog-slider__title" href="2024/08/26/GraphCL/" alt="">Graph Contrastive Learning with Augmentations</a><div class="blog-slider__text">图学习</div><a class="blog-slider__button" href="2024/08/26/GraphCL/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/10/18/PCGNN/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-18</span><a class="blog-slider__title" href="2024/10/18/PCGNN/" alt="">PC-GNN</a><div class="blog-slider__text">欺诈检测</div><a class="blog-slider__button" href="2024/10/18/PCGNN/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="/js/swiper.min.js"></script><script defer data-pjax src="/js/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__pulse');
+    arr[i].setAttribute('data-wow-duration', '1s');
+    arr[i].setAttribute('data-wow-delay', '500ms');
+    arr[i].setAttribute('data-wow-offset', '50');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
