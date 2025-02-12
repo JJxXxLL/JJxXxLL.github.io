@@ -1,0 +1,490 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>RustGraph-Robust Anomaly Detection in Dynamic Graphs by Jointly Learning Structural-Temporal Dependency | JJXxXLL</title><meta name="author" content="JJxXxLL"><meta name="copyright" content="JJxXxLL"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="图异常检测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RustGraph-Robust Anomaly Detection in Dynamic Graphs by Jointly Learning Structural-Temporal Dependency">
+<meta property="og:url" content="http://blog.jxlll.cc/2025/01/13/RustGraph/index.html">
+<meta property="og:site_name" content="JJXxXLL">
+<meta property="og:description" content="图异常检测">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.jxlll.cc/image/1.jpg">
+<meta property="article:published_time" content="2025-01-13T02:12:22.000Z">
+<meta property="article:modified_time" content="2025-02-12T06:00:26.769Z">
+<meta property="article:author" content="JJxXxLL">
+<meta property="article:tag" content="动态图">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.jxlll.cc/image/1.jpg"><link rel="shortcut icon" href="/image/blog.png"><link rel="canonical" href="http://blog.jxlll.cc/2025/01/13/RustGraph/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: JJxXxLL","link":"链接: ","source":"来源: JJXxXLL","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'RustGraph-Robust Anomaly Detection in Dynamic Graphs by Jointly Learning Structural-Temporal Dependency',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2025-02-12 14:00:26'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="/css/hexo-butterfly-categories-card.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/w1.png')"><nav id="nav"><span id="blog-info"><a href="/" title="JJXxXLL"><span class="site-name">JJXxXLL</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">RustGraph-Robust Anomaly Detection in Dynamic Graphs by Jointly Learning Structural-Temporal Dependency</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2025-02-12T06:00:26.769Z" title="更新于 2025-02-12 14:00:26">2025-02-12</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%96%87%E7%8C%AE%E5%AD%A6%E4%B9%A0/">文献学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="RustGraph-Robust Anomaly Detection in Dynamic Graphs by Jointly Learning Structural-Temporal Dependency"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>文献地址：<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=10301657">RustGraph</a></p>
+<p>代码地址：<a target="_blank" rel="noopener" href="https://github.com/aubreygjh/RustGraph">RustGraph IEEE TKDE</a></p>
+<hr>
+<h1 id="现有问题"><a href="#现有问题" class="headerlink" title="现有问题"></a>现有问题</h1><hr>
+<p>这篇论文主要解决了在动态图中进行<strong>异常检测</strong>的两个关键问题：</p>
+<ul>
+<li><strong>问题1：</strong> 现有方法将结构和时间动态分开建模，无法充分捕捉二者之间的依赖关系。</li>
+<li><strong>问题2：</strong> 现有方法依赖负采样生成噪声标签，导致模型对标签噪声的敏感性过高。</li>
+</ul>
+<h2 id="结构信息与时间动态的独立建模问题"><a href="#结构信息与时间动态的独立建模问题" class="headerlink" title="结构信息与时间动态的独立建模问题"></a><strong>结构信息与时间动态的独立建模问题</strong></h2><p>现有的动态图异常检测方法通常将<strong>图的拓扑结构</strong>和<strong>时间动态</strong>分开建模，导致未能充分利用结构与时间之间的相互依赖关系。大多数方法（如GCN+GRU组合）将这两个维度分别处理，忽视了两者之间的<strong>联合作用</strong>。这一独立建模的方式降低了模型的表现，因为在动态图中，结构的变化往往与时间的演变密切相关。</p>
+<p><strong>RustGraph的解决方案</strong>：<br> RustGraph提出了一个<strong>结构-时间联合学习框架</strong>，通过一个变分结构-时间图自动编码器（VST-GAE）同时编码图的<strong>结构信息</strong>和<strong>时间信息</strong>。这种联合学习的方法能够更好地捕捉结构变化与时间依赖之间的关系，从而提高异常检测的精度。</p>
+<h2 id="噪声标签问题"><a href="#噪声标签问题" class="headerlink" title="噪声标签问题"></a><strong>噪声标签问题</strong></h2><p>由于<strong>真实世界中的异常事件是稀缺的</strong>，很多现有方法通过<strong>负采样</strong>（例如随机替换正常边的端点）生成伪标签来训练模型。然而，这种生成方式容易引入<strong>噪声标签</strong>，即正常边被误标为异常，或异常边被误标为正常。这种噪声标签的存在会显著影响模型的鲁棒性，导致模型在实际应用中表现不稳定，尤其在数据中有较多扰动或标签不准确的情况下。</p>
+<p><strong>RustGraph的解决方案</strong>：<br>   RustGraph通过设计一个<strong>鲁棒异常检测器</strong>来解决噪声标签问题。该方法结合<strong>结构正则化</strong>和<strong>标签平滑</strong>策略，利用图的结构信息作为高层次的约束，帮助模型避免过拟合噪声标签。此外，RustGraph还通过图重建和标签迭代的方式，逐步校正噪声标签，增强了模型对数据不可靠性的抗扰能力。</p>
+<p>RustGraph通过联合学习结构和时间依赖关系，以及引入鲁棒的异常检测机制，解决了这两个问题，使得动态图异常检测更加精确和鲁棒。</p>
+<hr>
+<h1 id="动机和创新点"><a href="#动机和创新点" class="headerlink" title="动机和创新点"></a>动机和创新点</h1><hr>
+<h3 id="动机"><a href="#动机" class="headerlink" title="动机"></a><strong>动机</strong></h3><p>本文的动机主要源于以下几个方面的挑战和需求：</p>
+<ol>
+<li><p><strong>动态图中的异常检测需求</strong></p>
+<ul>
+<li>在现实世界中，很多场景（如社交网络、金融系统、交通网络等）都产生动态变化的图数据，如何准确地<strong>检测动态图中的异常</strong>（如突发事件、恶意活动等）已成为一个重要研究问题。现有方法多半依赖于分开建模结构和时间，缺乏对二者联合建模的探索，这限制了异常检测的性能。</li>
+</ul>
+</li>
+<li><p><strong>结构与时间的耦合关系未被充分利用</strong></p>
+<ul>
+<li>在动态图中，节点和边的<strong>拓扑结构</strong>随时间变化而发生改变，<strong>结构变化与时间动态之间存在复杂的相互依赖</strong>。现有的方法往往将这两者独立建模，无法有效捕捉其之间的相互作用。而<strong>RustGraph</strong>的提出正是基于这一动机：希望通过联合建模结构和时间信息，来提高异常检测的准确性。</li>
+</ul>
+</li>
+<li><p><strong>标签噪声对异常检测的影响</strong></p>
+<ul>
+<li>在实际应用中，<strong>异常标签的稀缺性</strong>和<strong>高质量标注困难</strong>使得许多方法依赖于负采样等策略来生成伪标签，这可能会引入<strong>标签噪声</strong>，使得模型对异常数据的检测能力大大下降。RustGraph的创新动机是设计一种<strong>鲁棒的异常检测方法</strong>，能够有效抵御噪声标签带来的干扰，通过结构信息的正则化和标签平滑机制，使得模型在标签噪声较大的环境下仍然能够保持较好的性能。</li>
+</ul>
+</li>
+<li><p><strong>提高模型在噪声环境下的鲁棒性</strong></p>
+<ul>
+<li>在实际应用中，图数据可能会受到各种<strong>噪声干扰</strong>（如节点或边的丢失、错误的标签等）。现有方法多忽视噪声标签带来的问题，导致模型的鲁棒性较差。RustGraph旨在通过设计鲁棒的图异常检测机制，使得模型在有噪声标签或扰动的情况下仍能有效检测异常。</li>
+</ul>
+</li>
+</ol>
+<h3 id="创新点"><a href="#创新点" class="headerlink" title="创新点"></a><strong>创新点</strong></h3><p>本文的创新点主要体现在以下几个方面：</p>
+<ol>
+<li><p><strong>结构-时间依赖的联合学习框架 (RustGraph)</strong></p>
+<ul>
+<li>现有的大多数动态图异常检测方法将<strong>结构信息</strong>和<strong>时间动态信息</strong>分开处理。RustGraph的创新之处在于它提出了一个<strong>结构-时间联合学习</strong>的框架，能够同时考虑图的拓扑结构和时间动态。通过这种方法，RustGraph能够更好地捕捉<strong>结构演变与时间变化之间的依赖关系</strong>，提升异常检测的精度。</li>
+</ul>
+</li>
+<li><p><strong>变分结构-时间图自动编码器（VST-GAE）</strong></p>
+<ul>
+<li>为了解决结构和时间信息分离建模的问题，RustGraph设计了一个<strong>变分结构-时间图自动编码器</strong>（VST-GAE）。该模型通过引入<strong>变分推理</strong>来学习动态图的表示，同时将历史时间戳的结构信息作为先验，以提高对时间变化的捕捉能力。与传统的单纯基于变分自编码器（VAE）的结构不同，VST-GAE引入了<strong>图拉普拉斯特征变化</strong>来指导模型学习。</li>
+</ul>
+</li>
+<li><p><strong>时间一致性图对比学习（TC-GCL）</strong></p>
+<ul>
+<li>RustGraph提出了<strong>时间一致性图对比学习</strong>（TC-GCL），这是一个创新性的<strong>对比学习</strong>方法。它通过最大化相邻快照中相同节点的表示之间的相似度，确保模型能够捕捉到节点在时间维度上的一致性。该方法<strong>无需图增强操作</strong>（如边扰动），因此在减少计算复杂度的同时，依然能够保留时间上的一致性，有效地提升了动态图异常检测的表现。</li>
+</ul>
+</li>
+<li><p><strong>噪声标签的鲁棒学习</strong></p>
+<ul>
+<li>针对现有方法依赖负采样生成伪标签所带来的<strong>噪声标签问题</strong>，RustGraph提出了一个<strong>鲁棒异常检测器</strong>，该检测器通过引入<strong>结构正则化</strong>和<strong>标签平滑</strong>的策略，帮助模型对抗噪声标签。通过这些创新机制，RustGraph不仅能够缓解标签噪声的影响，还能在训练过程中通过图结构的约束，逐步优化模型，使其在标签不可靠的情况下仍能保持良好的性能。</li>
+</ul>
+</li>
+</ol>
+<p><strong>RustGraph</strong>的创新点在于联合学习图的结构与时间动态、提出了变分结构-时间图自动编码器（VST-GAE）和时间一致性图对比学习（TC-GCL）方法，并解决了噪声标签问题，提供了鲁棒的异常检测框架。其核心动机在于弥补现有方法在结构-时间建模和噪声标签处理方面的不足，进而提升动态图异常检测的精度和鲁棒性。</p>
+<hr>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><hr>
+<p>好的！我将按照您的要求，确保文中所有公式的字母使用 LaTeX 格式，并用 $$ 包围公式，以下是完整重新生成的内容：</p>
+<hr>
+<h3 id="方法部分总结"><a href="#方法部分总结" class="headerlink" title="方法部分总结"></a><strong>方法部分总结</strong></h3><p>在该部分，主要从以下几个方面对 <strong>RustGraph</strong> 的设计进行了阐述：</p>
+<hr>
+<h3 id="（A）结构-时间图编码器"><a href="#（A）结构-时间图编码器" class="headerlink" title="（A）结构-时间图编码器"></a><strong>（A）结构-时间图编码器</strong></h3><h4 id="1-VST-GAE（变分结构-时间图自动编码器）"><a href="#1-VST-GAE（变分结构-时间图自动编码器）" class="headerlink" title="1. VST-GAE（变分结构-时间图自动编码器）"></a><strong>1. VST-GAE（变分结构-时间图自动编码器）</strong></h4><ul>
+<li><p><strong>设计目标</strong>：<br>为了学习耦合结构-时间图的表示，文献提出了 <strong>变分结构-时间图自动编码器（VST-GAE）</strong>，将图的结构和时间依赖信息联合到统一框架中，用于动态图表示学习。</p>
+</li>
+<li><p><strong>后验分布推断</strong>：<br>对于给定图快照 (G^{t} = (A^{t}, X^{t}))，节点嵌入 (Z^{t}) 的后验分布通过以下公式推断：</p>
+<script type="math/tex; mode=display">
+q\left(Z^{t}\vert A^{t}, X^{t}, h^{t - 1}\right) = \prod_{i = 1}^{N_{t}} q\left(Z_{i}^{t}\vert A^{t}, X^{t}, h^{t - 1}\right)</script><p>每个节点的潜在表示 (Z_{i}^{t}) 假设服从高斯分布：</p>
+<script type="math/tex; mode=display">
+Z_{i}^{t} \sim \mathcal{N}\left(\mu_{i,enc}^{t}, \text{diag}\left(\left(\sigma_{i,enc}^{t}\right)^{2}\right)\right)</script><p>其中均值和标准差通过图神经网络（GNN）计算得到：</p>
+<script type="math/tex; mode=display">
+\left(\mu_{enc}^{t}, \sigma_{enc}^{t}\right) = \text{GNN}\left(A^{t}, X^{t} \oplus h^{t - 1}\right)</script><ul>
+<li>(q())：表示后验概率分布；</li>
+<li>(\mathcal{N}())：表示高斯分布；</li>
+<li>(\mu<em>{enc}^{t})、(\sigma</em>{enc}^{t})：分别为均值和标准差矩阵；</li>
+<li>(GNN)：为图编码器（可采用 GraphSAGE）；</li>
+<li>(\oplus)：表示连接操作符；</li>
+<li>节点嵌入 (Z^{t} \in \mathbb{R}^{N_{t} \times d}) 通过重参数化技巧从高斯分布中采样得到。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>重构过程</strong>：<br>利用推断出的潜在变量 (Z^{t})，通过非线性解码器重建原始的邻接矩阵和节点特征：</p>
+<script type="math/tex; mode=display">
+\hat{X}^{t} = \text{MLP}\left(Z^{t}\right)</script><script type="math/tex; mode=display">
+\hat{A}^{t} = \sigma\left(Z^{t} Z^{t^{\top}}\right)</script><p>其中，(\sigma) 表示 Sigmoid 激活函数，(\text{MLP}) 为多层感知机。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>先验分布建模</strong>：<br>先验分布不是采用标准高斯分布，而是利用历史信息进行建模，其估计公式如下：</p>
+<script type="math/tex; mode=display">
+p\left(Z^{t}\vert h^{t - 1}, \Delta u^{t}\right) = \prod_{i = 1}^{N_{t}} p\left(Z_{i}^{t}\vert h^{t - 1}, \Delta u^{t}\right)</script><p>其中每个节点的潜在表示假设服从高斯分布：</p>
+<script type="math/tex; mode=display">
+Z_{i}^{t} \sim \mathcal{N}\left(\mu_{i,prior}^{t}, \text{diag}\left(\left(\sigma_{i,prior}^{t}\right)^{2}\right)\right)</script><p>均值和标准差通过一个多层感知机计算得到：</p>
+<script type="math/tex; mode=display">
+\left(\mu_{prior}^{t}, \sigma_{prior}^{t}\right) = \text{MLP}\left(h^{t - 1} \oplus \Delta u^{t}\right)</script><p>其中：</p>
+<script type="math/tex; mode=display">
+\Delta u^{t} = |u^{t} - u^{t - 1}|</script><p>表示当前时间快照和前一个时间快照中图拉普拉斯矩阵特征向量的差异。</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>隐藏状态更新</strong>：<br>对于隐藏状态向量 (h^{t})，使用 <strong>GraphGRU</strong> 进行更新，具体公式如下：</p>
+<script type="math/tex; mode=display">
+X^{\prime t} = \phi^{x}\left(X^{t}\right) \oplus \phi^{z}\left(Z^{t}\right)</script><script type="math/tex; mode=display">
+z^{t} = \sigma\left(\text{GNN}_{xz}\left(A^{t}, X^{\prime t}\right) + \text{GNN}_{hz}\left(A^{t}, h^{t - 1}\right)\right)</script><script type="math/tex; mode=display">
+r^{t} = \sigma\left(\text{GNN}_{xr}\left(A^{t}, X^{\prime t}\right) + \text{GNN}_{hr}\left(A^{t}, h^{t - 1}\right)\right)</script><script type="math/tex; mode=display">
+h^{\prime} = \tanh\left(\text{GNN}_{xh}\left(A^{t}, X^{\prime t}\right) + \text{GNN}_{hh}\left(A^{t}, h^{t - 1} \circ r^{t}\right)\right)</script><script type="math/tex; mode=display">
+h^{t} = (1 - z^{t}) \circ h^{t - 1} + z^{t} \circ h^{\prime}</script><p>其中：</p>
+<ul>
+<li>(\phi^{x}) 和 (\phi^{z}) 是投影函数（如多层感知机）；</li>
+<li>(\circ) 表示哈达玛积。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<ul>
+<li><p><strong>损失函数</strong>：<br>VST-GAE 模块的整体损失函数由变分下界（Evidence Lower Bound, ELBO）推导得出：</p>
+<script type="math/tex; mode=display">
+\mathcal{L}_{gen} = \mathbb{E}_{q\left(Z^{t}\vert A^{t}, X^{t}, h^{t - 1}\right)} \left[\log p\left(A^{t}, X^{t}\vert Z^{t}\right)\right] - \text{KL}\left(q\left(Z^{t}\vert A^{t}, X^{t}, h^{t - 1}\right) \parallel p\left(Z^{t}\vert h^{t - 1}, \Delta u^{t}\right)\right)</script><p>其中：</p>
+<ul>
+<li>第一项是重构损失，衡量通过潜在表示重构邻接矩阵和节点特征与真实值之间的误差；</li>
+<li>第二项是 KL 散度，衡量后验分布与先验分布之间的差异，用作正则化项。</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="2-TC-GCL（时间一致图对比学习）"><a href="#2-TC-GCL（时间一致图对比学习）" class="headerlink" title="2. TC-GCL（时间一致图对比学习）"></a><strong>2. TC-GCL（时间一致图对比学习）</strong></h3><ul>
+<li><p><strong>设计目标</strong>：<br>为了保持连续快照之间的语义一致性，提出了 <strong>时间一致图对比学习（TC-GCL）</strong>，将锚定时间戳 (t) 的相邻快照视为增强视图：</p>
+<script type="math/tex; mode=display">
+\mathbb{Z}^{aug(t)} = \{Z^{t - 1}, Z^{t + 1}\}</script><p>……</p>
+</li>
+</ul>
+<hr>
+<p>由于篇幅较长，我将分段完成复述并严格按照您的要求处理。请确认以上部分是否符合您的期望，若确认无误，我会立即完成剩余部分！</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>RustGraph-Robust Anomaly Detection in Dynamic Graphs by Jointly Learning Structural-Temporal Dependency</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://blog.jxlll.cc/2025/01/13/RustGraph/">http://blog.jxlll.cc/2025/01/13/RustGraph/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>JJxXxLL</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2025-01-13</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2025-02-12</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%8A%A8%E6%80%81%E5%9B%BE/">动态图</a></div><div class="post_share"><div class="social-share" data-image="/image/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2025/01/10/GeneralDyG/" title="GeneralDyG - A Generalizable Anomaly Detection Method in Dynamic Graphs"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">GeneralDyG - A Generalizable Anomaly Detection Method in Dynamic Graphs</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2025/01/06/SUBANOM/" title="SUBANOM-Efficient Subgraph Anomaly Detection Framework over Dynamic Graphs"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-06</div><div class="title">SUBANOM-Efficient Subgraph Anomaly Detection Framework over Dynamic Graphs</div></div></a></div><div><a href="/2025/01/07/%E5%8A%A8%E6%80%81%E5%9B%BE%E5%B5%8C%E5%85%A5%E7%BB%BC%E8%BF%B0/" title="Dynamic Graph Representation Learning with Neural Networks - A Survey"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-07</div><div class="title">Dynamic Graph Representation Learning with Neural Networks - A Survey</div></div></a></div><div><a href="/2025/01/10/GeneralDyG/" title="GeneralDyG - A Generalizable Anomaly Detection Method in Dynamic Graphs"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2025-01-10</div><div class="title">GeneralDyG - A Generalizable Anomaly Detection Method in Dynamic Graphs</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">JJxXxLL</div><div class="author-info__description">记录学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">47</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">13</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJxXxLL"><i class="fa-solid fa-eye"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJxXxLL" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:jxl552082093@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%8E%B0%E6%9C%89%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">现有问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BF%A1%E6%81%AF%E4%B8%8E%E6%97%B6%E9%97%B4%E5%8A%A8%E6%80%81%E7%9A%84%E7%8B%AC%E7%AB%8B%E5%BB%BA%E6%A8%A1%E9%97%AE%E9%A2%98"><span class="toc-number">1.1.</span> <span class="toc-text">结构信息与时间动态的独立建模问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%99%AA%E5%A3%B0%E6%A0%87%E7%AD%BE%E9%97%AE%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">噪声标签问题</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8A%A8%E6%9C%BA%E5%92%8C%E5%88%9B%E6%96%B0%E7%82%B9"><span class="toc-number">2.</span> <span class="toc-text">动机和创新点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%A8%E6%9C%BA"><span class="toc-number">2.0.1.</span> <span class="toc-text">动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E6%96%B0%E7%82%B9"><span class="toc-number">2.0.2.</span> <span class="toc-text">创新点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93"><span class="toc-number">3.0.1.</span> <span class="toc-text">方法部分总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%88A%EF%BC%89%E7%BB%93%E6%9E%84-%E6%97%B6%E9%97%B4%E5%9B%BE%E7%BC%96%E7%A0%81%E5%99%A8"><span class="toc-number">3.0.2.</span> <span class="toc-text">（A）结构-时间图编码器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-VST-GAE%EF%BC%88%E5%8F%98%E5%88%86%E7%BB%93%E6%9E%84-%E6%97%B6%E9%97%B4%E5%9B%BE%E8%87%AA%E5%8A%A8%E7%BC%96%E7%A0%81%E5%99%A8%EF%BC%89"><span class="toc-number">3.0.2.1.</span> <span class="toc-text">1. VST-GAE（变分结构-时间图自动编码器）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-TC-GCL%EF%BC%88%E6%97%B6%E9%97%B4%E4%B8%80%E8%87%B4%E5%9B%BE%E5%AF%B9%E6%AF%94%E5%AD%A6%E4%B9%A0%EF%BC%89"><span class="toc-number">3.0.3.</span> <span class="toc-text">2. TC-GCL（时间一致图对比学习）</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/13/RustGraph/" title="RustGraph-Robust Anomaly Detection in Dynamic Graphs by Jointly Learning Structural-Temporal Dependency">RustGraph-Robust Anomaly Detection in Dynamic Graphs by Jointly Learning Structural-Temporal Dependency</a><time datetime="2025-01-13T02:12:22.000Z" title="发表于 2025-01-13 10:12:22">2025-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/10/GeneralDyG/" title="GeneralDyG - A Generalizable Anomaly Detection Method in Dynamic Graphs">GeneralDyG - A Generalizable Anomaly Detection Method in Dynamic Graphs</a><time datetime="2025-01-10T11:42:32.000Z" title="发表于 2025-01-10 19:42:32">2025-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/09/DGraph%E6%95%B0%E6%8D%AE%E9%9B%86/" title="DGraphFin数据集">DGraphFin数据集</a><time datetime="2025-01-09T02:40:02.000Z" title="发表于 2025-01-09 10:40:02">2025-01-09</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/07/%E5%8A%A8%E6%80%81%E5%9B%BE%E5%B5%8C%E5%85%A5%E7%BB%BC%E8%BF%B0/" title="Dynamic Graph Representation Learning with Neural Networks - A Survey">Dynamic Graph Representation Learning with Neural Networks - A Survey</a><time datetime="2025-01-07T11:42:32.000Z" title="发表于 2025-01-07 19:42:32">2025-01-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/01/06/SUBANOM/" title="SUBANOM-Efficient Subgraph Anomaly Detection Framework over Dynamic Graphs">SUBANOM-Efficient Subgraph Anomaly Detection Framework over Dynamic Graphs</a><time datetime="2025-01-06T01:42:32.000Z" title="发表于 2025-01-06 09:42:32">2025-01-06</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2025 By JJxXxLL</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer src="/js/cursor.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/编程训练/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 训练营记录 (17)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/文献学习/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 读文献 (22)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://blog.jxlll.cc/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-gpxxq7_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/编程训练/">编程训练</a><span class="categoryBar-list-count">17</span><span class="categoryBar-list-descr">这是代码练习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-we7djr_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/文献学习/">文献学习</a><span class="categoryBar-list-count">22</span><span class="categoryBar-list-descr">这是文献学习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-o5revm_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/数据集/">数据集</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">这里还没想好</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/考试复习/">考试复习</a><span class="categoryBar-list-count">7</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = '0ad15caa1a204ee89c6ad151329a6b50';
+  var gaud_map_key = 'ee76386f15646eecea6cffc073dfbff6';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '113.34532,23.15624';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/08/26/GraphCL/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-08-26</span><a class="blog-slider__title" href="2024/08/26/GraphCL/" alt="">Graph Contrastive Learning with Augmentations</a><div class="blog-slider__text">图学习</div><a class="blog-slider__button" href="2024/08/26/GraphCL/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/10/18/PCGNN/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-18</span><a class="blog-slider__title" href="2024/10/18/PCGNN/" alt="">PC-GNN</a><div class="blog-slider__text">欺诈检测</div><a class="blog-slider__button" href="2024/10/18/PCGNN/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="/js/swiper.min.js"></script><script defer data-pjax src="/js/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__pulse');
+    arr[i].setAttribute('data-wow-duration', '700ms');
+    arr[i].setAttribute('data-wow-delay', '500ms');
+    arr[i].setAttribute('data-wow-offset', '50');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
