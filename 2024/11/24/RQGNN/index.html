@@ -1,0 +1,763 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection Detection | JJXxXLL</title><meta name="author" content="JJxXxLL"><meta name="copyright" content="JJxXxLL"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="图异常检测">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection Detection">
+<meta property="og:url" content="http://blog.jxlll.cc/2024/11/24/RQGNN/index.html">
+<meta property="og:site_name" content="JJXxXLL">
+<meta property="og:description" content="图异常检测">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.jxlll.cc/image/1.jpg">
+<meta property="article:published_time" content="2024-11-24T05:42:32.000Z">
+<meta property="article:modified_time" content="2026-02-14T01:05:16.795Z">
+<meta property="article:author" content="JJxXxLL">
+<meta property="article:tag" content="图异常检测">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.jxlll.cc/image/1.jpg"><link rel="shortcut icon" href="/image/blog.png"><link rel="canonical" href="http://blog.jxlll.cc/2024/11/24/RQGNN/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: JJxXxLL","link":"链接: ","source":"来源: JJXxXLL","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection Detection',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-02-14 09:05:16'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="/css/hexo-butterfly-categories-card.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/w1.png')"><nav id="nav"><span id="blog-info"><a href="/" title="JJXxXLL"><span class="site-name">JJXxXLL</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection Detection</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2026-02-14T01:05:16.795Z" title="更新于 2026-02-14 09:05:16">2026-02-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%96%87%E7%8C%AE%E5%AD%A6%E4%B9%A0/">文献学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5.5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>18分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection Detection"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Rayleigh-Quotient-Graph-Neural-Networks-for-Graph-level-Anomaly-Detection"><a href="#Rayleigh-Quotient-Graph-Neural-Networks-for-Graph-level-Anomaly-Detection" class="headerlink" title="Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection"></a>Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection</h1><p>文献地址：<a target="_blank" rel="noopener" href="https://openreview.net/forum?id=4UIBysXjVq">Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection | OpenReview</a></p>
+<p>代码仓库：<a target="_blank" rel="noopener" href="https://github.com/xydong127/RQGNN">xydong127/RQGNN</a></p>
+<h1 id="1-问题"><a href="#1-问题" class="headerlink" title="1 问题"></a>1 问题</h1><p>核心问题是：<strong>如何通过光谱特性有效地进行图级异常检测</strong>。</p>
+<h2 id="1-1-现有问题"><a href="#1-1-现有问题" class="headerlink" title="1.1 现有问题"></a>1.1 <strong>现有问题</strong></h2><ul>
+<li><strong>光谱特性的忽视</strong>：<ul>
+<li>当前图异常检测方法多基于空间域的特征，例如节点属性和拓扑信息，未能充分利用图的光谱特性。</li>
+<li>异常图和正常图在光谱能量分布上存在显著差异，但这一特性尚未被现有方法利用。</li>
+</ul>
+</li>
+<li><strong>模型解释性不足</strong>：<ul>
+<li>许多现有方法框架复杂，设计上缺乏理论依据，难以解释异常检测的核心原理。</li>
+</ul>
+</li>
+<li><strong>性能不足</strong>：<ul>
+<li>当前模型在异常检测任务中效果有限，特别是在数据不平衡的情况下难以有效捕捉异常模式。</li>
+</ul>
+</li>
+</ul>
+<h2 id="1-2-文献中的解决方案"><a href="#1-2-文献中的解决方案" class="headerlink" title="1.2 文献中的解决方案"></a>1.2 <strong>文献中的解决方案</strong></h2><p>针对上述问题，本文提出了一个创新性的解决方案：</p>
+<ul>
+<li>通过研究<strong>Rayleigh商</strong>，揭示正常图和异常图的累积光谱能量分布存在统计学差异。</li>
+<li>利用光谱图神经网络（Spectral GNN）结合Rayleigh商进行显式与隐式学习，捕捉异常图的光谱特性。</li>
+<li>通过提出Rayleigh Quotient Graph Neural Network（RQGNN），实现异常检测任务的高效和解释性解决方案。</li>
+</ul>
+<h2 id="1-3-目标"><a href="#1-3-目标" class="headerlink" title="1.3 目标"></a>1.3 <strong>目标</strong></h2><ul>
+<li><strong>探索图的光谱特性</strong>：利用Rayleigh商描述光谱能量分布差异，为异常检测提供理论支持。</li>
+<li><strong>提高检测精度</strong>：设计能够捕捉异常图特征的高效模型，在多个真实世界数据集上验证其性能。</li>
+<li><strong>增强模型解释性</strong>：通过光谱特性（Rayleigh商）和模块化设计，提供异常检测的可解释框架。</li>
+</ul>
+<p>文献的主要贡献在于首次将Rayleigh商引入到图级异常检测中，开辟了基于光谱特性的图异常检测新方向。</p>
+<hr>
+<h1 id="2-背景知识介绍"><a href="#2-背景知识介绍" class="headerlink" title="2 背景知识介绍"></a>2 背景知识介绍</h1><h2 id="2-1-图的光谱特性"><a href="#2-1-图的光谱特性" class="headerlink" title="2.1 图的光谱特性"></a>2.1 图的光谱特性</h2><p><strong>图的光谱特性</strong>是基于图的拉普拉斯矩阵或邻接矩阵的特征值和特征向量来描述图的全局结构、局部模式及其信号传播特性。它们广泛用于图分割、图嵌入、图信号处理等任务。</p>
+<h3 id="1-图谱分析的基础"><a href="#1-图谱分析的基础" class="headerlink" title="1. 图谱分析的基础"></a>1. <strong>图谱分析的基础</strong></h3><h4 id="1-拉普拉斯矩阵"><a href="#1-拉普拉斯矩阵" class="headerlink" title="(1) 拉普拉斯矩阵"></a>(1) <strong>拉普拉斯矩阵</strong></h4><p>对于一个无向图 (G = (V, E))，拉普拉斯矩阵定义为：</p>
+<script type="math/tex; mode=display">
+L = D - A,</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">D</script> 是节点的度矩阵（对角元素为节点度数）；</li>
+<li><script type="math/tex">A</script> 是邻接矩阵。</li>
+</ul>
+<h4 id="2-归一化拉普拉斯矩阵"><a href="#2-归一化拉普拉斯矩阵" class="headerlink" title="(2) 归一化拉普拉斯矩阵"></a>(2) <strong>归一化拉普拉斯矩阵</strong></h4><p>归一化形式可以是：</p>
+<script type="math/tex; mode=display">
+\tilde{L} = I - D^{-1/2} A D^{-1/2}.</script><h4 id="3-谱分解"><a href="#3-谱分解" class="headerlink" title="(3) 谱分解"></a>(3) <strong>谱分解</strong></h4><p>拉普拉斯矩阵 <script type="math/tex">L</script> 可以分解为：</p>
+<script type="math/tex; mode=display">
+L = U \Lambda U^T,</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">U</script> 是特征向量组成的矩阵；</li>
+<li><script type="math/tex">\Lambda = \text{diag}(\lambda_1, \lambda_2, \dots, \lambda_n)</script> 是特征值对角矩阵，特征值按升序排列。</li>
+</ul>
+<h4 id="4-特征值的性质"><a href="#4-特征值的性质" class="headerlink" title="(4) 特征值的性质"></a>(4) <strong>特征值的性质</strong></h4><ul>
+<li><script type="math/tex">\lambda_1 = 0</script> 且对应的特征向量为常数向量（全1向量），反映图的全局平滑性。</li>
+<li>较小的特征值对应图的低频信息（平滑信号）。</li>
+<li>较大的特征值对应图的高频信息（局部变化）。</li>
+</ul>
+<h3 id="2-光谱特性描述图的几种方式"><a href="#2-光谱特性描述图的几种方式" class="headerlink" title="2. 光谱特性描述图的几种方式"></a>2. <strong>光谱特性描述图的几种方式</strong></h3><h4 id="1-连通性"><a href="#1-连通性" class="headerlink" title="(1) 连通性"></a>(1) <strong>连通性</strong></h4><ul>
+<li>第二小特征值（Fiedler值）<script type="math/tex">\lambda_2</script> 表示图的连通性。<ul>
+<li><script type="math/tex">\lambda_2 = 0</script>：图是不连通的；</li>
+<li><script type="math/tex">\lambda_2 > 0</script>：图是连通的，值越大表明连通性越强。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-信号平滑性"><a href="#2-信号平滑性" class="headerlink" title="(2) 信号平滑性"></a>(2) <strong>信号平滑性</strong></h4><ul>
+<li>光谱特性可以描述图上的信号传播特性。</li>
+<li><strong>低频信号</strong>：小特征值对应的特征向量反映了全局一致性信号。</li>
+<li><strong>高频信号</strong>：大特征值对应的特征向量捕捉了图中的局部变化或噪声。</li>
+</ul>
+<h4 id="3-图的全局结构"><a href="#3-图的全局结构" class="headerlink" title="(3) 图的全局结构"></a>(3) <strong>图的全局结构</strong></h4><ul>
+<li>特征值分布反映了图的全局几何性质，例如节点的聚集度或离散度。</li>
+</ul>
+<h4 id="4-图的社区结构"><a href="#4-图的社区结构" class="headerlink" title="(4) 图的社区结构"></a>(4) <strong>图的社区结构</strong></h4><ul>
+<li>社区检测任务可以利用特征值和特征向量：<ul>
+<li>特征值反映社区的连通性；</li>
+<li>特征向量可以划分图为若干子图。</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-图谱特性在不同任务中的意义"><a href="#3-图谱特性在不同任务中的意义" class="headerlink" title="3. 图谱特性在不同任务中的意义"></a>3. <strong>图谱特性在不同任务中的意义</strong></h3><h4 id="1-图分割"><a href="#1-图分割" class="headerlink" title="(1) 图分割"></a>(1) <strong>图分割</strong></h4><p>通过拉普拉斯矩阵的第二小特征值 <script type="math/tex">\lambda_2</script> 和对应的特征向量，可以实现图的二分。</p>
+<ul>
+<li>目标是找到一个切割，使得子图内部的连接紧密，子图之间的连接稀疏。</li>
+</ul>
+<h4 id="2-图信号处理"><a href="#2-图信号处理" class="headerlink" title="(2) 图信号处理"></a>(2) <strong>图信号处理</strong></h4><ul>
+<li>图上的信号（例如节点特征）可以被分解到不同频率域：<ul>
+<li><strong>低频分量</strong>：全局一致性，类似平滑变化；</li>
+<li><strong>高频分量</strong>：局部剧烈变化或异常信号。</li>
+</ul>
+</li>
+</ul>
+<h4 id="3-图嵌入"><a href="#3-图嵌入" class="headerlink" title="(3) 图嵌入"></a>(3) <strong>图嵌入</strong></h4><ul>
+<li>通过谱分解将图嵌入到低维空间，同时保留图的全局结构。</li>
+<li>特征向量为嵌入向量，特征值用于度量不同分量的重要性。</li>
+</ul>
+<h4 id="4-图异常检测"><a href="#4-图异常检测" class="headerlink" title="(4) 图异常检测"></a>(4) <strong>图异常检测</strong></h4><ul>
+<li>异常图通常表现为高频信号（较大的特征值），因为异常会打破图的全局结构，增加局部变化。</li>
+</ul>
+<h4 id="5-传播特性分析"><a href="#5-传播特性分析" class="headerlink" title="(5) 传播特性分析"></a>(5) <strong>传播特性分析</strong></h4><ul>
+<li>特征值的分布决定了图上信息扩散或传播的速度：<ul>
+<li>紧凑的特征值分布表示传播快；</li>
+<li>分散的特征值分布表示传播慢。</li>
+</ul>
+</li>
+</ul>
+<h3 id="4-图光谱特性与Rayleigh商的关系"><a href="#4-图光谱特性与Rayleigh商的关系" class="headerlink" title="4. 图光谱特性与Rayleigh商的关系"></a>4. <strong>图光谱特性与Rayleigh商的关系</strong></h3><p>Rayleigh商为分析光谱特性提供了一个直观的度量工具：</p>
+<script type="math/tex; mode=display">
+RQ(x, L) = \frac{x^T L x}{x^T x},</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">x</script> 是信号；</li>
+<li><script type="math/tex">L</script> 是拉普拉斯矩阵。</li>
+</ul>
+<h4 id="1-平滑性度量"><a href="#1-平滑性度量" class="headerlink" title="(1) 平滑性度量"></a>(1) <strong>平滑性度量</strong></h4><ul>
+<li><script type="math/tex">RQ(x, L)</script> 的值越小，信号越平滑（低频分量多）。</li>
+<li><script type="math/tex">RQ(x, L)</script> 的值越大，信号越不平滑（高频分量多）。</li>
+</ul>
+<h4 id="2-特征值与信号"><a href="#2-特征值与信号" class="headerlink" title="(2) 特征值与信号"></a>(2) <strong>特征值与信号</strong></h4><ul>
+<li>Rayleigh商的极值对应于拉普拉斯矩阵的特征值。</li>
+<li>对应的信号 <script type="math/tex">x</script> 是拉普拉斯矩阵的特征向量。</li>
+</ul>
+<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. <strong>总结</strong></h3><p>图的光谱特性通过拉普拉斯矩阵的特征值和特征向量揭示了图的全局结构、信号传播模式和局部变化。特征值分布反映了图的连通性、平滑性和社区结构等重要性质。这些特性在图分割、嵌入、异常检测和传播分析等任务中具有广泛应用。Rayleigh商则提供了量化这些光谱特性的工具，是研究光谱特性的重要理论基础。</p>
+<hr>
+<h2 id="2-2-GNN发展"><a href="#2-2-GNN发展" class="headerlink" title="2.2 GNN发展"></a>2.2 GNN发展</h2><p><strong>图神经网络（GNN）</strong>的发展与图的<strong>光谱特征</strong>密切相关，但并不仅仅依赖光谱特征。GNN的发展结合了<strong>光谱方法</strong>和<strong>空间方法</strong>，根据应用需求和计算效率逐步演进。</p>
+<h3 id="1-基于光谱特征的GNN发展"><a href="#1-基于光谱特征的GNN发展" class="headerlink" title="1. 基于光谱特征的GNN发展"></a>1. <strong>基于光谱特征的GNN发展</strong></h3><p>早期的GNN模型主要受到<strong>图谱分析</strong>的启发，利用图的光谱特性设计过滤器或特征提取方法。</p>
+<h4 id="1-光谱图神经网络的基础"><a href="#1-光谱图神经网络的基础" class="headerlink" title="(1) 光谱图神经网络的基础"></a>(1) <strong>光谱图神经网络的基础</strong></h4><p>光谱图神经网络（Spectral GNN）以图的拉普拉斯矩阵的特征值和特征向量为基础，进行特征学习。</p>
+<ul>
+<li><p><strong>目标</strong>：</p>
+<ul>
+<li>利用图的光谱特性捕捉全局信息。</li>
+<li>通过滤波器处理图信号，实现节点或图的特征表示。</li>
+</ul>
+</li>
+<li><p><strong>关键公式</strong>：<br>图信号<script type="math/tex">x</script>在拉普拉斯矩阵上的过滤操作可以表示为：</p>
+<script type="math/tex; mode=display">
+g_\theta(L)x = U g_\theta(\Lambda) U^T x,</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">L</script>是拉普拉斯矩阵；</li>
+<li><script type="math/tex">U</script>是拉普拉斯矩阵的特征向量矩阵；</li>
+<li><script type="math/tex">\Lambda</script>是拉普拉斯矩阵的特征值对角矩阵；</li>
+<li><script type="math/tex">g_\theta(\Lambda)</script>是基于特征值设计的滤波器。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-光谱GNN的代表方法"><a href="#2-光谱GNN的代表方法" class="headerlink" title="(2) 光谱GNN的代表方法"></a>(2) <strong>光谱GNN的代表方法</strong></h4><ol>
+<li><p><strong>Spectral Convolutional Neural Networks (Bruna et al., 2013)</strong>：</p>
+<ul>
+<li>基于光谱域设计卷积操作，直接依赖拉普拉斯矩阵的特征分解。</li>
+<li><strong>缺点</strong>：特征分解的计算复杂度高，难以扩展到大规模图。</li>
+</ul>
+</li>
+<li><p><strong>ChebNet (Defferrard et al., 2016)</strong>：</p>
+<ul>
+<li>使用<strong>切比雪夫多项式</strong>近似滤波器，减少了依赖拉普拉斯分解的计算。</li>
+<li>滤波器表示为：<script type="math/tex; mode=display">
+g_\theta(L) \approx \sum_{k=0}^K \theta_k T_k(\tilde{L}),</script>其中<script type="math/tex">T_k</script>是切比雪夫多项式，<script type="math/tex">\tilde{L}</script>是归一化的拉普拉斯矩阵。</li>
+</ul>
+</li>
+<li><p><strong>GCN (Graph Convolutional Networks, Kipf and Welling, 2017)</strong>：</p>
+<ul>
+<li><p>GCN进一步简化了光谱卷积，使用一阶近似，避免复杂的多项式计算：</p>
+<script type="math/tex; mode=display">
+H^{(l+1)} = \sigma\left( \tilde{D}^{-1/2} \tilde{A} \tilde{D}^{-1/2} H^{(l)} W^{(l)} \right),</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">\tilde{A} = A + I</script>是加自环的邻接矩阵；</li>
+<li><script type="math/tex">\tilde{D}</script>是节点的度矩阵。</li>
+</ul>
+</li>
+<li><p>通过简化的图卷积操作，将光谱方法引入空间域。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="光谱方法的局限性："><a href="#光谱方法的局限性：" class="headerlink" title="光谱方法的局限性："></a>光谱方法的局限性：</h4><ul>
+<li><strong>高计算成本</strong>：需要对图的拉普拉斯矩阵进行特征分解，计算复杂度高。</li>
+<li><strong>转移性差</strong>：光谱特性依赖于图的特定拓扑结构，难以泛化到不同图。</li>
+</ul>
+<h3 id="2-空间域方法的发展"><a href="#2-空间域方法的发展" class="headerlink" title="2. 空间域方法的发展"></a>2. <strong>空间域方法的发展</strong></h3><p>由于光谱方法的局限性，GNN逐步转向<strong>空间域方法</strong>，这类方法直接在节点的局部邻域上进行操作，无需特征分解。</p>
+<h4 id="1-空间域的核心思想"><a href="#1-空间域的核心思想" class="headerlink" title="(1) 空间域的核心思想"></a>(1) <strong>空间域的核心思想</strong></h4><p>空间域方法将卷积操作转化为邻域信息的聚合，即通过每个节点的邻居信息生成节点的特征。</p>
+<h4 id="2-代表模型"><a href="#2-代表模型" class="headerlink" title="(2) 代表模型"></a>(2) <strong>代表模型</strong></h4><ol>
+<li><p><strong>GraphSAGE (Hamilton et al., 2017)</strong>：</p>
+<ul>
+<li>通过采样邻居节点，设计不同的聚合函数（如均值、最大值）进行特征更新：<script type="math/tex; mode=display">
+h_v^{(l+1)} = \sigma\left( W^{(l)} \cdot \text{AGGREGATE}(\{h_u^{(l)}, \forall u \in \mathcal{N}(v)\}) \right),</script>其中<script type="math/tex">\mathcal{N}(v)</script>表示节点<script type="math/tex">v</script>的邻居。</li>
+</ul>
+</li>
+<li><p><strong>GAT (Graph Attention Networks, Velickovic et al., 2018)</strong>：</p>
+<ul>
+<li>引入注意力机制，根据邻居的重要性分配不同权重：<script type="math/tex; mode=display">
+h_i^{(l+1)} = \sigma\left( \sum_{j \in \mathcal{N}(i)} \alpha_{ij} W h_j^{(l)} \right),</script>其中<script type="math/tex">\alpha_{ij}</script>是注意力权重。</li>
+</ul>
+</li>
+<li><p><strong>Graph Isomorphism Network (GIN, Xu et al., 2019)</strong>：</p>
+<ul>
+<li>设计了一种强表达能力的聚合函数，理论上等价于 Weisfeiler-Lehman 图同构测试。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-光谱特征与空间特征的结合"><a href="#3-光谱特征与空间特征的结合" class="headerlink" title="3. 光谱特征与空间特征的结合"></a>3. <strong>光谱特征与空间特征的结合</strong></h3><p>近年来，研究者尝试结合光谱和空间方法，以更好地利用图的全局和局部信息。</p>
+<h4 id="1-光谱与空间的统一"><a href="#1-光谱与空间的统一" class="headerlink" title="(1) 光谱与空间的统一"></a>(1) <strong>光谱与空间的统一</strong></h4><p>例如：</p>
+<ul>
+<li><p><strong>SIGN (Scalable Inception Graph Networks, Rossi et al., 2020)</strong>：</p>
+<ul>
+<li>预先计算光谱特性，将其作为额外特征输入空间域方法。</li>
+</ul>
+</li>
+<li><p><strong>ARMA (Atwood et al., 2020)</strong>：</p>
+<ul>
+<li>在图的频谱域和空间域之间交替优化，达到更好的性能。</li>
+</ul>
+</li>
+</ul>
+<h4 id="2-高效的光谱方法"><a href="#2-高效的光谱方法" class="headerlink" title="(2) 高效的光谱方法"></a>(2) <strong>高效的光谱方法</strong></h4><p>例如本文提到的Chebyshev波动滤波器，通过多项式近似实现光谱特性的高效学习。</p>
+<hr>
+<h2 id="3-瑞利商的研究"><a href="#3-瑞利商的研究" class="headerlink" title="3. 瑞利商的研究"></a>3. 瑞利商的研究</h2><p>作者通过系统分析和设计，创新性地使用了<strong>瑞利商（Rayleigh Quotient）</strong>，以捕捉图的光谱特性，并结合其统计模式差异用于图级异常检测。以下是作者使用瑞利商的详细方法和步骤：</p>
+<h3 id="1-理论基础：瑞利商与光谱能量分布"><a href="#1-理论基础：瑞利商与光谱能量分布" class="headerlink" title="1. 理论基础：瑞利商与光谱能量分布"></a>1. <strong>理论基础：瑞利商与光谱能量分布</strong></h3><p>作者将瑞利商用于描述图的累积光谱能量分布，并揭示了正常图和异常图的能量分布差异：</p>
+<ul>
+<li><p>瑞利商的定义为：</p>
+<script type="math/tex; mode=display">
+RQ(x, L) = \frac{x^T L x}{x^T x},</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">x</script> 是图信号（如节点属性或结构特征）；</li>
+<li><script type="math/tex">L</script> 是图的拉普拉斯矩阵。</li>
+</ul>
+</li>
+<li><p><strong>累积光谱能量</strong>：<br>作者通过理论分析证明，瑞利商值可以直接量化图信号在低频和高频分量上的分布：</p>
+<ul>
+<li>小的瑞利商值对应低频能量（信号平滑，图的全局模式）。</li>
+<li>大的瑞利商值对应高频能量（局部变化或异常）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-瑞利商在异常检测中的发现"><a href="#2-瑞利商在异常检测中的发现" class="headerlink" title="2. 瑞利商在异常检测中的发现"></a>2. <strong>瑞利商在异常检测中的发现</strong></h3><p>作者通过实验和理论发现：</p>
+<ul>
+<li>正常图的累积光谱能量分布倾向于低频，表现为较小的瑞利商值；</li>
+<li>异常图的光谱能量更多分布在高频区域，导致瑞利商值较大。</li>
+</ul>
+<p>这一模式差异为异常检测提供了新的依据。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/image-20241124003004669.png" alt="image-20241124003004669"></p>
+<hr>
+<h1 id="3-方法"><a href="#3-方法" class="headerlink" title="3 方法"></a>3 方法</h1><h2 id="3-1-Rayleigh-Quotient-and-Spectral-Analysis-详细介绍："><a href="#3-1-Rayleigh-Quotient-and-Spectral-Analysis-详细介绍：" class="headerlink" title="3.1 Rayleigh Quotient and Spectral Analysis 详细介绍："></a><strong>3.1 Rayleigh Quotient and Spectral Analysis</strong> 详细介绍：</h2><p><strong>核心内容</strong>：作者在这一节中通过理论分析，揭示了瑞利商在图谱分析中的作用，并探讨其与累积光谱能量分布的关系。这一部分为后续设计方法中的瑞利商学习组件（RQL）和光谱相关组件奠定了理论基础。</p>
+<h3 id="1-瑞利商的定义与变化特性"><a href="#1-瑞利商的定义与变化特性" class="headerlink" title="1. 瑞利商的定义与变化特性"></a>1. <strong>瑞利商的定义与变化特性</strong></h3><h4 id="瑞利商公式："><a href="#瑞利商公式：" class="headerlink" title="瑞利商公式："></a><strong>瑞利商公式</strong>：</h4><script type="math/tex; mode=display">
+RQ(x, L) = \frac{x^T L x}{x^T x},</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">L</script>：图的拉普拉斯矩阵；</li>
+<li><script type="math/tex">x</script>：图信号向量。</li>
+</ul>
+<p>瑞利商用于衡量图信号在图结构上的光谱能量分布。</p>
+<h4 id="变化特性分析："><a href="#变化特性分析：" class="headerlink" title="变化特性分析："></a><strong>变化特性分析</strong>：</h4><p>作者从理论上分析了瑞利商在拉普拉斯矩阵 <script type="math/tex">L</script> 或信号 <script type="math/tex">x</script> 存在小扰动时的变化范围：</p>
+<ul>
+<li><p><strong>定理1（拉普拉斯矩阵扰动）</strong>：<br>对于任意图 <script type="math/tex">G</script>，若拉普拉斯矩阵存在扰动 <script type="math/tex">\Delta</script>，瑞利商的变化范围满足：</p>
+<script type="math/tex; mode=display">
+|\Delta RQ| \leq ||\Delta||_2,</script><p>其中 <script type="math/tex">||\Delta||_2</script> 是扰动矩阵的二范数。</p>
+</li>
+<li><p><strong>定理2（信号扰动）</strong>：<br>对于任意图 <script type="math/tex">G</script>，若图信号存在扰动 <script type="math/tex">\delta</script>，瑞利商的变化范围满足：</p>
+<script type="math/tex; mode=display">
+|\Delta RQ| \leq 2x^T L \delta + o(\delta),</script><p>当 <script type="math/tex">\delta</script> 足够小时，忽略高阶项后有：</p>
+<script type="math/tex; mode=display">
+|\Delta RQ| \leq 2x^T L \delta.</script></li>
+</ul>
+<p><strong>启示</strong>：如果两个图的 <script type="math/tex">L</script> 和 <script type="math/tex">x</script> 足够接近，那么它们的瑞利商值也非常接近，从而可以用于相似性度量和类别划分。</p>
+<h3 id="2-瑞利商与光谱能量分布"><a href="#2-瑞利商与光谱能量分布" class="headerlink" title="2. 瑞利商与光谱能量分布"></a>2. <strong>瑞利商与光谱能量分布</strong></h3><h4 id="累积光谱能量表示："><a href="#累积光谱能量表示：" class="headerlink" title="累积光谱能量表示："></a><strong>累积光谱能量表示</strong>：</h4><ul>
+<li><p>累积光谱能量从 <script type="math/tex">\lambda_1</script> 到 <script type="math/tex">\lambda_k</script> 定义为：</p>
+<script type="math/tex; mode=display">
+\text{Spectral Energy} = \frac{\sum_{j=1}^k x_j^2}{\sum_{i=1}^n x_i^2},</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">x_j</script> 是图信号在第 <script type="math/tex">j</script> 个特征值对应特征向量上的分量。</li>
+</ul>
+</li>
+<li><p>作者指出，通过累积光谱能量，可以衡量信号的频率分布。</p>
+</li>
+</ul>
+<h4 id="瑞利商的转换："><a href="#瑞利商的转换：" class="headerlink" title="瑞利商的转换："></a><strong>瑞利商的转换</strong>：</h4><ul>
+<li>作者证明累积光谱能量可以通过瑞利商表示，从而避免高成本的矩阵分解操作：<script type="math/tex; mode=display">
+\int_{\lambda_k}^{\lambda_n} E(t) dt = RQ(x, L),</script>其中 <script type="math/tex">E(t)</script> 是光谱能量分布函数。</li>
+</ul>
+<p><strong>意义</strong>：瑞利商成为描述图光谱能量分布的一个高效替代方式。</p>
+<h3 id="3-动机与指导"><a href="#3-动机与指导" class="headerlink" title="3. 动机与指导"></a>3. <strong>动机与指导</strong></h3><h4 id="瑞利商分布模式："><a href="#瑞利商分布模式：" class="headerlink" title="瑞利商分布模式："></a><strong>瑞利商分布模式</strong>：</h4><ul>
+<li>正常图与异常图在瑞利商分布上的统计模式差异为异常检测提供了理论依据；</li>
+<li>类别标签相同的图，其瑞利商值在不同样本中表现出一致性。</li>
+</ul>
+<h4 id="框架设计动机："><a href="#框架设计动机：" class="headerlink" title="框架设计动机："></a><strong>框架设计动机</strong>：</h4><ol>
+<li><strong>显式瑞利商学习</strong>：设计一个模块直接学习图的瑞利商值（第3.2节的RQL）。</li>
+<li><strong>光谱信息提取</strong>：结合光谱GNN捕捉累积光谱能量信息（第3.3节）。</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>第3.1节从理论层面明确了瑞利商的变化特性及其与光谱能量的关系，展示了瑞利商作为图光谱特性指标的有效性。这些分析为后续模块设计提供了理论支持，同时证明了瑞利商在图异常检测中的潜力。</p>
+<hr>
+<h2 id="3-2-Rayleigh-Quotient-Learning-Component-RQL"><a href="#3-2-Rayleigh-Quotient-Learning-Component-RQL" class="headerlink" title="3.2. Rayleigh Quotient Learning Component (RQL)"></a><strong>3.2. Rayleigh Quotient Learning Component (RQL)</strong></h2><p>作者详细介绍了如何通过设计一个专门的组件来显式学习图的瑞利商 (Rayleigh Quotient)，以捕捉其光谱特性。</p>
+<h3 id="3-2-1-RQL-的设计目标"><a href="#3-2-1-RQL-的设计目标" class="headerlink" title="3.2.1. RQL 的设计目标"></a><strong>3.2.1. RQL 的设计目标</strong></h3><ul>
+<li><strong>核心目标</strong>：直接从图数据中学习瑞利商特征，将其作为图的全局表示，用于后续的异常检测任务。</li>
+<li><strong>动机</strong>：瑞利商在正常图和异常图之间存在显著分布差异，这种差异可以作为分类的重要依据。</li>
+</ul>
+<h3 id="3-2-2-RQL-的工作流程"><a href="#3-2-2-RQL-的工作流程" class="headerlink" title="3.2.2. RQL 的工作流程**"></a>3.2.2. RQL 的工作流程**</h3><p>RQL 模块通过以下步骤生成每个图的瑞利商表示：</p>
+<ol>
+<li><p><strong>输入</strong>：</p>
+<ul>
+<li>图信号 <script type="math/tex">G_i.X</script>，表示图 <script type="math/tex">G_i</script> 中节点的属性矩阵；</li>
+<li>图的拉普拉斯矩阵 <script type="math/tex">L</script>。</li>
+</ul>
+</li>
+<li><strong>处理步骤</strong>：<ul>
+<li><strong>信号预处理</strong>：<br>使用多层感知机（MLP）对图信号进行变换：<script type="math/tex; mode=display">
+\tilde{X} = \text{MLP}(G_i.X),</script>生成的 <script type="math/tex">\tilde{X}</script> 是变换后的节点信号矩阵。</li>
+<li><strong>瑞利商计算</strong>：<br>根据定义公式计算每个图的瑞利商：<script type="math/tex; mode=display">
+RQ = \text{diag}\left(\frac{\tilde{X}^T L \tilde{X}}{\tilde{X}^T \tilde{X}}\right),</script>其中 <script type="math/tex">\text{diag}</script> 表示提取对角元素。</li>
+<li><strong>高层表示提取</strong>：<br>再次通过 MLP 将瑞利商映射为全局特征：<script type="math/tex; mode=display">
+h^{G}_{RQ} = \text{MLP}(RQ),</script>得到每个图的瑞利商特征表示。</li>
+</ul>
+</li>
+<li><strong>输出</strong>：<ul>
+<li><script type="math/tex">h^{G}_{RQ}</script>，即每个图的全局瑞利商表示。</li>
+</ul>
+</li>
+</ol>
+<h3 id="3-2-3-模块的优势"><a href="#3-2-3-模块的优势" class="headerlink" title="3.2.3. 模块的优势"></a><strong>3.2.3. 模块的优势</strong></h3><ul>
+<li><strong>显式学习瑞利商</strong>：<br>直接量化图的光谱特性，避免复杂的光谱分解计算。</li>
+<li><strong>紧密结合光谱能量分布</strong>：<br>瑞利商有效反映了图信号在高频和低频区域的能量分布，为分类提供有力特征。</li>
+<li><strong>高效计算</strong>：<br>相比传统的图光谱方法，RQL 模块通过简单的矩阵操作和 MLP 映射实现高效计算。</li>
+</ul>
+<h3 id="3-2-4-RQL-在整体框架中的作用"><a href="#3-2-4-RQL-在整体框架中的作用" class="headerlink" title="3.2.4. RQL 在整体框架中的作用"></a><strong>3.2.4. RQL 在整体框架中的作用</strong></h3><ul>
+<li>RQL 模块是 RQGNN 框架的第一部分，它的任务是生成图的显式瑞利商特征；</li>
+<li>与后续隐式学习模块 (CWGNN with RQ-pooling) 结合，构成完整的异常检测框架。</li>
+</ul>
+<hr>
+<h2 id="3-3-Chebyshev-Wavelet-GNN-with-RQ-Pooling"><a href="#3-3-Chebyshev-Wavelet-GNN-with-RQ-Pooling" class="headerlink" title="3.3 Chebyshev Wavelet GNN with RQ-Pooling"></a><strong>3.3 Chebyshev Wavelet GNN with RQ-Pooling</strong></h2><p><strong>核心内容</strong>：作者在这一节中提出了一个结合 <strong>Chebyshev波滤波器</strong> 和 <strong>RQ-Pooling（基于瑞利商的池化）</strong> 的模块，用于隐式学习图的光谱特性。这个模块能够捕获图的局部和全局信息，同时通过池化聚焦于图的关键区域。</p>
+<h3 id="3-3-1-Chebyshev-Wavelet-GNN"><a href="#3-3-1-Chebyshev-Wavelet-GNN" class="headerlink" title="3.3.1. Chebyshev Wavelet GNN"></a><strong>3.3.1. Chebyshev Wavelet GNN</strong></h3><h4 id="1-背景：光谱卷积的挑战"><a href="#1-背景：光谱卷积的挑战" class="headerlink" title="(1) 背景：光谱卷积的挑战"></a><strong>(1) 背景：光谱卷积的挑战</strong></h4><p>传统的光谱卷积（基于拉普拉斯矩阵特征值和特征向量）计算代价昂贵，尤其对于大规模图。为此，作者采用了 <strong>Chebyshev多项式近似</strong>，高效地实现频谱域上的图卷积操作。</p>
+<h4 id="2-Chebyshev多项式卷积公式"><a href="#2-Chebyshev多项式卷积公式" class="headerlink" title="(2) Chebyshev多项式卷积公式"></a><strong>(2) Chebyshev多项式卷积公式</strong></h4><p>给定图的归一化拉普拉斯矩阵 <script type="math/tex">\tilde{L}</script>，Chebyshev多项式定义为：</p>
+<script type="math/tex; mode=display">
+T_k(\tilde{L}) = 2\tilde{L}T_{k-1}(\tilde{L}) - T_{k-2}(\tilde{L}),</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">T_0(\tilde{L}) = I</script>；</li>
+<li><script type="math/tex">T_1(\tilde{L}) = \tilde{L}</script>。</li>
+</ul>
+<p><strong>Chebyshev卷积</strong>通过多项式逼近拉普拉斯矩阵的特征值滤波器：</p>
+<script type="math/tex; mode=display">
+g_\theta(L)x \approx \sum_{k=0}^K \theta_k T_k(\tilde{L})x,</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">\theta_k</script> 是需要学习的权重；</li>
+<li><script type="math/tex">T_k(\tilde{L})</script> 是 Chebyshev多项式。</li>
+</ul>
+<h4 id="3-实现"><a href="#3-实现" class="headerlink" title="(3) 实现"></a><strong>(3) 实现</strong></h4><p>代码中，Chebyshev多项式卷积作用于每个节点的特征，通过累积多项式阶次捕获不同频段的频谱信息。</p>
+<h3 id="3-3-2-RQ-Pooling（基于瑞利商的池化）"><a href="#3-3-2-RQ-Pooling（基于瑞利商的池化）" class="headerlink" title="3.3.2. RQ-Pooling（基于瑞利商的池化）"></a><strong>3.3.2. RQ-Pooling（基于瑞利商的池化）</strong></h3><h4 id="1-背景：池化在图中的作用"><a href="#1-背景：池化在图中的作用" class="headerlink" title="(1) 背景：池化在图中的作用"></a><strong>(1) 背景：池化在图中的作用</strong></h4><p>池化操作是图级任务的重要步骤，能够在保留图全局特性的同时减少计算量。作者结合瑞利商的特性，引入 RQ-Pooling，用于选择对全局光谱特性贡献最大的节点区域。</p>
+<h4 id="2-瑞利商的注意力机制"><a href="#2-瑞利商的注意力机制" class="headerlink" title="(2) 瑞利商的注意力机制"></a><strong>(2) 瑞利商的注意力机制</strong></h4><p>通过瑞利商 <script type="math/tex">RQ(x, L)</script> 计算每个节点的重要性分数：</p>
+<script type="math/tex; mode=display">
+\alpha_j = \text{softmax}(RQ_j),</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">RQ_j</script> 是节点 <script type="math/tex">j</script> 对应的瑞利商值；</li>
+<li><script type="math/tex">\alpha_j</script> 表示节点的重要性权重。</li>
+</ul>
+<h4 id="3-聚合节点特征"><a href="#3-聚合节点特征" class="headerlink" title="(3) 聚合节点特征"></a><strong>(3) 聚合节点特征</strong></h4><p>使用瑞利商权重聚合节点特征：</p>
+<script type="math/tex; mode=display">
+h^{G}_{\text{Att}} = \sum_{j \in V} \alpha_j h_j,</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">h_j</script> 是节点 <script type="math/tex">j</script> 的隐式特征。</li>
+</ul>
+<h4 id="4-输出"><a href="#4-输出" class="headerlink" title="(4) 输出"></a><strong>(4) 输出</strong></h4><p>池化后生成图的全局特征表示 <script type="math/tex">h^{G}_{\text{Att}}</script>。</p>
+<h3 id="3-3-3-综合模块设计"><a href="#3-3-3-综合模块设计" class="headerlink" title="3.3.3. 综合模块设计"></a><strong>3.3.3. 综合模块设计</strong></h3><p>作者将 Chebyshev Wavelet 和 RQ-Pooling 结合，实现隐式学习和池化的高效框架。</p>
+<ol>
+<li><h4 id="节点特征生成"><a href="#节点特征生成" class="headerlink" title="节点特征生成"></a><strong>节点特征生成</strong></h4><p>通过 Chebyshev多项式卷积生成节点特征：</p>
+<script type="math/tex; mode=display">
+h_j = \text{CONCAT}(f_1(L)X_j, f_2(L)X_j, \ldots, f_q(L)X_j),</script><p>其中 <script type="math/tex">f_k(L)</script> 是第 <script type="math/tex">k</script> 阶 Chebyshev滤波器。</p>
+</li>
+<li><h4 id="基于瑞利商的池化"><a href="#基于瑞利商的池化" class="headerlink" title="基于瑞利商的池化"></a><strong>基于瑞利商的池化</strong></h4><p>通过 RQ-Pooling 提取重要节点的特征并聚合成全局表示。</p>
+</li>
+<li><h4 id="图的最终特征"><a href="#图的最终特征" class="headerlink" title="图的最终特征"></a><strong>图的最终特征</strong></h4><p>将显式瑞利商特征和隐式光谱特征拼接：</p>
+<script type="math/tex; mode=display">
+h^{G} = \text{MLP}(\text{CONCAT}(h^{G}_{\text{Att}}, h^{G}_{RQ})).</script></li>
+</ol>
+<h3 id="3-3-4-本节的关键创新"><a href="#3-3-4-本节的关键创新" class="headerlink" title="3.3.4. 本节的关键创新"></a><strong>3.3.4. 本节的关键创新</strong></h3><ol>
+<li><h4 id="高效光谱卷积："><a href="#高效光谱卷积：" class="headerlink" title="高效光谱卷积："></a><strong>高效光谱卷积</strong>：</h4><ul>
+<li>使用 Chebyshev多项式近似，降低了传统光谱卷积的计算复杂度；</li>
+<li>捕获了图信号的多频段信息。</li>
+</ul>
+</li>
+<li><h4 id="基于瑞利商的池化："><a href="#基于瑞利商的池化：" class="headerlink" title="基于瑞利商的池化："></a><strong>基于瑞利商的池化</strong>：</h4><ul>
+<li>将瑞利商值引入注意力机制，为池化操作提供物理意义明确的权重；</li>
+<li>强调高频和低频特性对全局图表示的不同贡献。</li>
+</ul>
+</li>
+<li><h4 id="隐式与显式结合："><a href="#隐式与显式结合：" class="headerlink" title="隐式与显式结合："></a><strong>隐式与显式结合</strong>：</h4><ul>
+<li>隐式特征通过卷积提取，显式特征通过瑞利商直接计算，形成互补。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="3-4-Class-Balanced-Focal-Loss-CB-Loss"><a href="#3-4-Class-Balanced-Focal-Loss-CB-Loss" class="headerlink" title="3.4 Class-Balanced Focal Loss (CB Loss)"></a>3.4 Class-Balanced Focal Loss (CB Loss)</h2><p>文献的第3.4部分提出了一种改进的损失函数——<strong>Class-Balanced Focal Loss (CB Loss)</strong>，主要用于解决类别不平衡问题，特别是在异常检测任务中，正负样本比例差异可能导致模型偏向多数类别。</p>
+<h3 id="3-4-1-动机"><a href="#3-4-1-动机" class="headerlink" title="3.4.1. 动机"></a><strong>3.4.1. 动机</strong></h3><p>在异常检测任务中：</p>
+<ul>
+<li>正常图（多数类）占据绝大多数，而异常图（少数类）数量有限。</li>
+<li>常规交叉熵损失容易被多数类主导，导致模型无法有效学习少数类的特征。</li>
+<li>作者引入<strong>类别平衡</strong>和<strong>焦点调整</strong>的策略，解决上述问题。</li>
+</ul>
+<h3 id="3-4-2-CB-Loss-设计原理"><a href="#3-4-2-CB-Loss-设计原理" class="headerlink" title="3.4.2. CB Loss 设计原理"></a><strong>3.4.2. CB Loss 设计原理</strong></h3><h4 id="1-类别平衡因子"><a href="#1-类别平衡因子" class="headerlink" title="(1) 类别平衡因子"></a><strong>(1) 类别平衡因子</strong></h4><p>通过类别样本数量计算<strong>有效样本数量</strong>（Effective Number of Samples）：</p>
+<script type="math/tex; mode=display">
+\text{Effective Number} = 1 - \beta^{n},</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">n</script> 是类别的样本数量；</li>
+<li><script type="math/tex">\beta</script> 是控制因子，<script type="math/tex">\beta \in [0, 1)</script>。</li>
+</ul>
+<p>类别权重：</p>
+<script type="math/tex; mode=display">
+\text{Class Weight} = \frac{1 - \beta}{1 - \beta^{n}}.</script><h4 id="2-焦点调整因子"><a href="#2-焦点调整因子" class="headerlink" title="(2) 焦点调整因子"></a><strong>(2) 焦点调整因子</strong></h4><p>焦点调整因子通过调节简单样本和困难样本的损失权重：</p>
+<script type="math/tex; mode=display">
+\text{Focal Modulation} = (1 - p_t)^\gamma,</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">p_t</script> 是预测概率；</li>
+<li><script type="math/tex">\gamma</script> 是调节因子，控制困难样本的权重。</li>
+</ul>
+<h4 id="3-最终损失函数"><a href="#3-最终损失函数" class="headerlink" title="(3) 最终损失函数"></a><strong>(3) 最终损失函数</strong></h4><p>CB Loss 的形式：</p>
+<script type="math/tex; mode=display">
+\mathcal{L}_{CB} = -\sum_{i=1}^{N} \text{Class Weight}_i \cdot (1 - p_{t_i})^\gamma \cdot \log(p_{t_i}),</script><p>其中：</p>
+<ul>
+<li><script type="math/tex">N</script> 是样本总数；</li>
+<li><script type="math/tex">p_{t_i}</script> 是第 <script type="math/tex">i</script> 个样本的预测概率。</li>
+</ul>
+<h3 id="3-4-3-优势分析"><a href="#3-4-3-优势分析" class="headerlink" title="3.4.3. 优势分析"></a><strong>3.4.3. 优势分析</strong></h3><ol>
+<li><strong>类别平衡</strong>：CB Loss 根据类别样本数量动态调整权重，显著降低了多数类的主导作用。</li>
+<li><strong>焦点调整</strong>：对错误预测的困难样本给予更大权重，提升了少数类样本的学习能力。</li>
+<li><strong>鲁棒性</strong>：在类别分布高度不平衡的情况下，CB Loss 能够提高模型对少数类的泛化能力。</li>
+</ol>
+<hr>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection Detection</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://blog.jxlll.cc/2024/11/24/RQGNN/">http://blog.jxlll.cc/2024/11/24/RQGNN/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>JJxXxLL</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-11-24</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-02-14</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%9B%BE%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B/">图异常检测</a></div><div class="post_share"><div class="social-share" data-image="/image/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/11/24/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" title="贪心算法复习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">贪心算法复习</div></div></a></div><div class="next-post pull-right"><a href="/2024/11/13/HOGRL/" title="Effective High-order Graph Representation Learning for Credit Card Fraud Detection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Effective High-order Graph Representation Learning for Credit Card Fraud Detection</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/10/26/DDPM/" title="Denoising Diffusion Probabilistic Model"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-26</div><div class="title">Denoising Diffusion Probabilistic Model</div></div></a></div><div><a href="/2024/11/13/HOGRL/" title="Effective High-order Graph Representation Learning for Credit Card Fraud Detection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-13</div><div class="title">Effective High-order Graph Representation Learning for Credit Card Fraud Detection</div></div></a></div><div><a href="/2024/10/23/MITIGATE/" title="Multitask Active Learning for Graph Anomaly Detection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-23</div><div class="title">Multitask Active Learning for Graph Anomaly Detection</div></div></a></div><div><a href="/2024/12/14/PMP/" title="Partitioning Message Passing for Graph Fraud Detection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-14</div><div class="title">Partitioning Message Passing for Graph Fraud Detection</div></div></a></div><div><a href="/2024/11/01/DAGAD/" title="DAGAD-Data Augmentation for Graph Anomaly Detection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-01</div><div class="title">DAGAD-Data Augmentation for Graph Anomaly Detection</div></div></a></div><div><a href="/2024/11/07/GADRA/" title="GADRA-Graph Anomaly Detection via Neighborhood Reconstruction"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-07</div><div class="title">GADRA-Graph Anomaly Detection via Neighborhood Reconstruction</div></div></a></div><div><a href="/2024/10/18/PCGNN/" title="PC-GNN"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-10-18</div><div class="title">PC-GNN</div></div></a></div><div><a href="/2024/09/29/Pre-trained%20Online%20Contrastive%20Learning%20for%20Insurance%20Fraud%20Detection/" title="Pre-trained Online Contrastive Learning for Insurance Fraud Detection"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-09-29</div><div class="title">Pre-trained Online Contrastive Learning for Insurance Fraud Detection</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">JJxXxLL</div><div class="author-info__description">记录学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJxXxLL"><i class="fa-solid fa-eye"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJxXxLL" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:jxl552082093@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Rayleigh-Quotient-Graph-Neural-Networks-for-Graph-level-Anomaly-Detection"><span class="toc-number">1.</span> <span class="toc-text">Rayleigh Quotient Graph Neural Networks for Graph-level Anomaly Detection</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#1-%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">1 问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-1-%E7%8E%B0%E6%9C%89%E9%97%AE%E9%A2%98"><span class="toc-number">2.1.</span> <span class="toc-text">1.1 现有问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-2-%E6%96%87%E7%8C%AE%E4%B8%AD%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-number">2.2.</span> <span class="toc-text">1.2 文献中的解决方案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#1-3-%E7%9B%AE%E6%A0%87"><span class="toc-number">2.3.</span> <span class="toc-text">1.3 目标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">2 背景知识介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#2-1-%E5%9B%BE%E7%9A%84%E5%85%89%E8%B0%B1%E7%89%B9%E6%80%A7"><span class="toc-number">3.1.</span> <span class="toc-text">2.1 图的光谱特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9B%BE%E8%B0%B1%E5%88%86%E6%9E%90%E7%9A%84%E5%9F%BA%E7%A1%80"><span class="toc-number">3.1.1.</span> <span class="toc-text">1. 图谱分析的基础</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9F%A9%E9%98%B5"><span class="toc-number">3.1.1.1.</span> <span class="toc-text">(1) 拉普拉斯矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%BD%92%E4%B8%80%E5%8C%96%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E7%9F%A9%E9%98%B5"><span class="toc-number">3.1.1.2.</span> <span class="toc-text">(2) 归一化拉普拉斯矩阵</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%B0%B1%E5%88%86%E8%A7%A3"><span class="toc-number">3.1.1.3.</span> <span class="toc-text">(3) 谱分解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E7%89%B9%E5%BE%81%E5%80%BC%E7%9A%84%E6%80%A7%E8%B4%A8"><span class="toc-number">3.1.1.4.</span> <span class="toc-text">(4) 特征值的性质</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%85%89%E8%B0%B1%E7%89%B9%E6%80%A7%E6%8F%8F%E8%BF%B0%E5%9B%BE%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F"><span class="toc-number">3.1.2.</span> <span class="toc-text">2. 光谱特性描述图的几种方式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BF%9E%E9%80%9A%E6%80%A7"><span class="toc-number">3.1.2.1.</span> <span class="toc-text">(1) 连通性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BF%A1%E5%8F%B7%E5%B9%B3%E6%BB%91%E6%80%A7"><span class="toc-number">3.1.2.2.</span> <span class="toc-text">(2) 信号平滑性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%9B%BE%E7%9A%84%E5%85%A8%E5%B1%80%E7%BB%93%E6%9E%84"><span class="toc-number">3.1.2.3.</span> <span class="toc-text">(3) 图的全局结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%9B%BE%E7%9A%84%E7%A4%BE%E5%8C%BA%E7%BB%93%E6%9E%84"><span class="toc-number">3.1.2.4.</span> <span class="toc-text">(4) 图的社区结构</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%9B%BE%E8%B0%B1%E7%89%B9%E6%80%A7%E5%9C%A8%E4%B8%8D%E5%90%8C%E4%BB%BB%E5%8A%A1%E4%B8%AD%E7%9A%84%E6%84%8F%E4%B9%89"><span class="toc-number">3.1.3.</span> <span class="toc-text">3. 图谱特性在不同任务中的意义</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%9B%BE%E5%88%86%E5%89%B2"><span class="toc-number">3.1.3.1.</span> <span class="toc-text">(1) 图分割</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%9B%BE%E4%BF%A1%E5%8F%B7%E5%A4%84%E7%90%86"><span class="toc-number">3.1.3.2.</span> <span class="toc-text">(2) 图信号处理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%9B%BE%E5%B5%8C%E5%85%A5"><span class="toc-number">3.1.3.3.</span> <span class="toc-text">(3) 图嵌入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E5%9B%BE%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B"><span class="toc-number">3.1.3.4.</span> <span class="toc-text">(4) 图异常检测</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E4%BC%A0%E6%92%AD%E7%89%B9%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-number">3.1.3.5.</span> <span class="toc-text">(5) 传播特性分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%9B%BE%E5%85%89%E8%B0%B1%E7%89%B9%E6%80%A7%E4%B8%8ERayleigh%E5%95%86%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">3.1.4.</span> <span class="toc-text">4. 图光谱特性与Rayleigh商的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B9%B3%E6%BB%91%E6%80%A7%E5%BA%A6%E9%87%8F"><span class="toc-number">3.1.4.1.</span> <span class="toc-text">(1) 平滑性度量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%89%B9%E5%BE%81%E5%80%BC%E4%B8%8E%E4%BF%A1%E5%8F%B7"><span class="toc-number">3.1.4.2.</span> <span class="toc-text">(2) 特征值与信号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%80%BB%E7%BB%93"><span class="toc-number">3.1.5.</span> <span class="toc-text">5. 总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-2-GNN%E5%8F%91%E5%B1%95"><span class="toc-number">3.2.</span> <span class="toc-text">2.2 GNN发展</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9F%BA%E4%BA%8E%E5%85%89%E8%B0%B1%E7%89%B9%E5%BE%81%E7%9A%84GNN%E5%8F%91%E5%B1%95"><span class="toc-number">3.2.1.</span> <span class="toc-text">1. 基于光谱特征的GNN发展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%85%89%E8%B0%B1%E5%9B%BE%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E7%9A%84%E5%9F%BA%E7%A1%80"><span class="toc-number">3.2.1.1.</span> <span class="toc-text">(1) 光谱图神经网络的基础</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%85%89%E8%B0%B1GNN%E7%9A%84%E4%BB%A3%E8%A1%A8%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.1.2.</span> <span class="toc-text">(2) 光谱GNN的代表方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%89%E8%B0%B1%E6%96%B9%E6%B3%95%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7%EF%BC%9A"><span class="toc-number">3.2.1.3.</span> <span class="toc-text">光谱方法的局限性：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%A9%BA%E9%97%B4%E5%9F%9F%E6%96%B9%E6%B3%95%E7%9A%84%E5%8F%91%E5%B1%95"><span class="toc-number">3.2.2.</span> <span class="toc-text">2. 空间域方法的发展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%A9%BA%E9%97%B4%E5%9F%9F%E7%9A%84%E6%A0%B8%E5%BF%83%E6%80%9D%E6%83%B3"><span class="toc-number">3.2.2.1.</span> <span class="toc-text">(1) 空间域的核心思想</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BB%A3%E8%A1%A8%E6%A8%A1%E5%9E%8B"><span class="toc-number">3.2.2.2.</span> <span class="toc-text">(2) 代表模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%89%E8%B0%B1%E7%89%B9%E5%BE%81%E4%B8%8E%E7%A9%BA%E9%97%B4%E7%89%B9%E5%BE%81%E7%9A%84%E7%BB%93%E5%90%88"><span class="toc-number">3.2.3.</span> <span class="toc-text">3. 光谱特征与空间特征的结合</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%85%89%E8%B0%B1%E4%B8%8E%E7%A9%BA%E9%97%B4%E7%9A%84%E7%BB%9F%E4%B8%80"><span class="toc-number">3.2.3.1.</span> <span class="toc-text">(1) 光谱与空间的统一</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%AB%98%E6%95%88%E7%9A%84%E5%85%89%E8%B0%B1%E6%96%B9%E6%B3%95"><span class="toc-number">3.2.3.2.</span> <span class="toc-text">(2) 高效的光谱方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E7%91%9E%E5%88%A9%E5%95%86%E7%9A%84%E7%A0%94%E7%A9%B6"><span class="toc-number">3.3.</span> <span class="toc-text">3. 瑞利商的研究</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%90%86%E8%AE%BA%E5%9F%BA%E7%A1%80%EF%BC%9A%E7%91%9E%E5%88%A9%E5%95%86%E4%B8%8E%E5%85%89%E8%B0%B1%E8%83%BD%E9%87%8F%E5%88%86%E5%B8%83"><span class="toc-number">3.3.1.</span> <span class="toc-text">1. 理论基础：瑞利商与光谱能量分布</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%91%9E%E5%88%A9%E5%95%86%E5%9C%A8%E5%BC%82%E5%B8%B8%E6%A3%80%E6%B5%8B%E4%B8%AD%E7%9A%84%E5%8F%91%E7%8E%B0"><span class="toc-number">3.3.2.</span> <span class="toc-text">2. 瑞利商在异常检测中的发现</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#3-%E6%96%B9%E6%B3%95"><span class="toc-number">4.</span> <span class="toc-text">3 方法</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#3-1-Rayleigh-Quotient-and-Spectral-Analysis-%E8%AF%A6%E7%BB%86%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-number">4.1.</span> <span class="toc-text">3.1 Rayleigh Quotient and Spectral Analysis 详细介绍：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E7%91%9E%E5%88%A9%E5%95%86%E7%9A%84%E5%AE%9A%E4%B9%89%E4%B8%8E%E5%8F%98%E5%8C%96%E7%89%B9%E6%80%A7"><span class="toc-number">4.1.1.</span> <span class="toc-text">1. 瑞利商的定义与变化特性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%91%9E%E5%88%A9%E5%95%86%E5%85%AC%E5%BC%8F%EF%BC%9A"><span class="toc-number">4.1.1.1.</span> <span class="toc-text">瑞利商公式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%98%E5%8C%96%E7%89%B9%E6%80%A7%E5%88%86%E6%9E%90%EF%BC%9A"><span class="toc-number">4.1.1.2.</span> <span class="toc-text">变化特性分析：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%91%9E%E5%88%A9%E5%95%86%E4%B8%8E%E5%85%89%E8%B0%B1%E8%83%BD%E9%87%8F%E5%88%86%E5%B8%83"><span class="toc-number">4.1.2.</span> <span class="toc-text">2. 瑞利商与光谱能量分布</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B4%AF%E7%A7%AF%E5%85%89%E8%B0%B1%E8%83%BD%E9%87%8F%E8%A1%A8%E7%A4%BA%EF%BC%9A"><span class="toc-number">4.1.2.1.</span> <span class="toc-text">累积光谱能量表示：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%91%9E%E5%88%A9%E5%95%86%E7%9A%84%E8%BD%AC%E6%8D%A2%EF%BC%9A"><span class="toc-number">4.1.2.2.</span> <span class="toc-text">瑞利商的转换：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8A%A8%E6%9C%BA%E4%B8%8E%E6%8C%87%E5%AF%BC"><span class="toc-number">4.1.3.</span> <span class="toc-text">3. 动机与指导</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%91%9E%E5%88%A9%E5%95%86%E5%88%86%E5%B8%83%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="toc-number">4.1.3.1.</span> <span class="toc-text">瑞利商分布模式：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E8%AE%BE%E8%AE%A1%E5%8A%A8%E6%9C%BA%EF%BC%9A"><span class="toc-number">4.1.3.2.</span> <span class="toc-text">框架设计动机：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">4.1.4.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-2-Rayleigh-Quotient-Learning-Component-RQL"><span class="toc-number">4.2.</span> <span class="toc-text">3.2. Rayleigh Quotient Learning Component (RQL)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-1-RQL-%E7%9A%84%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-number">4.2.1.</span> <span class="toc-text">3.2.1. RQL 的设计目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-RQL-%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-number">4.2.2.</span> <span class="toc-text">3.2.2. RQL 的工作流程**</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-3-%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BC%98%E5%8A%BF"><span class="toc-number">4.2.3.</span> <span class="toc-text">3.2.3. 模块的优势</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-4-RQL-%E5%9C%A8%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">4.2.4.</span> <span class="toc-text">3.2.4. RQL 在整体框架中的作用</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-3-Chebyshev-Wavelet-GNN-with-RQ-Pooling"><span class="toc-number">4.3.</span> <span class="toc-text">3.3 Chebyshev Wavelet GNN with RQ-Pooling</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-1-Chebyshev-Wavelet-GNN"><span class="toc-number">4.3.1.</span> <span class="toc-text">3.3.1. Chebyshev Wavelet GNN</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%83%8C%E6%99%AF%EF%BC%9A%E5%85%89%E8%B0%B1%E5%8D%B7%E7%A7%AF%E7%9A%84%E6%8C%91%E6%88%98"><span class="toc-number">4.3.1.1.</span> <span class="toc-text">(1) 背景：光谱卷积的挑战</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Chebyshev%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%8D%B7%E7%A7%AF%E5%85%AC%E5%BC%8F"><span class="toc-number">4.3.1.2.</span> <span class="toc-text">(2) Chebyshev多项式卷积公式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%AE%9E%E7%8E%B0"><span class="toc-number">4.3.1.3.</span> <span class="toc-text">(3) 实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-2-RQ-Pooling%EF%BC%88%E5%9F%BA%E4%BA%8E%E7%91%9E%E5%88%A9%E5%95%86%E7%9A%84%E6%B1%A0%E5%8C%96%EF%BC%89"><span class="toc-number">4.3.2.</span> <span class="toc-text">3.3.2. RQ-Pooling（基于瑞利商的池化）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%83%8C%E6%99%AF%EF%BC%9A%E6%B1%A0%E5%8C%96%E5%9C%A8%E5%9B%BE%E4%B8%AD%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="toc-number">4.3.2.1.</span> <span class="toc-text">(1) 背景：池化在图中的作用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%91%9E%E5%88%A9%E5%95%86%E7%9A%84%E6%B3%A8%E6%84%8F%E5%8A%9B%E6%9C%BA%E5%88%B6"><span class="toc-number">4.3.2.2.</span> <span class="toc-text">(2) 瑞利商的注意力机制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%81%9A%E5%90%88%E8%8A%82%E7%82%B9%E7%89%B9%E5%BE%81"><span class="toc-number">4.3.2.3.</span> <span class="toc-text">(3) 聚合节点特征</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E8%BE%93%E5%87%BA"><span class="toc-number">4.3.2.4.</span> <span class="toc-text">(4) 输出</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-3-%E7%BB%BC%E5%90%88%E6%A8%A1%E5%9D%97%E8%AE%BE%E8%AE%A1"><span class="toc-number">4.3.3.</span> <span class="toc-text">3.3.3. 综合模块设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E7%89%B9%E5%BE%81%E7%94%9F%E6%88%90"><span class="toc-number">4.3.3.1.</span> <span class="toc-text">节点特征生成</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E7%91%9E%E5%88%A9%E5%95%86%E7%9A%84%E6%B1%A0%E5%8C%96"><span class="toc-number">4.3.3.2.</span> <span class="toc-text">基于瑞利商的池化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E7%9A%84%E6%9C%80%E7%BB%88%E7%89%B9%E5%BE%81"><span class="toc-number">4.3.3.3.</span> <span class="toc-text">图的最终特征</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-4-%E6%9C%AC%E8%8A%82%E7%9A%84%E5%85%B3%E9%94%AE%E5%88%9B%E6%96%B0"><span class="toc-number">4.3.4.</span> <span class="toc-text">3.3.4. 本节的关键创新</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E6%95%88%E5%85%89%E8%B0%B1%E5%8D%B7%E7%A7%AF%EF%BC%9A"><span class="toc-number">4.3.4.1.</span> <span class="toc-text">高效光谱卷积：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E7%91%9E%E5%88%A9%E5%95%86%E7%9A%84%E6%B1%A0%E5%8C%96%EF%BC%9A"><span class="toc-number">4.3.4.2.</span> <span class="toc-text">基于瑞利商的池化：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9A%90%E5%BC%8F%E4%B8%8E%E6%98%BE%E5%BC%8F%E7%BB%93%E5%90%88%EF%BC%9A"><span class="toc-number">4.3.4.3.</span> <span class="toc-text">隐式与显式结合：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-4-Class-Balanced-Focal-Loss-CB-Loss"><span class="toc-number">4.4.</span> <span class="toc-text">3.4 Class-Balanced Focal Loss (CB Loss)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-1-%E5%8A%A8%E6%9C%BA"><span class="toc-number">4.4.1.</span> <span class="toc-text">3.4.1. 动机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-2-CB-Loss-%E8%AE%BE%E8%AE%A1%E5%8E%9F%E7%90%86"><span class="toc-number">4.4.2.</span> <span class="toc-text">3.4.2. CB Loss 设计原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%B1%BB%E5%88%AB%E5%B9%B3%E8%A1%A1%E5%9B%A0%E5%AD%90"><span class="toc-number">4.4.2.1.</span> <span class="toc-text">(1) 类别平衡因子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E7%84%A6%E7%82%B9%E8%B0%83%E6%95%B4%E5%9B%A0%E5%AD%90"><span class="toc-number">4.4.2.2.</span> <span class="toc-text">(2) 焦点调整因子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%9C%80%E7%BB%88%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0"><span class="toc-number">4.4.2.3.</span> <span class="toc-text">(3) 最终损失函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-3-%E4%BC%98%E5%8A%BF%E5%88%86%E6%9E%90"><span class="toc-number">4.4.3.</span> <span class="toc-text">3.4.3. 优势分析</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/14/%E6%8B%BC%E5%9B%A2/%E9%94%99%E8%AF%AF3/" title="无题">无题</a><time datetime="2026-02-14T01:05:16.797Z" title="发表于 2026-02-14 09:05:16">2026-02-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/13/JAVA/redis/" title="数据库Redis">数据库Redis</a><time datetime="2026-01-13T01:18:32.000Z" title="发表于 2026-01-13 09:18:32">2026-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/13/JAVA/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库MySql">数据库MySql</a><time datetime="2026-01-13T01:18:32.000Z" title="发表于 2026-01-13 09:18:32">2026-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/10/JAVA/Spring/" title="Spring学习">Spring学习</a><time datetime="2026-01-10T01:18:32.000Z" title="发表于 2026-01-10 09:18:32">2026-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/04/%E6%8B%BC%E5%9B%A2/%E6%8B%BC%E5%9B%A23/" title="拼团3">拼团3</a><time datetime="2026-01-04T01:18:32.000Z" title="发表于 2026-01-04 09:18:32">2026-01-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By JJxXxLL</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer src="/js/cursor.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/编程训练/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 训练营记录 (16)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/文献学习/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 读文献 (23)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://blog.jxlll.cc/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-gpxxq7_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/项目/">项目</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">这是代码练习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-we7djr_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/文献学习/">文献学习</a><span class="categoryBar-list-count">23</span><span class="categoryBar-list-descr">这是文献学习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-o5revm_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/数据集/">数据集</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">这里还没想好</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/可视化/">可视化</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/编程训练/">编程训练</a><span class="categoryBar-list-count">16</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/考试复习/">考试复习</a><span class="categoryBar-list-count">7</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Spring/">Spring</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/JAVA/">JAVA</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Redis/">Redis</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/小型支付商城系统/">小型支付商城系统</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/组件/">组件</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Database/">Database</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/拼团/">拼团</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/报错/">报错</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/学习/">学习</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = '0ad15caa1a204ee89c6ad151329a6b50';
+  var qweather_api_host = 'nj6r6pm8pt.re.qweatherapi.com';
+  var ip_api_key = 'Kq1pRjB3WyDja7rhKcWV9f5QU8';
+  var gaud_map_key = 'ee76386f15646eecea6cffc073dfbff6';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '113.34532,23.15624';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/08/26/GraphCL/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-08-26</span><a class="blog-slider__title" href="2024/08/26/GraphCL/" alt="">Graph Contrastive Learning with Augmentations</a><div class="blog-slider__text">图学习</div><a class="blog-slider__button" href="2024/08/26/GraphCL/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/10/18/PCGNN/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-18</span><a class="blog-slider__title" href="2024/10/18/PCGNN/" alt="">PC-GNN</a><div class="blog-slider__text">欺诈检测</div><a class="blog-slider__button" href="2024/10/18/PCGNN/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="/js/swiper.min.js"></script><script defer data-pjax src="/js/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__pulse');
+    arr[i].setAttribute('data-wow-duration', '700ms');
+    arr[i].setAttribute('data-wow-delay', '500ms');
+    arr[i].setAttribute('data-wow-offset', '50');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>

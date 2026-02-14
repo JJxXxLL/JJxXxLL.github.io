@@ -1,0 +1,1130 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>体系结构复习3 | JJXxXLL</title><meta name="author" content="JJxXxLL"><meta name="copyright" content="JJxXxLL"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="考试复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="体系结构复习3">
+<meta property="og:url" content="http://blog.jxlll.cc/2024/12/20/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A03/index.html">
+<meta property="og:site_name" content="JJXxXLL">
+<meta property="og:description" content="考试复习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.jxlll.cc/image/1.jpg">
+<meta property="article:published_time" content="2024-12-20T07:12:12.000Z">
+<meta property="article:modified_time" content="2026-02-14T01:05:16.796Z">
+<meta property="article:author" content="JJxXxLL">
+<meta property="article:tag" content="考试复习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.jxlll.cc/image/1.jpg"><link rel="shortcut icon" href="/image/blog.png"><link rel="canonical" href="http://blog.jxlll.cc/2024/12/20/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A03/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: JJxXxLL","link":"链接: ","source":"来源: JJXxXLL","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '体系结构复习3',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-02-14 09:05:16'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="/css/hexo-butterfly-categories-card.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/w1.png')"><nav id="nav"><span id="blog-info"><a href="/" title="JJXxXLL"><span class="site-name">JJXxXLL</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">体系结构复习3</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2026-02-14T01:05:16.796Z" title="更新于 2026-02-14 09:05:16">2026-02-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/">考试复习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">691</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>2分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="体系结构复习3"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="第3章-单周期MIPS处理器的设计"><a href="#第3章-单周期MIPS处理器的设计" class="headerlink" title="第3章  单周期MIPS处理器的设计"></a>第3章  单周期MIPS处理器的设计</h1><h2 id="1-add-sub-addi-subi-lw-sw-beq-j-每条指令在单周期处理器中的执行逻辑"><a href="#1-add-sub-addi-subi-lw-sw-beq-j-每条指令在单周期处理器中的执行逻辑" class="headerlink" title="1.add, sub, addi, subi, lw, sw, beq, j 每条指令在单周期处理器中的执行逻辑"></a>1.add, sub, addi, subi, lw, sw, beq, j 每条指令在单周期处理器中的执行逻辑</h2><h3 id="MIPS单周期处理器中各指令的执行逻辑"><a href="#MIPS单周期处理器中各指令的执行逻辑" class="headerlink" title="MIPS单周期处理器中各指令的执行逻辑"></a><strong>MIPS单周期处理器中各指令的执行逻辑</strong></h3><p>以下是 <strong>add、sub、addi、subi、lw、sw、beq 和 j</strong> 指令在单周期处理器中的执行逻辑，包括各个阶段和数据通路的工作流程。</p>
+<hr>
+<h3 id="1-R型指令：add-和-sub"><a href="#1-R型指令：add-和-sub" class="headerlink" title="1. R型指令：add 和 sub"></a><strong>1. R型指令：add 和 sub</strong></h3><p>R型指令用于<strong>寄存器之间的算术逻辑操作</strong>。</p>
+<ul>
+<li><p><strong>格式</strong>：  </p>
+<script type="math/tex; mode=display">
+\text{[op (6位)][rs (5位)][rt (5位)][rd (5位)][shamt (5位)][funct (6位)]}</script></li>
+<li><p><strong>示例</strong>：  </p>
+<ul>
+<li><code>add rd, rs, rt</code>：<script type="math/tex">\text{rd} = \text{rs} + \text{rt}</script>  </li>
+<li><code>sub rd, rs, rt</code>：<script type="math/tex">\text{rd} = \text{rs} - \text{rt}</script>  </li>
+</ul>
+</li>
+</ul>
+<h4 id="执行逻辑"><a href="#执行逻辑" class="headerlink" title="执行逻辑"></a><strong>执行逻辑</strong></h4><ol>
+<li><p><strong>取指（Instruction Fetch）</strong>：<br>从指令存储器中取出指令，PC更新为 <script type="math/tex">PC + 4</script>。</p>
+</li>
+<li><p><strong>译码（Instruction Decode）</strong>：<br>读取指令中的寄存器地址字段：<code>rs</code>、<code>rt</code> 和 <code>rd</code>，从寄存器堆中读取 <code>rs</code> 和 <code>rt</code> 的值。</p>
+</li>
+<li><p><strong>执行（Execute）</strong>：  </p>
+<ul>
+<li>ALU 根据指令功能码（<code>funct</code> 字段）执行加法（<code>add</code>）或减法（<code>sub</code>）。  </li>
+<li>控制信号 <code>ALUOp</code> 决定 ALU 执行加法或减法操作。</li>
+</ul>
+</li>
+<li><p><strong>写回（Write Back）</strong>：<br>将 ALU 的结果写回寄存器 <code>rd</code>。</p>
+</li>
+</ol>
+<hr>
+<h3 id="2-I型指令：addi-和-subi"><a href="#2-I型指令：addi-和-subi" class="headerlink" title="2. I型指令：addi 和 subi"></a><strong>2. I型指令：addi 和 subi</strong></h3><p>I型指令用于<strong>立即数运算</strong>。</p>
+<ul>
+<li><p><strong>格式</strong>：  </p>
+<script type="math/tex; mode=display">
+\text{[op (6位)][rs (5位)][rt (5位)][immediate (16位)]}</script></li>
+<li><p><strong>示例</strong>：  </p>
+<ul>
+<li><code>addi rt, rs, imm</code>：<script type="math/tex">\text{rt} = \text{rs} + \text{imm}</script>  </li>
+<li><code>subi rt, rs, imm</code>：<script type="math/tex">\text{rt} = \text{rs} - \text{imm}</script>  </li>
+</ul>
+</li>
+</ul>
+<h4 id="执行逻辑-1"><a href="#执行逻辑-1" class="headerlink" title="执行逻辑"></a><strong>执行逻辑</strong></h4><ol>
+<li><p><strong>取指（Instruction Fetch）</strong>：<br>从指令存储器中取出指令，PC更新为 <script type="math/tex">PC + 4</script>。</p>
+</li>
+<li><p><strong>译码（Instruction Decode）</strong>：<br>读取寄存器 <code>rs</code> 的值，同时将立即数 <code>imm</code> 进行<strong>符号扩展</strong>（16位扩展到32位）。</p>
+</li>
+<li><p><strong>执行（Execute）</strong>：<br>ALU 执行加法或减法操作：  </p>
+<ul>
+<li>操作数：寄存器 <code>rs</code> 和扩展后的 <code>imm</code>。</li>
+</ul>
+</li>
+<li><p><strong>写回（Write Back）</strong>：<br>将结果写回寄存器 <code>rt</code>。</p>
+</li>
+</ol>
+<hr>
+<h3 id="3-数据传输指令：lw-和-sw"><a href="#3-数据传输指令：lw-和-sw" class="headerlink" title="3. 数据传输指令：lw 和 sw"></a><strong>3. 数据传输指令：lw 和 sw</strong></h3><p><strong>lw</strong>（加载字） 和 <strong>sw</strong>（存储字） 用于数据传输。</p>
+<ul>
+<li><strong>格式</strong>：  <script type="math/tex; mode=display">
+\text{[op (6位)][rs (5位)][rt (5位)][offset (16位)]}</script></li>
+</ul>
+<h4 id="执行逻辑-2"><a href="#执行逻辑-2" class="headerlink" title="执行逻辑"></a><strong>执行逻辑</strong></h4><ul>
+<li><strong>lw rt, offset(rs)</strong>：从存储器读取数据到寄存器 <code>rt</code>。  </li>
+<li><strong>sw rt, offset(rs)</strong>：将寄存器 <code>rt</code> 的数据存入存储器。</li>
+</ul>
+<ol>
+<li><p><strong>取指（Instruction Fetch）</strong>：<br>从指令存储器取出指令，PC更新为 <script type="math/tex">PC + 4</script>。</p>
+</li>
+<li><p><strong>译码（Instruction Decode）</strong>：<br>读取基址寄存器 <code>rs</code> 的值，并将偏移量 <code>offset</code> 进行符号扩展。</p>
+</li>
+<li><p><strong>地址计算（Execute）</strong>：<br>使用 ALU 计算目标地址：  </p>
+<script type="math/tex; mode=display">
+\text{目标地址} = \text{rs} + \text{offset}</script></li>
+<li><p><strong>内存访问（Memory Access）</strong>：  </p>
+<ul>
+<li><strong>lw</strong>：从存储器中读取数据，存入寄存器 <code>rt</code>。  </li>
+<li><strong>sw</strong>：将寄存器 <code>rt</code> 的数据写入目标地址。</li>
+</ul>
+</li>
+<li><p><strong>写回（Write Back）</strong>（仅 <code>lw</code>）：<br>将从存储器加载的数据写回寄存器 <code>rt</code>。</p>
+</li>
+</ol>
+<hr>
+<h3 id="4-分支指令：beq"><a href="#4-分支指令：beq" class="headerlink" title="4. 分支指令：beq"></a><strong>4. 分支指令：beq</strong></h3><p><strong>beq</strong> 指令用于条件分支。</p>
+<ul>
+<li><p><strong>格式</strong>：  </p>
+<script type="math/tex; mode=display">
+\text{[op (6位)][rs (5位)][rt (5位)][offset (16位)]}</script></li>
+<li><p><strong>示例</strong>：<code>beq rs, rt, offset</code>  </p>
+<ul>
+<li>如果 <script type="math/tex">rs == rt</script>，跳转到目标地址：  <script type="math/tex; mode=display">
+\text{目标地址} = \text{PC} + 4 + (\text{offset} << 2)</script></li>
+</ul>
+</li>
+</ul>
+<h4 id="执行逻辑-3"><a href="#执行逻辑-3" class="headerlink" title="执行逻辑"></a><strong>执行逻辑</strong></h4><ol>
+<li><p><strong>取指（Instruction Fetch）</strong>：<br>取出指令，PC 更新为 <script type="math/tex">PC + 4</script>。</p>
+</li>
+<li><p><strong>译码（Instruction Decode）</strong>：<br>读取寄存器 <code>rs</code> 和 <code>rt</code> 的值，并符号扩展偏移量 <code>offset</code>。</p>
+</li>
+<li><p><strong>比较（Execute）</strong>：<br>ALU 比较 <code>rs</code> 和 <code>rt</code> 的值是否相等。</p>
+</li>
+<li><p><strong>分支判断</strong>：  </p>
+<ul>
+<li>若 <script type="math/tex">rs == rt</script>，更新 PC：  <script type="math/tex; mode=display">
+\text{PC} = \text{PC} + 4 + (\text{offset} << 2)</script></li>
+<li>否则继续执行下一条指令。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="5-跳转指令：j"><a href="#5-跳转指令：j" class="headerlink" title="5. 跳转指令：j"></a><strong>5. 跳转指令：j</strong></h3><p><strong>j</strong> 指令用于无条件跳转。</p>
+<ul>
+<li><p><strong>格式</strong>：  </p>
+<script type="math/tex; mode=display">
+\text{[op (6位)][address (26位)]}</script></li>
+<li><p><strong>示例</strong>：<code>j address</code>  </p>
+<ul>
+<li>跳转到目标地址：  <script type="math/tex; mode=display">
+\text{PC} = \text{Top 4 bits of PC} \, | \, (\text{address} << 2)</script></li>
+</ul>
+</li>
+</ul>
+<h4 id="执行逻辑-4"><a href="#执行逻辑-4" class="headerlink" title="执行逻辑"></a><strong>执行逻辑</strong></h4><ol>
+<li><p><strong>取指（Instruction Fetch）</strong>：<br>取出指令，PC更新为 <script type="math/tex">PC + 4</script>。</p>
+</li>
+<li><p><strong>目标地址计算（Execute）</strong>：<br>拼接 PC 的高 4 位和指令的 26 位目标地址，得到跳转地址。</p>
+</li>
+<li><p><strong>PC更新</strong>：<br>将计算得到的目标地址写入 PC。</p>
+</li>
+</ol>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a><strong>总结</strong></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>指令</strong></th>
+<th><strong>操作</strong></th>
+<th><strong>执行过程</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>add</code></td>
+<td><script type="math/tex">rd = rs + rt</script></td>
+<td>取指 → 译码 → ALU运算 → 写回</td>
+</tr>
+<tr>
+<td><code>sub</code></td>
+<td><script type="math/tex">rd = rs - rt</script></td>
+<td>取指 → 译码 → ALU运算 → 写回</td>
+</tr>
+<tr>
+<td><code>addi</code></td>
+<td><script type="math/tex">rt = rs + imm</script></td>
+<td>取指 → 译码 → 符号扩展 → ALU运算 → 写回</td>
+</tr>
+<tr>
+<td><code>subi</code></td>
+<td><script type="math/tex">rt = rs - imm</script></td>
+<td>取指 → 译码 → 符号扩展 → ALU运算 → 写回</td>
+</tr>
+<tr>
+<td><code>lw</code></td>
+<td><script type="math/tex">rt = Mem[rs + offset]</script></td>
+<td>取指 → 译码 → 地址计算 → 内存读取 → 写回</td>
+</tr>
+<tr>
+<td><code>sw</code></td>
+<td><script type="math/tex">Mem[rs + offset] = rt</script></td>
+<td>取指 → 译码 → 地址计算 → 内存写入</td>
+</tr>
+<tr>
+<td><code>beq</code></td>
+<td>若 <script type="math/tex">rs == rt</script> 则分支跳转</td>
+<td>取指 → 译码 → 比较 → 更新PC</td>
+</tr>
+<tr>
+<td><code>j</code></td>
+<td>无条件跳转到目标地址</td>
+<td>取指 → 目标地址计算 → 更新PC</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="2-上述指令的指令编码、代码、功能以及在单周期中的数据通路，条件分支指令的地址计算、单周期各功能部件的控制信号值判断"><a href="#2-上述指令的指令编码、代码、功能以及在单周期中的数据通路，条件分支指令的地址计算、单周期各功能部件的控制信号值判断" class="headerlink" title="2.上述指令的指令编码、代码、功能以及在单周期中的数据通路，条件分支指令的地址计算、单周期各功能部件的控制信号值判断"></a>2.上述指令的指令编码、代码、功能以及在单周期中的数据通路，条件分支指令的地址计算、单周期各功能部件的控制信号值判断</h2><h3 id="MIPS单周期处理器：指令编码、功能、数据通路与控制信号分析"><a href="#MIPS单周期处理器：指令编码、功能、数据通路与控制信号分析" class="headerlink" title="MIPS单周期处理器：指令编码、功能、数据通路与控制信号分析"></a><strong>MIPS单周期处理器：指令编码、功能、数据通路与控制信号分析</strong></h3><p>以下是 <strong>add、sub、addi、subi、lw、sw、beq 和 j</strong> 指令的<strong>指令编码</strong>、<strong>代码功能</strong>、<strong>单周期中的数据通路</strong>以及<strong>控制信号</strong>的详细解析，包括条件分支指令的地址计算。</p>
+<hr>
+<h3 id="1-R型指令：add-和-sub-1"><a href="#1-R型指令：add-和-sub-1" class="headerlink" title="1. R型指令：add 和 sub"></a><strong>1. R型指令：add 和 sub</strong></h3><h4 id="指令编码"><a href="#指令编码" class="headerlink" title="指令编码"></a><strong>指令编码</strong></h4><ul>
+<li><strong>格式</strong>：  <script type="math/tex; mode=display">
+\text{[op (6位)][rs (5位)][rt (5位)][rd (5位)][shamt (5位)][funct (6位)]}</script></li>
+<li><strong>示例编码</strong>：  <ul>
+<li><code>add $t0, $t1, $t2</code>  <script type="math/tex; mode=display">
+op = 000000, rs = 01001, rt = 01010, rd = 01000, shamt = 00000, funct = 100000</script></li>
+<li><code>sub $t0, $t1, $t2</code>  <script type="math/tex; mode=display">
+op = 000000, rs = 01001, rt = 01010, rd = 01000, shamt = 00000, funct = 100010</script></li>
+</ul>
+</li>
+</ul>
+<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a><strong>功能</strong></h4><ul>
+<li><code>add</code>：寄存器加法，结果存储到 <code>rd</code>  <script type="math/tex; mode=display">\text{rd} = \text{rs} + \text{rt}</script></li>
+<li><code>sub</code>：寄存器减法，结果存储到 <code>rd</code>  <script type="math/tex; mode=display">\text{rd} = \text{rs} - \text{rt}</script></li>
+</ul>
+<h4 id="数据通路"><a href="#数据通路" class="headerlink" title="数据通路"></a><strong>数据通路</strong></h4><ol>
+<li><strong>寄存器堆</strong>：  <ul>
+<li>读取 <code>rs</code> 和 <code>rt</code> 两个寄存器的值。  </li>
+</ul>
+</li>
+<li><strong>ALU</strong>：  <ul>
+<li><code>add</code> 或 <code>sub</code> 操作，根据 <strong>funct</strong> 字段判断具体操作。  </li>
+</ul>
+</li>
+<li><strong>写回</strong>：  <ul>
+<li>将结果写回寄存器 <code>rd</code>。</li>
+</ul>
+</li>
+</ol>
+<h4 id="控制信号"><a href="#控制信号" class="headerlink" title="控制信号"></a><strong>控制信号</strong></h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>控制信号</th>
+<th>值</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RegDst</code></td>
+<td>1</td>
+<td>写回寄存器目的地址为 <code>rd</code></td>
+</tr>
+<tr>
+<td><code>RegWrite</code></td>
+<td>1</td>
+<td>使能寄存器写回</td>
+</tr>
+<tr>
+<td><code>ALUSrc</code></td>
+<td>0</td>
+<td>ALU 第二个操作数来自寄存器</td>
+</tr>
+<tr>
+<td><code>ALUOp</code></td>
+<td>10</td>
+<td>ALU 控制信号，R型指令判断功能码</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="2-I型指令：addi-和-subi-1"><a href="#2-I型指令：addi-和-subi-1" class="headerlink" title="2. I型指令：addi 和 subi"></a><strong>2. I型指令：addi 和 subi</strong></h3><h4 id="指令编码-1"><a href="#指令编码-1" class="headerlink" title="指令编码"></a><strong>指令编码</strong></h4><ul>
+<li><strong>格式</strong>：  <script type="math/tex; mode=display">
+\text{[op (6位)][rs (5位)][rt (5位)][immediate (16位)]}</script></li>
+<li><strong>示例编码</strong>：  <ul>
+<li><code>addi $t0, $t1, 5</code>  <script type="math/tex; mode=display">
+op = 001000, rs = 01001, rt = 01000, immediate = 0000 0000 0000 0101</script></li>
+</ul>
+</li>
+</ul>
+<h4 id="功能-1"><a href="#功能-1" class="headerlink" title="功能"></a><strong>功能</strong></h4><ul>
+<li><code>addi</code>：寄存器与立即数加法，结果存储到 <code>rt</code>  <script type="math/tex; mode=display">\text{rt} = \text{rs} + \text{immediate}</script></li>
+</ul>
+<h4 id="数据通路-1"><a href="#数据通路-1" class="headerlink" title="数据通路"></a><strong>数据通路</strong></h4><ol>
+<li><strong>寄存器堆</strong>：  <ul>
+<li>读取 <code>rs</code> 的值。  </li>
+</ul>
+</li>
+<li><strong>立即数扩展</strong>：  <ul>
+<li>将 16 位 <code>immediate</code> 进行符号扩展为 32 位。  </li>
+</ul>
+</li>
+<li><strong>ALU</strong>：  <ul>
+<li>执行加法操作：<code>rs + imm</code>。  </li>
+</ul>
+</li>
+<li><strong>写回</strong>：  <ul>
+<li>将结果写回寄存器 <code>rt</code>。</li>
+</ul>
+</li>
+</ol>
+<h4 id="控制信号-1"><a href="#控制信号-1" class="headerlink" title="控制信号"></a><strong>控制信号</strong></h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>控制信号</th>
+<th>值</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RegDst</code></td>
+<td>0</td>
+<td>写回寄存器目的地址为 <code>rt</code></td>
+</tr>
+<tr>
+<td><code>RegWrite</code></td>
+<td>1</td>
+<td>使能寄存器写回</td>
+</tr>
+<tr>
+<td><code>ALUSrc</code></td>
+<td>1</td>
+<td>ALU 第二个操作数来自立即数</td>
+</tr>
+<tr>
+<td><code>ALUOp</code></td>
+<td>00</td>
+<td>ALU 控制信号为加法操作</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="3-数据传输指令：lw-和-sw-1"><a href="#3-数据传输指令：lw-和-sw-1" class="headerlink" title="3. 数据传输指令：lw 和 sw"></a><strong>3. 数据传输指令：lw 和 sw</strong></h3><h4 id="指令编码-2"><a href="#指令编码-2" class="headerlink" title="指令编码"></a><strong>指令编码</strong></h4><ul>
+<li><strong>格式</strong>：  <script type="math/tex; mode=display">
+\text{[op (6位)][rs (5位)][rt (5位)][offset (16位)]}</script></li>
+<li><strong>示例编码</strong>：  <ul>
+<li><code>lw $t0, 4($t1)</code>  <script type="math/tex; mode=display">
+op = 100011, rs = 01001, rt = 01000, offset = 0000 0000 0000 0100</script></li>
+</ul>
+</li>
+</ul>
+<h4 id="功能-2"><a href="#功能-2" class="headerlink" title="功能"></a><strong>功能</strong></h4><ul>
+<li><strong>lw</strong>：加载字到寄存器  <script type="math/tex; mode=display">\text{rt} = \text{Mem}[rs + offset]</script></li>
+<li><strong>sw</strong>：存储寄存器值到内存  <script type="math/tex; mode=display">\text{Mem}[rs + offset] = \text{rt}</script></li>
+</ul>
+<h4 id="数据通路-2"><a href="#数据通路-2" class="headerlink" title="数据通路"></a><strong>数据通路</strong></h4><ol>
+<li><strong>寄存器堆</strong>：  <ul>
+<li>读取基址寄存器 <code>rs</code>。  </li>
+</ul>
+</li>
+<li><strong>立即数扩展</strong>：  <ul>
+<li>偏移量 <code>offset</code> 符号扩展为 32 位。  </li>
+</ul>
+</li>
+<li><strong>ALU</strong>：  <ul>
+<li>计算内存地址：<code>rs + offset</code>。  </li>
+</ul>
+</li>
+<li><strong>数据存储器</strong>：  <ul>
+<li><code>lw</code>：从内存中读取数据写入 <code>rt</code>。  </li>
+<li><code>sw</code>：将 <code>rt</code> 的数据写入内存。</li>
+</ul>
+</li>
+</ol>
+<h4 id="控制信号-2"><a href="#控制信号-2" class="headerlink" title="控制信号"></a><strong>控制信号</strong></h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>控制信号</th>
+<th>lw 值</th>
+<th>sw 值</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MemRead</code></td>
+<td>1</td>
+<td>0</td>
+<td>使能内存读取</td>
+</tr>
+<tr>
+<td><code>MemWrite</code></td>
+<td>0</td>
+<td>1</td>
+<td>使能内存写入</td>
+</tr>
+<tr>
+<td><code>ALUSrc</code></td>
+<td>1</td>
+<td>1</td>
+<td>ALU 第二个操作数为偏移量</td>
+</tr>
+<tr>
+<td><code>RegWrite</code></td>
+<td>1</td>
+<td>0</td>
+<td><code>lw</code> 需写回寄存器</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="4-分支指令：beq-1"><a href="#4-分支指令：beq-1" class="headerlink" title="4. 分支指令：beq"></a><strong>4. 分支指令：beq</strong></h3><h4 id="指令编码-3"><a href="#指令编码-3" class="headerlink" title="指令编码"></a><strong>指令编码</strong></h4><ul>
+<li><strong>格式</strong>：  <script type="math/tex; mode=display">
+\text{[op (6位)][rs (5位)][rt (5位)][offset (16位)]}</script></li>
+</ul>
+<h4 id="功能-3"><a href="#功能-3" class="headerlink" title="功能"></a><strong>功能</strong></h4><ul>
+<li><code>beq</code>：若两个寄存器相等，则跳转  <script type="math/tex; mode=display">\text{PC} = \text{PC} + 4 + (\text{offset} << 2)</script></li>
+</ul>
+<h4 id="数据通路-3"><a href="#数据通路-3" class="headerlink" title="数据通路"></a><strong>数据通路</strong></h4><ol>
+<li><strong>寄存器堆</strong>：  <ul>
+<li>读取 <code>rs</code> 和 <code>rt</code> 的值。  </li>
+</ul>
+</li>
+<li><strong>ALU</strong>：  <ul>
+<li>比较 <code>rs</code> 和 <code>rt</code>，生成 <code>Zero</code> 信号。  </li>
+</ul>
+</li>
+<li><strong>PC更新</strong>：  <ul>
+<li>若 <code>Zero = 1</code>，跳转地址：<code>PC + 4 + (offset &lt;&lt; 2)</code>。</li>
+</ul>
+</li>
+</ol>
+<h4 id="控制信号-3"><a href="#控制信号-3" class="headerlink" title="控制信号"></a><strong>控制信号</strong></h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>控制信号</th>
+<th>值</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Branch</code></td>
+<td>1</td>
+<td>使能分支跳转</td>
+</tr>
+<tr>
+<td><code>ALUOp</code></td>
+<td>01</td>
+<td>ALU 控制信号进行比较操作</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="5-跳转指令：j-1"><a href="#5-跳转指令：j-1" class="headerlink" title="5. 跳转指令：j"></a><strong>5. 跳转指令：j</strong></h3><h4 id="指令编码-4"><a href="#指令编码-4" class="headerlink" title="指令编码"></a><strong>指令编码</strong></h4><ul>
+<li><strong>格式</strong>：  <script type="math/tex; mode=display">
+\text{[op (6位)][address (26位)]}</script></li>
+</ul>
+<h4 id="功能-4"><a href="#功能-4" class="headerlink" title="功能"></a><strong>功能</strong></h4><ul>
+<li><code>j</code>：无条件跳转  <script type="math/tex; mode=display">\text{PC} = \text{Top 4 bits of PC} \, | \, (\text{address} << 2)</script></li>
+</ul>
+<h4 id="数据通路-4"><a href="#数据通路-4" class="headerlink" title="数据通路"></a><strong>数据通路</strong></h4><ol>
+<li><strong>目标地址计算</strong>：  <ul>
+<li>将指令中的 26 位地址左移2位，与 PC 高 4 位拼接。  </li>
+</ul>
+</li>
+<li><strong>PC更新</strong>：  <ul>
+<li>将计算得到的目标地址写入 PC。</li>
+</ul>
+</li>
+</ol>
+<h4 id="控制信号-4"><a href="#控制信号-4" class="headerlink" title="控制信号"></a><strong>控制信号</strong></h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>控制信号</th>
+<th>值</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Jump</code></td>
+<td>1</td>
+<td>使能无条件跳转</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="总结表格"><a href="#总结表格" class="headerlink" title="总结表格"></a><strong>总结表格</strong></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+<th>关键控制信号</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>add</code></td>
+<td><script type="math/tex">rd = rs + rt</script></td>
+<td><code>RegDst=1, ALUSrc=0, RegWrite=1</code></td>
+</tr>
+<tr>
+<td><code>sub</code></td>
+<td><script type="math/tex">rd = rs - rt</script></td>
+<td><code>RegDst=1, ALUSrc=0, RegWrite=1</code></td>
+</tr>
+<tr>
+<td><code>addi</code></td>
+<td><script type="math/tex">rt = rs + imm</script></td>
+<td><code>RegDst=0, ALUSrc=1, RegWrite=1</code></td>
+</tr>
+<tr>
+<td><code>lw</code></td>
+<td><script type="math/tex">rt = \text{Mem}[rs + offset]</script></td>
+<td><code>MemRead=1, ALUSrc=1, RegWrite=1</code></td>
+</tr>
+<tr>
+<td><code>sw</code></td>
+<td><script type="math/tex">\text{Mem}[rs + offset] = rt</script></td>
+<td><code>MemWrite=1, ALUSrc=1, RegWrite=0</code></td>
+</tr>
+<tr>
+<td><code>beq</code></td>
+<td>若 <script type="math/tex">rs == rt</script> 则分支跳转</td>
+<td><code>Branch=1, ALUSrc=0, ALUOp=01</code></td>
+</tr>
+<tr>
+<td><code>j</code></td>
+<td>无条件跳转到目标地址</td>
+<td><code>Jump=1</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>以下是您需要的 <strong>add</strong>、<strong>sub</strong>、<strong>addi</strong>、<strong>subi</strong>、<strong>lw</strong>、<strong>sw</strong>、<strong>beq</strong> 和 <strong>j</strong> 指令的操作码及相关信息总结：</p>
+<hr>
+<h3 id="1-R型指令"><a href="#1-R型指令" class="headerlink" title="1. R型指令"></a><strong>1. R型指令</strong></h3><p>R型指令的操作码固定为 <strong><code>000000</code></strong>，具体功能由 <strong>功能码（funct）</strong> 决定。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+<th>操作码（op）</th>
+<th>功能码（funct）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>add</code></td>
+<td>加法</td>
+<td><code>000000</code></td>
+<td><code>100000</code></td>
+</tr>
+<tr>
+<td><code>sub</code></td>
+<td>减法</td>
+<td><code>000000</code></td>
+<td><code>100010</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="2-I型指令"><a href="#2-I型指令" class="headerlink" title="2. I型指令"></a><strong>2. I型指令</strong></h3><p>I型指令的功能由操作码（<code>op</code>）直接决定。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+<th>操作码（op）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addi</code></td>
+<td>加法（立即数）</td>
+<td><code>001000</code></td>
+</tr>
+<tr>
+<td><code>subi</code></td>
+<td>减法（立即数）</td>
+<td><strong>（无标准指令，在MIPS中未定义）</strong></td>
+</tr>
+<tr>
+<td><code>lw</code></td>
+<td>加载字</td>
+<td><code>100011</code></td>
+</tr>
+<tr>
+<td><code>sw</code></td>
+<td>存储字</td>
+<td><code>101011</code></td>
+</tr>
+<tr>
+<td><code>beq</code></td>
+<td>分支（相等跳转）</td>
+<td><code>000100</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="3-J型指令"><a href="#3-J型指令" class="headerlink" title="3. J型指令"></a><strong>3. J型指令</strong></h3><p>J型指令的功能由操作码（<code>op</code>）直接决定。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>功能</th>
+<th>操作码（op）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>j</code></td>
+<td>无条件跳转</td>
+<td><code>000010</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="4-总结表格"><a href="#4-总结表格" class="headerlink" title="4. 总结表格"></a><strong>4. 总结表格</strong></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>指令类型</th>
+<th>指令</th>
+<th>功能</th>
+<th>操作码（op）</th>
+<th>功能码（funct，R型指令专用）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R型</td>
+<td><code>add</code></td>
+<td>加法</td>
+<td><code>000000</code></td>
+<td><code>100000</code></td>
+</tr>
+<tr>
+<td></td>
+<td><code>sub</code></td>
+<td>减法</td>
+<td><code>000000</code></td>
+<td><code>100010</code></td>
+</tr>
+<tr>
+<td>I型</td>
+<td><code>addi</code></td>
+<td>加法（立即数）</td>
+<td><code>001000</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td><code>subi</code></td>
+<td>减法（立即数，未定义）</td>
+<td><strong>N/A</strong></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td><code>lw</code></td>
+<td>加载字</td>
+<td><code>100011</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td><code>sw</code></td>
+<td>存储字</td>
+<td><code>101011</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td></td>
+<td><code>beq</code></td>
+<td>分支（相等跳转）</td>
+<td><code>000100</code></td>
+<td>-</td>
+</tr>
+<tr>
+<td>J型</td>
+<td><code>j</code></td>
+<td>无条件跳转</td>
+<td><code>000010</code></td>
+<td>-</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a><strong>注意</strong></h3><ol>
+<li><p><strong><code>subi</code> 指令</strong>：在标准 MIPS 指令集中，<code>subi</code> 并未被定义，可以通过 <code>addi</code> 使用负数立即数来替代。例如：</p>
+<script type="math/tex; mode=display">
+\text{subi rt, rs, imm} \quad \text{等价于} \quad \text{addi rt, rs, -imm}</script></li>
+<li><p><strong>R型指令</strong> 使用 <code>funct</code> 字段指定具体功能，其 <code>op</code> 始终为 <code>000000</code>。</p>
+</li>
+<li><p><strong>I型和J型指令</strong> 直接通过 <code>op</code> 字段来确定功能，无需 <code>funct</code> 字段。</p>
+</li>
+</ol>
+<h3 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/image-20241220195518838.png" alt="image-20241220195518838" style="zoom:50%;" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/image-20241220195541292.png" alt="image-20241220195541292" style="zoom:50%;" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/image-20241220195604428.png" alt="image-20241220195604428" style="zoom:50%;" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/image-20241220195638411.png" alt="image-20241220195638411" style="zoom:50%;" /></p>
+<h3 id="题目分析与解答"><a href="#题目分析与解答" class="headerlink" title="题目分析与解答"></a><strong>题目分析与解答</strong></h3><p>题目中要求我们分析 MIPS 指令（AND、LD 和 BEQ）在执行过程中涉及的关键路径，并根据每个模块的延迟时间计算总延迟。</p>
+<hr>
+<h3 id="1-问题分析"><a href="#1-问题分析" class="headerlink" title="1. 问题分析"></a><strong>1. 问题分析</strong></h3><ul>
+<li>每条指令的执行会经过不同的数据路径，关键路径是指令执行时耗时最长的路径。</li>
+<li><p><strong>已知每个模块的延迟时间</strong>：</p>
+<ul>
+<li><strong>指令存储器</strong>：400ps  </li>
+<li><strong>加法器</strong>：100ps  </li>
+<li><strong>ALU</strong>：120ps  </li>
+<li><strong>寄存器堆</strong>：200ps  </li>
+<li><strong>数据存储器</strong>：350ps  </li>
+<li><strong>控制单元</strong>：100ps  </li>
+</ul>
+</li>
+<li><p>需要计算的三种指令：</p>
+<ol>
+<li><strong>AND 指令</strong>（R型指令）：涉及寄存器堆和 ALU。  </li>
+<li><strong>LD 指令</strong>（加载指令）：涉及寄存器堆、ALU 和数据存储器。  </li>
+<li><strong>BEQ 指令</strong>（分支指令）：涉及寄存器堆、ALU 和控制单元。</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h3 id="2-关键路径分析"><a href="#2-关键路径分析" class="headerlink" title="2. 关键路径分析"></a><strong>2. 关键路径分析</strong></h3><h4 id="1-AND-指令（R型指令）"><a href="#1-AND-指令（R型指令）" class="headerlink" title="(1) AND 指令（R型指令）"></a><strong>(1) AND 指令（R型指令）</strong></h4><ul>
+<li>路径：<code>PC -&gt; 指令存储器 -&gt; 寄存器堆 -&gt; ALU -&gt; 寄存器堆</code><ul>
+<li><strong>指令存储器</strong>：400ps  </li>
+<li><strong>寄存器堆</strong>（读取）：200ps  </li>
+<li><strong>ALU</strong>：120ps  </li>
+<li><strong>寄存器堆</strong>（写入）：不计入关键路径，因为写操作发生在时钟边沿。</li>
+</ul>
+</li>
+<li><strong>总延迟时间</strong>：  <script type="math/tex; mode=display">
+\text{400ps + 200ps + 120ps = 920ps}</script></li>
+</ul>
+<h4 id="2-LD-指令（I型指令）"><a href="#2-LD-指令（I型指令）" class="headerlink" title="(2) LD 指令（I型指令）"></a><strong>(2) LD 指令（I型指令）</strong></h4><ul>
+<li>路径：<code>PC -&gt; 指令存储器 -&gt; 寄存器堆 -&gt; ALU -&gt; 数据存储器 -&gt; 寄存器堆</code><ul>
+<li><strong>指令存储器</strong>：400ps  </li>
+<li><strong>寄存器堆</strong>（读取）：200ps  </li>
+<li><strong>ALU</strong>：120ps  </li>
+<li><strong>数据存储器</strong>：350ps  </li>
+<li><strong>寄存器堆</strong>（写入）：不计入关键路径。</li>
+</ul>
+</li>
+<li><strong>总延迟时间</strong>：  <script type="math/tex; mode=display">
+\text{400ps + 200ps + 120ps + 350ps = 1070ps}</script></li>
+</ul>
+<h4 id="3-BEQ-指令（分支指令）"><a href="#3-BEQ-指令（分支指令）" class="headerlink" title="(3) BEQ 指令（分支指令）"></a><strong>(3) BEQ 指令（分支指令）</strong></h4><ul>
+<li>路径：<code>PC -&gt; 指令存储器 -&gt; 寄存器堆 -&gt; ALU -&gt; 控制单元</code><ul>
+<li><strong>指令存储器</strong>：400ps  </li>
+<li><strong>寄存器堆</strong>（读取）：200ps  </li>
+<li><strong>ALU</strong>：120ps  </li>
+<li><strong>控制单元</strong>：100ps  </li>
+</ul>
+</li>
+<li><strong>总延迟时间</strong>：  <script type="math/tex; mode=display">
+\text{400ps + 200ps + 120ps + 100ps = 1020ps}</script></li>
+</ul>
+<hr>
+<h3 id="3-总结表格"><a href="#3-总结表格" class="headerlink" title="3. 总结表格"></a><strong>3. 总结表格</strong></h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th><strong>指令类型</strong></th>
+<th><strong>涉及模块</strong></th>
+<th><strong>延迟时间（ps）</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>AND</strong></td>
+<td>指令存储器 -&gt; 寄存器堆 -&gt; ALU</td>
+<td>920</td>
+</tr>
+<tr>
+<td><strong>LD</strong></td>
+<td>指令存储器 -&gt; 寄存器堆 -&gt; ALU -&gt; 数据存储器</td>
+<td>1070</td>
+</tr>
+<tr>
+<td><strong>BEQ</strong></td>
+<td>指令存储器 -&gt; 寄存器堆 -&gt; ALU -&gt; 控制单元</td>
+<td>1020</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="4-结果"><a href="#4-结果" class="headerlink" title="4. 结果"></a><strong>4. 结果</strong></h3><ul>
+<li><strong>AND 指令关键路径延迟时间</strong>：920ps  </li>
+<li><strong>LD 指令关键路径延迟时间</strong>：1070ps  </li>
+<li><strong>BEQ 指令关键路径延迟时间</strong>：1020ps  </li>
+</ul>
+<h2 id="3-中断和异常的处理时机"><a href="#3-中断和异常的处理时机" class="headerlink" title="3.中断和异常的处理时机"></a>3.中断和异常的处理时机</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/image-20241220210432176.png" alt="image-20241220210432176" style="zoom:50%;" /></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/image-20241220210449904.png" alt="image-20241220210449904" style="zoom:50%;" /></p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>体系结构复习3</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://blog.jxlll.cc/2024/12/20/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A03/">http://blog.jxlll.cc/2024/12/20/体系结构复习3/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>JJxXxLL</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2024-12-20</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-02-14</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0/">考试复习</a></div><div class="post_share"><div class="social-share" data-image="/image/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/12/21/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A04/" title="体系结构复习4"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">体系结构复习4</div></div></a></div><div class="next-post pull-right"><a href="/2024/12/19/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A02/" title="体系结构复习2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">体系结构复习2</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/12/18/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A01/" title="体系结构复习1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-18</div><div class="title">体系结构复习1</div></div></a></div><div><a href="/2024/12/19/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A02/" title="体系结构复习2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-19</div><div class="title">体系结构复习2</div></div></a></div><div><a href="/2024/12/21/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A04/" title="体系结构复习4"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-21</div><div class="title">体系结构复习4</div></div></a></div><div><a href="/2024/12/22/%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E5%A4%8D%E4%B9%A05/" title="体系结构复习5"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-22</div><div class="title">体系结构复习5</div></div></a></div><div><a href="/2024/11/24/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/" title="贪心算法复习"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-24</div><div class="title">贪心算法复习</div></div></a></div><div><a href="/2024/12/22/%E7%9F%A9%E9%98%B5%E7%90%86%E8%AE%BA%E5%A4%8D%E4%B9%A01/" title="矩阵理论复习1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-12-22</div><div class="title">矩阵理论复习1</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">JJxXxLL</div><div class="author-info__description">记录学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJxXxLL"><i class="fa-solid fa-eye"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJxXxLL" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:jxl552082093@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%AC%AC3%E7%AB%A0-%E5%8D%95%E5%91%A8%E6%9C%9FMIPS%E5%A4%84%E7%90%86%E5%99%A8%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.</span> <span class="toc-text">第3章  单周期MIPS处理器的设计</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-add-sub-addi-subi-lw-sw-beq-j-%E6%AF%8F%E6%9D%A1%E6%8C%87%E4%BB%A4%E5%9C%A8%E5%8D%95%E5%91%A8%E6%9C%9F%E5%A4%84%E7%90%86%E5%99%A8%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E9%80%BB%E8%BE%91"><span class="toc-number">1.1.</span> <span class="toc-text">1.add, sub, addi, subi, lw, sw, beq, j 每条指令在单周期处理器中的执行逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MIPS%E5%8D%95%E5%91%A8%E6%9C%9F%E5%A4%84%E7%90%86%E5%99%A8%E4%B8%AD%E5%90%84%E6%8C%87%E4%BB%A4%E7%9A%84%E6%89%A7%E8%A1%8C%E9%80%BB%E8%BE%91"><span class="toc-number">1.1.1.</span> <span class="toc-text">MIPS单周期处理器中各指令的执行逻辑</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-R%E5%9E%8B%E6%8C%87%E4%BB%A4%EF%BC%9Aadd-%E5%92%8C-sub"><span class="toc-number">1.1.2.</span> <span class="toc-text">1. R型指令：add 和 sub</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E9%80%BB%E8%BE%91"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">执行逻辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-I%E5%9E%8B%E6%8C%87%E4%BB%A4%EF%BC%9Aaddi-%E5%92%8C-subi"><span class="toc-number">1.1.3.</span> <span class="toc-text">2. I型指令：addi 和 subi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E9%80%BB%E8%BE%91-1"><span class="toc-number">1.1.3.1.</span> <span class="toc-text">执行逻辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%8C%87%E4%BB%A4%EF%BC%9Alw-%E5%92%8C-sw"><span class="toc-number">1.1.4.</span> <span class="toc-text">3. 数据传输指令：lw 和 sw</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E9%80%BB%E8%BE%91-2"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">执行逻辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4%EF%BC%9Abeq"><span class="toc-number">1.1.5.</span> <span class="toc-text">4. 分支指令：beq</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E9%80%BB%E8%BE%91-3"><span class="toc-number">1.1.5.1.</span> <span class="toc-text">执行逻辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%B7%B3%E8%BD%AC%E6%8C%87%E4%BB%A4%EF%BC%9Aj"><span class="toc-number">1.1.6.</span> <span class="toc-text">5. 跳转指令：j</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E9%80%BB%E8%BE%91-4"><span class="toc-number">1.1.6.1.</span> <span class="toc-text">执行逻辑</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-number">1.1.7.</span> <span class="toc-text">总结</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E4%B8%8A%E8%BF%B0%E6%8C%87%E4%BB%A4%E7%9A%84%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A0%81%E3%80%81%E4%BB%A3%E7%A0%81%E3%80%81%E5%8A%9F%E8%83%BD%E4%BB%A5%E5%8F%8A%E5%9C%A8%E5%8D%95%E5%91%A8%E6%9C%9F%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%EF%BC%8C%E6%9D%A1%E4%BB%B6%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4%E7%9A%84%E5%9C%B0%E5%9D%80%E8%AE%A1%E7%AE%97%E3%80%81%E5%8D%95%E5%91%A8%E6%9C%9F%E5%90%84%E5%8A%9F%E8%83%BD%E9%83%A8%E4%BB%B6%E7%9A%84%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7%E5%80%BC%E5%88%A4%E6%96%AD"><span class="toc-number">1.2.</span> <span class="toc-text">2.上述指令的指令编码、代码、功能以及在单周期中的数据通路，条件分支指令的地址计算、单周期各功能部件的控制信号值判断</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MIPS%E5%8D%95%E5%91%A8%E6%9C%9F%E5%A4%84%E7%90%86%E5%99%A8%EF%BC%9A%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A0%81%E3%80%81%E5%8A%9F%E8%83%BD%E3%80%81%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF%E4%B8%8E%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7%E5%88%86%E6%9E%90"><span class="toc-number">1.2.1.</span> <span class="toc-text">MIPS单周期处理器：指令编码、功能、数据通路与控制信号分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-R%E5%9E%8B%E6%8C%87%E4%BB%A4%EF%BC%9Aadd-%E5%92%8C-sub-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">1. R型指令：add 和 sub</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A0%81"><span class="toc-number">1.2.2.1.</span> <span class="toc-text">指令编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD"><span class="toc-number">1.2.2.2.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF"><span class="toc-number">1.2.2.3.</span> <span class="toc-text">数据通路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7"><span class="toc-number">1.2.2.4.</span> <span class="toc-text">控制信号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-I%E5%9E%8B%E6%8C%87%E4%BB%A4%EF%BC%9Aaddi-%E5%92%8C-subi-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">2. I型指令：addi 和 subi</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A0%81-1"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">指令编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-1"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF-1"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">数据通路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7-1"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">控制信号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%8C%87%E4%BB%A4%EF%BC%9Alw-%E5%92%8C-sw-1"><span class="toc-number">1.2.4.</span> <span class="toc-text">3. 数据传输指令：lw 和 sw</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A0%81-2"><span class="toc-number">1.2.4.1.</span> <span class="toc-text">指令编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-2"><span class="toc-number">1.2.4.2.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF-2"><span class="toc-number">1.2.4.3.</span> <span class="toc-text">数据通路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7-2"><span class="toc-number">1.2.4.4.</span> <span class="toc-text">控制信号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4%EF%BC%9Abeq-1"><span class="toc-number">1.2.5.</span> <span class="toc-text">4. 分支指令：beq</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A0%81-3"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">指令编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-3"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF-3"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">数据通路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7-3"><span class="toc-number">1.2.5.4.</span> <span class="toc-text">控制信号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%B7%B3%E8%BD%AC%E6%8C%87%E4%BB%A4%EF%BC%9Aj-1"><span class="toc-number">1.2.6.</span> <span class="toc-text">5. 跳转指令：j</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4%E7%BC%96%E7%A0%81-4"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">指令编码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD-4"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E8%B7%AF-4"><span class="toc-number">1.2.6.3.</span> <span class="toc-text">数据通路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E4%BF%A1%E5%8F%B7-4"><span class="toc-number">1.2.6.4.</span> <span class="toc-text">控制信号</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.2.7.</span> <span class="toc-text">总结表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-R%E5%9E%8B%E6%8C%87%E4%BB%A4"><span class="toc-number">1.2.8.</span> <span class="toc-text">1. R型指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-I%E5%9E%8B%E6%8C%87%E4%BB%A4"><span class="toc-number">1.2.9.</span> <span class="toc-text">2. I型指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-J%E5%9E%8B%E6%8C%87%E4%BB%A4"><span class="toc-number">1.2.10.</span> <span class="toc-text">3. J型指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%80%BB%E7%BB%93%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.2.11.</span> <span class="toc-text">4. 总结表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-number">1.2.12.</span> <span class="toc-text">注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">1.2.13.</span> <span class="toc-text">例题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%88%86%E6%9E%90%E4%B8%8E%E8%A7%A3%E7%AD%94"><span class="toc-number">1.2.14.</span> <span class="toc-text">题目分析与解答</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%97%AE%E9%A2%98%E5%88%86%E6%9E%90"><span class="toc-number">1.2.15.</span> <span class="toc-text">1. 问题分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%85%B3%E9%94%AE%E8%B7%AF%E5%BE%84%E5%88%86%E6%9E%90"><span class="toc-number">1.2.16.</span> <span class="toc-text">2. 关键路径分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-AND-%E6%8C%87%E4%BB%A4%EF%BC%88R%E5%9E%8B%E6%8C%87%E4%BB%A4%EF%BC%89"><span class="toc-number">1.2.16.1.</span> <span class="toc-text">(1) AND 指令（R型指令）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-LD-%E6%8C%87%E4%BB%A4%EF%BC%88I%E5%9E%8B%E6%8C%87%E4%BB%A4%EF%BC%89"><span class="toc-number">1.2.16.2.</span> <span class="toc-text">(2) LD 指令（I型指令）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-BEQ-%E6%8C%87%E4%BB%A4%EF%BC%88%E5%88%86%E6%94%AF%E6%8C%87%E4%BB%A4%EF%BC%89"><span class="toc-number">1.2.16.3.</span> <span class="toc-text">(3) BEQ 指令（分支指令）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%80%BB%E7%BB%93%E8%A1%A8%E6%A0%BC"><span class="toc-number">1.2.17.</span> <span class="toc-text">3. 总结表格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E7%BB%93%E6%9E%9C"><span class="toc-number">1.2.18.</span> <span class="toc-text">4. 结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-%E4%B8%AD%E6%96%AD%E5%92%8C%E5%BC%82%E5%B8%B8%E7%9A%84%E5%A4%84%E7%90%86%E6%97%B6%E6%9C%BA"><span class="toc-number">1.3.</span> <span class="toc-text">3.中断和异常的处理时机</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/14/%E6%8B%BC%E5%9B%A2/%E9%94%99%E8%AF%AF3/" title="无题">无题</a><time datetime="2026-02-14T01:05:16.797Z" title="发表于 2026-02-14 09:05:16">2026-02-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/13/JAVA/redis/" title="数据库Redis">数据库Redis</a><time datetime="2026-01-13T01:18:32.000Z" title="发表于 2026-01-13 09:18:32">2026-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/13/JAVA/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库MySql">数据库MySql</a><time datetime="2026-01-13T01:18:32.000Z" title="发表于 2026-01-13 09:18:32">2026-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/10/JAVA/Spring/" title="Spring学习">Spring学习</a><time datetime="2026-01-10T01:18:32.000Z" title="发表于 2026-01-10 09:18:32">2026-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/04/%E6%8B%BC%E5%9B%A2/%E6%8B%BC%E5%9B%A23/" title="拼团3">拼团3</a><time datetime="2026-01-04T01:18:32.000Z" title="发表于 2026-01-04 09:18:32">2026-01-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By JJxXxLL</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer src="/js/cursor.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/编程训练/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 训练营记录 (16)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/文献学习/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 读文献 (23)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://blog.jxlll.cc/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-gpxxq7_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/项目/">项目</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">这是代码练习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-we7djr_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/文献学习/">文献学习</a><span class="categoryBar-list-count">23</span><span class="categoryBar-list-descr">这是文献学习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-o5revm_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/数据集/">数据集</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">这里还没想好</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/可视化/">可视化</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/编程训练/">编程训练</a><span class="categoryBar-list-count">16</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/考试复习/">考试复习</a><span class="categoryBar-list-count">7</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Spring/">Spring</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/JAVA/">JAVA</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Redis/">Redis</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/小型支付商城系统/">小型支付商城系统</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/组件/">组件</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Database/">Database</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/拼团/">拼团</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/报错/">报错</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/学习/">学习</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = '0ad15caa1a204ee89c6ad151329a6b50';
+  var qweather_api_host = 'nj6r6pm8pt.re.qweatherapi.com';
+  var ip_api_key = 'Kq1pRjB3WyDja7rhKcWV9f5QU8';
+  var gaud_map_key = 'ee76386f15646eecea6cffc073dfbff6';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '113.34532,23.15624';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/08/26/GraphCL/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-08-26</span><a class="blog-slider__title" href="2024/08/26/GraphCL/" alt="">Graph Contrastive Learning with Augmentations</a><div class="blog-slider__text">图学习</div><a class="blog-slider__button" href="2024/08/26/GraphCL/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/10/18/PCGNN/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-18</span><a class="blog-slider__title" href="2024/10/18/PCGNN/" alt="">PC-GNN</a><div class="blog-slider__text">欺诈检测</div><a class="blog-slider__button" href="2024/10/18/PCGNN/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="/js/swiper.min.js"></script><script defer data-pjax src="/js/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__pulse');
+    arr[i].setAttribute('data-wow-duration', '700ms');
+    arr[i].setAttribute('data-wow-delay', '500ms');
+    arr[i].setAttribute('data-wow-offset', '50');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
