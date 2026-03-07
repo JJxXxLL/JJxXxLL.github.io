@@ -1,0 +1,1509 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Big Data Review | JJXxXLL</title><meta name="author" content="JJxXxLL"><meta name="copyright" content="JJxXxLL"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="复习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Big Data Review">
+<meta property="og:url" content="http://blog.jxlll.cc/2025/06/02/BigData/index.html">
+<meta property="og:site_name" content="JJXxXLL">
+<meta property="og:description" content="复习">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.jxlll.cc/image/1.jpg">
+<meta property="article:published_time" content="2025-06-02T02:12:22.000Z">
+<meta property="article:modified_time" content="2026-03-07T01:05:12.973Z">
+<meta property="article:author" content="JJxXxLL">
+<meta property="article:tag" content="review">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.jxlll.cc/image/1.jpg"><link rel="shortcut icon" href="/image/blog.png"><link rel="canonical" href="http://blog.jxlll.cc/2025/06/02/BigData/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: JJxXxLL","link":"链接: ","source":"来源: JJXxXLL","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Big Data Review',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-03-07 09:05:12'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="/css/hexo-butterfly-categories-card.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/w1.png')"><nav id="nav"><span id="blog-info"><a href="/" title="JJXxXLL"><span class="site-name">JJXxXLL</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Big Data Review</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2026-03-07T01:05:12.973Z" title="更新于 2026-03-07 09:05:12">2026-03-07</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">7.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>27分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Big Data Review"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Chapter-1-Introduction-to-Big-Data-Mining"><a href="#Chapter-1-Introduction-to-Big-Data-Mining" class="headerlink" title="Chapter 1 - Introduction to Big Data Mining"></a>Chapter 1 - Introduction to Big Data Mining</h1><h3 id="1-What’s-Big-Data"><a href="#1-What’s-Big-Data" class="headerlink" title="1. What’s Big Data?"></a>1. What’s Big Data?</h3><p><strong>大数据</strong>是指那些<strong>规模巨大、增长迅速、类型多样</strong>，而传统数据处理工具难以有效处理的数据集合。<br>    <strong>Big Data</strong> refers to datasets that are <strong>too large, fast, or diverse</strong> for traditional data-processing software to manage efficiently.</p>
+<hr>
+<h3 id="2-The-4Vs-of-Big-Data（四个特性）"><a href="#2-The-4Vs-of-Big-Data（四个特性）" class="headerlink" title="2. The 4Vs of Big Data（四个特性）"></a>2. The 4Vs of Big Data（四个特性）</h3><ul>
+<li><strong>Volume（体量）</strong>：数据规模巨大（如 Walmart 每小时 2.5PB）；</li>
+<li><strong>Velocity（速度）</strong>：数据产生速度快（如传感器、社交平台）；</li>
+<li><strong>Variety（多样性）</strong>：数据形式丰富（文本、图像、音频、视频等）；</li>
+<li><strong>Veracity（真实性）</strong>：数据存在不确定性、缺失、噪声问题。</li>
+</ul>
+<hr>
+<h3 id="3-What’s-Data-Mining"><a href="#3-What’s-Data-Mining" class="headerlink" title="3. What’s Data Mining?"></a>3. What’s Data Mining?</h3><p><strong>数据挖掘</strong>是从<strong>大量数据中自动发现有价值的模式和知识</strong>的过程。<br>    <strong>Data mining</strong> is the process of <strong>automatically discovering useful patterns and knowledge</strong> from large volumes of data.</p>
+<hr>
+<h3 id="4-Main-Tasks-of-Data-Mining"><a href="#4-Main-Tasks-of-Data-Mining" class="headerlink" title="4. Main Tasks of Data Mining"></a>4. Main Tasks of Data Mining</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>任务</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Association Rule Mining</strong></td>
+<td>发现项之间的共现模式</td>
+<td>购物篮分析：买牛奶的人常买面包</td>
+</tr>
+<tr>
+<td><strong>Clustering</strong></td>
+<td>将数据无监督地分组</td>
+<td>用户行为聚类、图像聚类</td>
+</tr>
+<tr>
+<td><strong>Classification / Prediction</strong></td>
+<td>用已有标签数据训练模型</td>
+<td>AD 点击预测、客户流失预测</td>
+</tr>
+<tr>
+<td><strong>Outlier Detection</strong></td>
+<td>发现异常数据</td>
+<td>信用卡欺诈检测、NBA球员分析（异常得分）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="Chapter-2-Subspace-Learning"><a href="#Chapter-2-Subspace-Learning" class="headerlink" title="Chapter 2 - Subspace Learning"></a>Chapter 2 - Subspace Learning</h1><p>🌐 主题：应对高维问题 → 降维与子空间聚类</p>
+<hr>
+<h3 id="一、Curse-of-Dimensionality（维度灾难）"><a href="#一、Curse-of-Dimensionality（维度灾难）" class="headerlink" title="一、Curse of Dimensionality（维度灾难）"></a>一、Curse of Dimensionality（维度灾难）</h3><blockquote>
+<p>当数据维度（特征数）增加时，原有在低维空间中有效的方法会失效或性能急剧下降的现象。</p>
+</blockquote>
+<ul>
+<li>数据量需求随维度呈指数增长；</li>
+<li>高维数据中，大多数数据点之间距离相近；</li>
+<li>分类器和聚类效果变差。</li>
+</ul>
+<hr>
+<h3 id="二、Dimensionality-Reduction（降维）"><a href="#二、Dimensionality-Reduction（降维）" class="headerlink" title="二、Dimensionality Reduction（降维）"></a>二、Dimensionality Reduction（降维）</h3><p>将数据从高维空间映射到一个低维子空间，同时尽可能保留其结构/信息。</p>
+<p>分为 <strong>线性方法</strong> 与 <strong>非线性方法</strong>：</p>
+<hr>
+<h3 id="①-Linear-Methods"><a href="#①-Linear-Methods" class="headerlink" title="① Linear Methods"></a>① Linear Methods</h3><h4 id="📌-Principal-component-analysis-PCA（主成分分析）"><a href="#📌-Principal-component-analysis-PCA（主成分分析）" class="headerlink" title="📌 Principal component analysis    PCA（主成分分析）"></a>📌 Principal component analysis    PCA（主成分分析）</h4><ul>
+<li>提取方差最大的方向作为主成分；</li>
+<li>求协方差矩阵的特征向量。</li>
+</ul>
+<p>数学目标：将高维数据投影到低维子空间，<strong>尽可能保留原始数据的方差（信息量）</strong>。</p>
+<ul>
+<li>最大化 $w^T S w$，其中 $S$ 为协方差矩阵。</li>
+</ul>
+<h4 id="📌-Multidimensional-scaling-MDS（多维缩放）"><a href="#📌-Multidimensional-scaling-MDS（多维缩放）" class="headerlink" title="📌 Multidimensional scaling           MDS（多维缩放）"></a>📌 Multidimensional scaling           MDS（多维缩放）</h4><ul>
+<li>目标是尽可能保留原始空间中 <strong>pairwise 距离</strong>；</li>
+<li>对称矩阵变换 → 特征值分解。</li>
+<li>MDS 是一种从<strong>距离矩阵</strong>中恢复坐标的方法，其目标是在低维空间中尽可能保留原始空间的距离关系，适用于降维与可视化。</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>PCA</th>
+<th>MDS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>输入</td>
+<td>原始特征矩阵 $X$</td>
+<td>样本间距离矩阵 $D$</td>
+</tr>
+<tr>
+<td>保留信息</td>
+<td>最大化投影后的方差</td>
+<td>尽可能保留成对距离</td>
+</tr>
+<tr>
+<td>本质</td>
+<td>特征值分解协方差矩阵</td>
+<td>特征值分解双中心化距离矩阵</td>
+</tr>
+<tr>
+<td>是否支持非欧式距离</td>
+<td>否</td>
+<td>是（可扩展到任意距离）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="②-Nonlinear-Methods"><a href="#②-Nonlinear-Methods" class="headerlink" title="② Nonlinear Methods"></a>② Nonlinear Methods</h3><p>适合复杂的流形结构，不满足线性假设。</p>
+<h4 id="包括："><a href="#包括：" class="headerlink" title="包括："></a>包括：</h4><ul>
+<li><p><strong>LLE（Locally Linear Embedding）</strong>：保持局部线性结构；</p>
+<ul>
+<li>LLE 是一种保留<strong>局部线性结构</strong>的非线性降维方法，通过保持每个点与邻居之间的重构权重，实现对高维流形的低维展开。</li>
+<li><p>对于每个数据点：</p>
+<ul>
+<li>在高维空间中，找到其最近邻；</li>
+<li>学习这些邻居对它的线性重构权重；</li>
+<li><p>然后在低维空间中找到坐标，使这些<strong>重构权重仍然能线性重建该点</strong>。</p>
+<p>也就是说：</p>
+<blockquote>
+<p><strong>保持“谁由谁重构出来”的关系结构不变。</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Laplacian Eigenmap （LEM）</strong>：LEM 是一种基于图的降维方法，通过构造<strong>邻接图</strong>并最小化<strong>图拉普拉斯能量</strong>，寻找保留局部结构的低维嵌入。</p>
+<ul>
+<li><p><strong>Laplacian Eigenmaps（LEM）</strong> 是一种基于图的<strong>流形学习</strong>方法，目标是：将高维数据降维到低维空间，同时保持原始数据点之间的<strong>局部邻接关系</strong>（图结构）。</p>
+<p>  它本质上是：利用“图拉普拉斯矩阵”的特征值分解，把样本映射到低维空间。</p>
+</li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>类型</th>
+<th>保留结构</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>LLE</td>
+<td>非线性</td>
+<td>局部线性结构</td>
+<td>保局部重构关系</td>
+<td>对噪声敏感</td>
+</tr>
+<tr>
+<td>LEM</td>
+<td>非线性</td>
+<td>局部邻接图结构</td>
+<td>图结构直观</td>
+<td>无法处理新样本（不可扩展）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><p><strong>Isomap</strong>：ISOMAP 用<strong>测地距离（沿着流形表面最短路径）</strong>代替欧几里得距离。</p>
+<ul>
+<li><strong>经典 MDS 的非线性扩展</strong>。</li>
+<li><strong>ISOMAP</strong> 是一种将测地距离作为相似度基础的非线性降维算法，能够在保持数据流形全局结构的同时将数据有效嵌入低维空间。</li>
+</ul>
+</li>
+<li><p><strong>SNE（Stochastic Neighbor Embedding）</strong>：</p>
+<ul>
+<li><p>SNE 是一种<strong>概率模型驱动的降维算法</strong>，它的目标是：</p>
+<p>  在低维空间中 <strong>保留样本之间的邻近概率关系</strong>。</p>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="三、Subspace-Clustering（子空间聚类）"><a href="#三、Subspace-Clustering（子空间聚类）" class="headerlink" title="三、Subspace Clustering（子空间聚类）"></a>三、Subspace Clustering（子空间聚类）</h3><p>高维数据中，<strong>不同簇可能存在于不同的子空间中</strong>。</p>
+<hr>
+<h3 id="①-Sparse-Subspace-Clustering-SSC"><a href="#①-Sparse-Subspace-Clustering-SSC" class="headerlink" title="① Sparse Subspace Clustering (SSC)"></a>① Sparse Subspace Clustering (SSC)</h3><h4 id="思路："><a href="#思路：" class="headerlink" title="思路："></a>思路：</h4><ul>
+<li>利用<strong>稀疏表示</strong>表达点之间的从属关系；</li>
+<li>每个样本用其他样本的线性组合表达，但只用<strong>同一子空间的点</strong>；</li>
+</ul>
+<p>数学模型：</p>
+<blockquote>
+<p>$\min |Z|_1 \quad \text{s.t. } X = XZ, \ \text{diag}(Z) = 0$</p>
+</blockquote>
+<p>解释：</p>
+<ul>
+<li>$X$ 是原始数据矩阵，$Z$ 是稀疏系数矩阵；</li>
+<li>求出 $Z$ 后，将其作为邻接图输入谱聚类方法。</li>
+</ul>
+<hr>
+<h4 id="②-Low-Rank-Representation-LRR"><a href="#②-Low-Rank-Representation-LRR" class="headerlink" title="② Low-Rank Representation (LRR)"></a>② Low-Rank Representation (LRR)</h4><blockquote>
+<p>利用核范数约束使得 $Z$ 尽可能低秩，适用于存在全局结构的数据。</p>
+</blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>对比维度</th>
+<th style="text-align:center">SSC（稀疏子空间聚类）</th>
+<th style="text-align:center">LRR（低秩表示）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>基本思想</strong></td>
+<td style="text-align:center">每个点由同子空间内的<strong>少数点稀疏重构</strong></td>
+<td style="text-align:center">所有数据整体表达为一个<strong>低秩表示</strong></td>
+</tr>
+<tr>
+<td><strong>表达模型</strong></td>
+<td style="text-align:center">$X = XZ, \quad \min \</td>
+<td style="text-align:center">Z\</td>
+<td>_1$</td>
+<td>$X = XZ, \quad \min \</td>
+<td>Z\</td>
+<td>_*$</td>
+</tr>
+<tr>
+<td><strong>优化目标</strong></td>
+<td style="text-align:center">稀疏性（$\ell_1$范数）</td>
+<td style="text-align:center">低秩性（核范数）</td>
+</tr>
+<tr>
+<td><strong>矩阵特性</strong></td>
+<td style="text-align:center">稀疏，具有 block-diagonal 结构</td>
+<td style="text-align:center">低秩，具有全局 block 结构</td>
+</tr>
+<tr>
+<td><strong>表示方式</strong></td>
+<td style="text-align:center"><strong>局部</strong>：每个样本独立表达</td>
+<td style="text-align:center"><strong>全局</strong>：整体联合优化</td>
+</tr>
+<tr>
+<td><strong>抗噪性能</strong></td>
+<td style="text-align:center">抗噪能力较弱，需扩展支持噪声</td>
+<td style="text-align:center"><strong>天然支持噪声建模</strong>（LRR+E）</td>
+</tr>
+<tr>
+<td><strong>适合情况</strong></td>
+<td style="text-align:center">数据干净、子空间独立</td>
+<td style="text-align:center">数据含噪、子空间可能交叉</td>
+</tr>
+<tr>
+<td><strong>理论保证</strong></td>
+<td style="text-align:center">若子空间独立、足够稀疏，则 Z 为 block-diagonal</td>
+<td style="text-align:center">对任意噪声类型，都能恢复子空间结构（有鲁棒性理论）</td>
+</tr>
+<tr>
+<td><strong>计算复杂度</strong></td>
+<td style="text-align:center">多次解 Lasso，复杂度高但可并行</td>
+<td style="text-align:center">解核范数优化问题，复杂度大但有闭式解</td>
+</tr>
+<tr>
+<td><strong>输出相似图</strong></td>
+<td style="text-align:center">( W =</td>
+<td style="text-align:center">Z</td>
+</tr>
+<tr>
+<td><strong>谱聚类</strong></td>
+<td style="text-align:center">✔️（构图后使用）</td>
+<td style="text-align:center">✔️（同样构图后使用）</td>
+</tr>
+<tr>
+<td><strong>可扩展性</strong></td>
+<td style="text-align:center">更适合小规模数据</td>
+<td style="text-align:center">扩展性弱，大规模数据需优化</td>
+</tr>
+<tr>
+<td><strong>代表算法</strong></td>
+<td style="text-align:center">Elhamifar &amp; Vidal, CVPR 2009</td>
+<td style="text-align:center">Liu et al., ICML 2010</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>SSC 中的 $Z$ 是列稀疏的，自然构成的图是“<strong>局部连通图</strong>”；</p>
+<p>LRR 的 $Z$ 是低秩稠密的，构成的图是“<strong>块对角稠密图</strong>”；</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>是否线性</th>
+<th>保留结构</th>
+<th>核心思想</th>
+<th>是否监督</th>
+<th>应用类型</th>
+<th>适用情况</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PCA</strong></td>
+<td>✅ 线性</td>
+<td>全局方差结构</td>
+<td>通过投影到最大方差方向实现降维</td>
+<td>❌ 无监督</td>
+<td>降维</td>
+<td>特征间线性关系，数据协方差矩阵非奇异时效果好</td>
+</tr>
+<tr>
+<td><strong>MDS</strong></td>
+<td>✅ 线性（经典MDS）或非线性</td>
+<td>欧氏距离</td>
+<td>保持样本间的<strong>成对距离</strong>关系</td>
+<td>❌ 无监督</td>
+<td>降维，可视化</td>
+<td>适用于距离信息已知或非结构化数据</td>
+</tr>
+<tr>
+<td><strong>LLE</strong></td>
+<td>❌ 非线性</td>
+<td>局部线性结构</td>
+<td>每个点用邻居线性重构，保持该结构进行降维</td>
+<td>❌ 无监督</td>
+<td>非线性降维</td>
+<td>数据位于非线性流形上，局部结构信息明确</td>
+</tr>
+<tr>
+<td><strong>LEM</strong></td>
+<td>❌ 非线性</td>
+<td>局部邻接结构</td>
+<td>构造图，利用拉普拉斯矩阵做谱嵌入（Laplacian Eigenmap）</td>
+<td>❌ 无监督</td>
+<td>非线性降维</td>
+<td>保留局部几何结构，适用于图结构或流形结构数据</td>
+</tr>
+<tr>
+<td><strong>Isomap</strong></td>
+<td>❌ 非线性</td>
+<td>全局几何结构</td>
+<td>用最短路径近似流形距离，再用MDS保持这些距离</td>
+<td>❌ 无监督</td>
+<td>流形学习、非线性降维</td>
+<td>流形结构明显，需保留全局关系</td>
+</tr>
+<tr>
+<td><strong>SNE</strong></td>
+<td>❌ 非线性</td>
+<td>局部概率结构</td>
+<td>保持邻近点的概率分布，通过KL散度优化嵌入</td>
+<td>❌ 无监督</td>
+<td>可视化（如t-SNE）</td>
+<td>高维数据可视化，重点保留邻近关系，常用于图像、文本</td>
+</tr>
+<tr>
+<td><strong>SSC</strong></td>
+<td>❌ 非线性</td>
+<td>子空间结构</td>
+<td>用稀疏线性组合表达样本，构建相似性图，再聚类</td>
+<td>❌ 无监督</td>
+<td>子空间聚类</td>
+<td>多个低维子空间混合，高维稀疏性显著</td>
+</tr>
+<tr>
+<td><strong>LRR</strong></td>
+<td>❌ 非线性</td>
+<td>子空间结构</td>
+<td>求解全局低秩表示Z，适合多个子空间块结构</td>
+<td>❌ 无监督</td>
+<td>子空间聚类</td>
+<td>存在多个独立子空间，噪声干扰或数据缺失较多时有效</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h1 id="✅-Chapter-3-Hashing（哈希技术）详解"><a href="#✅-Chapter-3-Hashing（哈希技术）详解" class="headerlink" title="✅ Chapter 3 - Hashing（哈希技术）详解"></a>✅ Chapter 3 - Hashing（哈希技术）详解</h1><hr>
+<h2 id="📌-主题核心："><a href="#📌-主题核心：" class="headerlink" title="📌 主题核心："></a>📌 主题核心：</h2><p>在<strong>大规模高维数据中快速查找相似项</strong>，使用哈希压缩、加速搜索过程，替代传统“暴力”比对。</p>
+<hr>
+<h3 id="✅-1-Why-动机与背景"><a href="#✅-1-Why-动机与背景" class="headerlink" title="✅ 1. Why? 动机与背景"></a>✅ 1. Why? 动机与背景</h3><p><strong>EN:</strong><br> In large-scale data, similarity computation is expensive. Hashing techniques allow us to compress high-dimensional data and approximate similarity using compact hash values.</p>
+<p><strong>CN：</strong><br> 在大规模数据中，计算相似度（如 Jaccard、余弦、欧氏距离）开销很大。哈希技术能将高维数据压缩，通过短小的哈希值来近似相似度，从而显著加速查询过程。</p>
+<hr>
+<h3 id="✅-2-k-shingles（或-k-grams）"><a href="#✅-2-k-shingles（或-k-grams）" class="headerlink" title="✅ 2. k-shingles（或 k-grams）"></a>✅ 2. k-shingles（或 k-grams）</h3><p><strong>EN:</strong><br> Convert documents (or strings) into sets of contiguous substrings of length k, called <strong>k-shingles</strong>.<br> These sets can then be compared using set-based similarity measures like Jaccard.</p>
+<p><strong>CN：</strong><br> 将文档或字符串划分为长度为 $k$ 的连续子串集合，称为 <strong>k-shingles（k-gram 子串）</strong>。<br> 转换为集合后，我们可以使用集合相似度（如 Jaccard）来比较它们。</p>
+<p>字符串 <code>abcde</code> 的 2-shingles 是：</p>
+<p>${\texttt{ab}, \texttt{bc}, \texttt{cd}, \texttt{de}}$</p>
+<hr>
+<h3 id="✅-3-MinHash（最小哈希）：Jaccard-相似度近似计算"><a href="#✅-3-MinHash（最小哈希）：Jaccard-相似度近似计算" class="headerlink" title="✅ 3. MinHash（最小哈希）：Jaccard 相似度近似计算"></a>✅ 3. MinHash（最小哈希）：Jaccard 相似度近似计算</h3><h2 id="①-Definition（定义）"><a href="#①-Definition（定义）" class="headerlink" title="① Definition（定义）"></a>① <strong>Definition（定义）</strong></h2><h3 id="📌-EN"><a href="#📌-EN" class="headerlink" title="📌 EN:"></a>📌 EN:</h3><p><strong>MinHash</strong> is a probabilistic hashing technique to estimate <strong>Jaccard similarity</strong> between sets.<br> It works by simulating random permutations of set elements and taking the <strong>minimum hashed index</strong> per set under each permutation.</p>
+<h3 id="📌-中文："><a href="#📌-中文：" class="headerlink" title="📌 中文："></a>📌 中文：</h3><p><strong>MinHash（最小哈希）</strong> 是一种用于近似计算两个集合之间 <strong>Jaccard 相似度</strong> 的概率型哈希方法。<br> 它的核心思想是：模拟集合元素的随机排列，在每次排列中记录每个集合中<strong>第一个出现的元素的哈希值</strong>。</p>
+<hr>
+<h2 id="②-Signature-Matrix（签名矩阵）"><a href="#②-Signature-Matrix（签名矩阵）" class="headerlink" title="② Signature Matrix（签名矩阵）"></a>② <strong>Signature Matrix（签名矩阵）</strong></h2><h3 id="📌-EN-1"><a href="#📌-EN-1" class="headerlink" title="📌 EN:"></a>📌 EN:</h3><p>The <strong>signature matrix</strong> compresses a binary input matrix into a smaller integer matrix.</p>
+<ul>
+<li><strong>Rows</strong>: each hash function (or permutation);</li>
+<li><strong>Columns</strong>: each document or set;</li>
+<li><strong>Value</strong>: the index (row) of the first 1 under that hash function.</li>
+</ul>
+<p>This matrix serves as a compact summary of the original data.</p>
+<h3 id="📌-中文：-1"><a href="#📌-中文：-1" class="headerlink" title="📌 中文："></a>📌 中文：</h3><p><strong>签名矩阵</strong> 是将原始 0-1 输入矩阵压缩成较小的整数矩阵。</p>
+<ul>
+<li>每一行对应一个哈希函数（或排列）；</li>
+<li>每一列对应一个文档（或集合）；</li>
+<li>每个值表示：在该哈希函数下，第一个在该文档中出现的特征（即为 1 的行）的哈希值。</li>
+</ul>
+<p>它是文档的“压缩表示”，用于后续快速估算相似度。</p>
+<hr>
+<h2 id="③-Properties-of-Signature-Matrix-Approximation（性质：近似性）"><a href="#③-Properties-of-Signature-Matrix-Approximation（性质：近似性）" class="headerlink" title="③ Properties of Signature Matrix: Approximation（性质：近似性）"></a>③ <strong>Properties of Signature Matrix: Approximation（性质：近似性）</strong></h2><h3 id="📌-EN-2"><a href="#📌-EN-2" class="headerlink" title="📌 EN:"></a>📌 EN:</h3><p>The most <strong>surprising and powerful property</strong> of MinHash is:</p>
+<blockquote>
+<p>The <strong>probability</strong> that two sets have the same MinHash value under a random hash function equals their <strong>Jaccard similarity</strong>.</p>
+</blockquote>
+<script type="math/tex; mode=display">
+\Pr[h(C_1) = h(C_2)] = \frac{|C_1 \cap C_2|}{|C_1 \cup C_2|} = \text{Jaccard}(C_1, C_2)</script><p>Therefore, the fraction of equal values between two columns in the <strong>signature matrix</strong> is an unbiased estimator of their Jaccard similarity.</p>
+<h3 id="📌-中文：-2"><a href="#📌-中文：-2" class="headerlink" title="📌 中文："></a>📌 中文：</h3><p>MinHash 最令人惊讶且有用的性质是：</p>
+<blockquote>
+<p>两个集合在某个哈希函数下的 MinHash 值相等的概率，等于它们的 <strong>Jaccard 相似度</strong>。</p>
+</blockquote>
+<script type="math/tex; mode=display">
+\Pr[h(C_1) = h(C_2)] = \text{Jaccard}(C_1, C_2)</script><p>所以，我们只需要比较签名矩阵中两个列向量的相同值所占的比例，就可以<strong>近似地估计</strong>它们之间的 Jaccard 相似度。</p>
+<p><strong>解释 MinHash 是如何近似计算两个集合的 Jaccard 相似度的。</strong></p>
+<p>✅ <strong>简洁英文答案 Simple English Answer：</strong><br> MinHash uses hash functions to find the first row with 1 for each set. If two sets get the same value for a hash, they are similar in that hash. The more matches they have, the higher their estimated Jaccard similarity.</p>
+<p>✅ <strong>中文解释：</strong><br> MinHash 用哈希函数找出每列第一个为1的行。如果两个集合在某个哈希函数下取值相同，就说明它们在这一部分相似。匹配次数越多，估算出的 Jaccard 相似度越高。</p>
+<hr>
+<h2 id="✅-总结-Recap"><a href="#✅-总结-Recap" class="headerlink" title="✅ 总结 Recap"></a>✅ 总结 Recap</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>英文摘要</th>
+<th>中文摘要</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Definition</td>
+<td>MinHash maps sets to compressed signatures for fast similarity estimation.</td>
+<td>MinHash 将集合压缩为签名，用于快速估计相似度。</td>
+</tr>
+<tr>
+<td>Signature Matrix</td>
+<td>Stores the min hash value for each doc and hash function.</td>
+<td>储存每个文档在每个哈希函数下的最小值，形成签名矩阵。</td>
+</tr>
+<tr>
+<td>Property</td>
+<td>Signature similarity ≈ Jaccard similarity.</td>
+<td>签名相似度 ≈ Jaccard 相似度（概率等价）。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="✅-4-LSH（Locality-Sensitive-Hashing）：加速相似查找"><a href="#✅-4-LSH（Locality-Sensitive-Hashing）：加速相似查找" class="headerlink" title="✅ 4. LSH（Locality Sensitive Hashing）：加速相似查找"></a>✅ 4. LSH（Locality Sensitive Hashing）：加速相似查找</h3><hr>
+<h2 id="🎯-Objective（目标）"><a href="#🎯-Objective（目标）" class="headerlink" title="🎯 Objective（目标）"></a>🎯 Objective（目标）</h2><h3 id="📌-EN-3"><a href="#📌-EN-3" class="headerlink" title="📌 EN:"></a>📌 EN:</h3><p>The <strong>goal</strong> of LSH is to <strong>quickly find similar items</strong> without comparing all item pairs.<br> It achieves this by ensuring that:</p>
+<ul>
+<li>Similar items <strong>hash to the same bucket with high probability</strong>;</li>
+<li>Dissimilar items <strong>hash to different buckets with high probability</strong>.</li>
+</ul>
+<h3 id="📌-中文：-3"><a href="#📌-中文：-3" class="headerlink" title="📌 中文："></a>📌 中文：</h3><p>LSH 的<strong>目标</strong>是：<strong>在不进行全对比的前提下，高效查找相似项</strong>。<br> 具体来说：</p>
+<ul>
+<li>如果两个数据点相似，它们被哈希到同一个桶的<strong>概率很高</strong>；</li>
+<li>如果两个数据点不相似，它们被哈希到同一个桶的<strong>概率很低</strong>。</li>
+</ul>
+<p><strong>简要说明 LSH 如何通过 “band” 和 “row” 的概念找出相似对。</strong></p>
+<p>✅ <strong>简洁英文答案 Simple English Answer：</strong><br> LSH splits each signature into bands (groups of rows). It hashes each band. If two columns match in at least one band, they are candidate pairs.</p>
+<p>✅ <strong>中文解释：</strong><br> LSH 把签名分成多个 band（每个包含几行），每个 band 单独哈希。只要两个列在某个 band 中哈希值相同，就认为它们是相似候选对。</p>
+<hr>
+<h2 id="🧠-Trick（技巧）"><a href="#🧠-Trick（技巧）" class="headerlink" title="🧠 Trick（技巧）"></a>🧠 Trick（技巧）</h2><h3 id="📌-EN-4"><a href="#📌-EN-4" class="headerlink" title="📌 EN:"></a>📌 EN:</h3><p>LSH uses the <strong>“banding technique”</strong> to amplify differences between similar and dissimilar items.<br> The trick is to:</p>
+<ol>
+<li><strong>Split signature vectors</strong> into <code>b</code> bands of <code>r</code> rows;</li>
+<li>Hash each band into buckets;</li>
+<li>If <strong>any band</strong> is equal between two columns, consider them a <strong>candidate pair</strong>.</li>
+</ol>
+<p>This creates a sharp S-shaped threshold for similarity matching.</p>
+<h3 id="📌-中文：-4"><a href="#📌-中文：-4" class="headerlink" title="📌 中文："></a>📌 中文：</h3><p>LSH 使用一个重要的技巧叫 <strong>“band 技术”</strong>，用来放大相似项和不相似项之间的差异。<br> 技巧如下：</p>
+<ol>
+<li>将每个签名向量（如 MinHash）分成 $b$ 个 band，每个 band 有 $r$ 行；</li>
+<li>对每个 band 单独进行哈希，将其映射到桶中；</li>
+<li>如果两个文档<strong>在某一个 band 中签名完全一致</strong>，就认为它们是<strong>候选相似对</strong>。</li>
+</ol>
+<p>这种方法会产生一个 <strong>S 型概率曲线</strong>：</p>
+<ul>
+<li>高于某个相似度阈值的项很容易被命中；</li>
+<li>低于阈值的项几乎不会碰撞。</li>
+</ul>
+<hr>
+<h2 id="📊-数学解释"><a href="#📊-数学解释" class="headerlink" title="📊 数学解释"></a>📊 数学解释</h2><p>设两个文档的 Jaccard 相似度为 $s$，则它们在一个 band 中签名完全相同的概率为：</p>
+<script type="math/tex; mode=display">
+s^r</script><p>在所有 $b$ 个 band 中<strong>至少一个 band 相同</strong>的概率 是：</p>
+<script type="math/tex; mode=display">
+1 - (1 - s^r)^b</script><p>这个函数是一个 <strong>S 型曲线</strong>，用于<strong>控制查全率与查准率的平衡</strong>。</p>
+<hr>
+<h2 id="✅-小结-Recap"><a href="#✅-小结-Recap" class="headerlink" title="✅ 小结 Recap"></a>✅ 小结 Recap</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>内容</th>
+<th>英文</th>
+<th>中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Objective</td>
+<td>Find similar pairs efficiently using hash buckets</td>
+<td>用哈希桶高效找出相似项</td>
+</tr>
+<tr>
+<td>Trick</td>
+<td>Banding: split signature into bands and hash each</td>
+<td>Band 技术：分段+哈希，对比部分而非全体</td>
+</tr>
+<tr>
+<td>数学</td>
+<td>Probability = $1 - (1 - s^r)^b$</td>
+<td>遇到相似对的概率呈 S 型曲线</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="✅-5-Find-Similar-Item"><a href="#✅-5-Find-Similar-Item" class="headerlink" title="✅ 5. Find Similar Item"></a>✅ 5. Find Similar Item</h3><p>结合上面 MinHash + LSH，你可以：</p>
+<ul>
+<li>在 O(1) 时间内找到与查询项<strong>落入同一桶的候选集</strong>；</li>
+<li>再对这些候选集做准确比较，找最相似的 top-k；</li>
+<li>复杂度从线性降低为<strong>亚线性（sub-linear）</strong>，适合亿级数据场景。</li>
+</ul>
+<hr>
+<h3 id="✅-6-Learn-to-Hash（学习哈希）"><a href="#✅-6-Learn-to-Hash（学习哈希）" class="headerlink" title="✅ 6. Learn to Hash（学习哈希）"></a>✅ 6. Learn to Hash（学习哈希）</h3><ul>
+<li><h2 id="🎯-What-is-“Learn-to-Hash”"><a href="#🎯-What-is-“Learn-to-Hash”" class="headerlink" title="🎯 What is “Learn to Hash”?"></a>🎯 What is “Learn to Hash”?</h2><h3 id="📌-EN-5"><a href="#📌-EN-5" class="headerlink" title="📌 EN:"></a>📌 EN:</h3><p>  Instead of using handcrafted hash functions like MinHash or LSH, we can <strong>learn hash functions from data</strong>.<br>   These data-driven methods are called <strong>learned hashing</strong> or <strong>data-dependent hashing</strong>.</p>
+<h3 id="📌-中文：-5"><a href="#📌-中文：-5" class="headerlink" title="📌 中文："></a>📌 中文：</h3><p>  与手工设计的哈希函数（如 MinHash、LSH）不同，<strong>学习型哈希</strong>是指<strong>从数据中自动学习哈希函数</strong>，让哈希结果更加符合数据分布规律，也更适用于复杂结构（如图像、文本等）。</p>
+<hr>
+<h2 id="📌-方法一：Random-Projection-随机投影"><a href="#📌-方法一：Random-Projection-随机投影" class="headerlink" title="📌 方法一：Random Projection 随机投影"></a>📌 方法一：<strong>Random Projection 随机投影</strong></h2><h3 id="EN"><a href="#EN" class="headerlink" title="EN:"></a>EN:</h3><ul>
+<li>Project high-dimensional vectors onto random hyperplanes;</li>
+<li><p>Use the <strong>sign</strong> of the projection to generate binary hash codes.</p>
+<p>For example, given a vector $x$ and random vector $w$ from $\mathcal{N}(0, I)$,<br>the hash is defined as:</p>
+<script type="math/tex; mode=display">
+h(x) = \text{sign}(w^\top x)</script><h3 id="中文："><a href="#中文：" class="headerlink" title="中文："></a>中文：</h3></li>
+<li><p>将高维向量随机投影到某个超平面；</p>
+</li>
+<li><p>根据投影值的正负号来生成哈希码（0 或 1）；</p>
+<p>例如，给定向量 $x$ 和随机权重 $w$，哈希函数为：</p>
+<script type="math/tex; mode=display">
+h(x) = \text{sign}(w^\top x)</script><p>这是<strong>欧式空间中最常用的 LSH 方法之一</strong>，也可用于学习初始化。</p>
+</li>
+</ul>
+<hr>
+<h2 id="📌-方法二：PCA-Hashing-主成分哈希"><a href="#📌-方法二：PCA-Hashing-主成分哈希" class="headerlink" title="📌 方法二：PCA Hashing 主成分哈希"></a>📌 方法二：<strong>PCA Hashing 主成分哈希</strong></h2><h3 id="EN-1"><a href="#EN-1" class="headerlink" title="EN:"></a>EN:</h3><ul>
+<li>Use <strong>PCA (Principal Component Analysis)</strong> to find top directions of variance;</li>
+<li><p>Project data onto those directions and threshold the result to get hash bits.</p>
+<h3 id="中文：-1"><a href="#中文：-1" class="headerlink" title="中文："></a>中文：</h3></li>
+<li><p>通过 <strong>PCA</strong> 选择数据最主要的变化方向（主成分）；</p>
+</li>
+<li><p>将样本在这些方向上的投影值做二值化处理，得到哈希码。</p>
+<p>这种方法相当于对数据先“白化”，然后对最重要的维度进行哈希，<strong>更符合数据本身的结构分布</strong>。</p>
+</li>
+</ul>
+<hr>
+<h2 id="📌-方法三：Spectral-Hashing-谱哈希"><a href="#📌-方法三：Spectral-Hashing-谱哈希" class="headerlink" title="📌 方法三：Spectral Hashing 谱哈希"></a>📌 方法三：<strong>Spectral Hashing 谱哈希</strong></h2><h3 id="EN-2"><a href="#EN-2" class="headerlink" title="EN:"></a>EN:</h3><ul>
+<li>Construct a <strong>graph</strong> based on data similarity；</li>
+<li>Use <strong>Laplacian Eigenmaps</strong> to compute embedding；</li>
+<li><p>Binarize the embedding coordinates to get hash bits.</p>
+<h3 id="中文：-2"><a href="#中文：-2" class="headerlink" title="中文："></a>中文：</h3></li>
+<li><p>构建基于样本相似度的图结构；</p>
+</li>
+<li>用<strong>图拉普拉斯矩阵的特征向量</strong>（如 Laplacian Eigenmaps）嵌入到低维空间；</li>
+<li><p>然后将嵌入坐标进行二值化生成哈希码。</p>
+<p>这是一种<strong>保留样本局部结构</strong>的学习哈希方法，常用于图像、文本语义嵌入。</p>
+</li>
+</ul>
+<hr>
+<h2 id="✅-总结对比表"><a href="#✅-总结对比表" class="headerlink" title="✅ 总结对比表"></a>✅ 总结对比表</h2><p>  | 方法              | 核心思想                                | 英文                            | 中文                      |<br>  | ————————- | ———————————————————- | ———————————————- | ————————————- |<br>  | Random Projection | Sign of projection on random hyperplane | Random hyperplanes              | 随机超平面投影并取符号    |<br>  | PCA Hashing       | Use top principal components            | Principal component projections | 主成分方向上的投影二值化  |<br>  | Spectral Hashing  | Use graph structure and eigenmaps       | Graph Laplacian &amp; embedding     | 图结构保持 + 谱嵌入二值化 |</p>
+</li>
+</ul>
+<pre><code>------
+
+## ✨ Why Learn to Hash?
+
+### EN:
+
+- Handcrafted hashes (e.g. MinHash) are generic, but not always optimal for specific data.
+- Learned hashing adapts to the **data distribution**, **label structure**, or **semantic similarity**.
+
+### 中文：
+
+- 手动设计的哈希函数（如 MinHash）虽然通用，但不一定适合所有数据；
+- 学习型哈希可以适应数据的**真实分布**、**语义结构**，效果通常更优。
+</code></pre><hr>
+<h2 id="🧾-总结表"><a href="#🧾-总结表" class="headerlink" title="🧾 总结表"></a>🧾 总结表</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>技术</th>
+<th>类型</th>
+<th>特点</th>
+<th>相似度形式</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MinHash</td>
+<td>基于集合</td>
+<td>高效估计 Jaccard</td>
+<td>集合相似度</td>
+</tr>
+<tr>
+<td>LSH</td>
+<td>基于哈希桶</td>
+<td>查找加速，S型函数</td>
+<td>多种距离</td>
+</tr>
+<tr>
+<td>Random Projection</td>
+<td>学习型</td>
+<td>快速，适合欧式空间</td>
+<td>cosine / L2</td>
+</tr>
+<tr>
+<td>Spectral Hashing</td>
+<td>学习型</td>
+<td>保持局部结构</td>
+<td>图距离</td>
+</tr>
+<tr>
+<td>Deep Hashing</td>
+<td>学习型</td>
+<td>可扩展、表达力强</td>
+<td>任意</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h1 id="✅-Chapter-4-Sampling（采样）"><a href="#✅-Chapter-4-Sampling（采样）" class="headerlink" title="✅ Chapter 4: Sampling（采样）"></a>✅ Chapter 4: Sampling（采样）</h1><hr>
+<h2 id="①-Rejection-Sampling-拒绝采样"><a href="#①-Rejection-Sampling-拒绝采样" class="headerlink" title="① Rejection Sampling 拒绝采样"></a>① Rejection Sampling 拒绝采样</h2><h3 id="📌-EN-6"><a href="#📌-EN-6" class="headerlink" title="📌 EN:"></a>📌 EN:</h3><p><strong>Rejection Sampling</strong> samples from a target distribution by generating samples from a simpler proposal distribution and rejecting some with probability.</p>
+<ul>
+<li><strong>RS</strong>: Sample from proposal $q(x)$, accept with probability $\frac{p(x)}{Mq(x)}$</li>
+</ul>
+<h3 id="📌-中文：-6"><a href="#📌-中文：-6" class="headerlink" title="📌 中文："></a>📌 中文：</h3><p><strong>拒绝采样</strong> 是从目标分布 $p(x)$ 采样的一种方法：</p>
+<ul>
+<li>先从一个易采样的提议分布 $q(x)$ 中采样；</li>
+<li>以比例 $\frac{p(x)}{Mq(x)}$ 接受样本（M 是放缩常数）；</li>
+</ul>
+<p>常用于低维、目标分布已知但难以采样时。</p>
+<hr>
+<h2 id="②-Importance-Sampling-重要性采样"><a href="#②-Importance-Sampling-重要性采样" class="headerlink" title="② Importance Sampling 重要性采样"></a>② Importance Sampling 重要性采样</h2><h3 id="📌-EN-7"><a href="#📌-EN-7" class="headerlink" title="📌 EN:"></a>📌 EN:</h3><p><strong>Importance Sampling (IS)</strong> estimates expectations under a target distribution $p(x)$ using samples from an easier distribution $q(x)$.</p>
+<ul>
+<li>Formula:</li>
+</ul>
+<p>$\mathbb{E}_p[f(x)] = \int f(x) p(x) dx = \int f(x) \frac{p(x)}{q(x)} q(x) dx$</p>
+<ul>
+<li>Estimate:</li>
+</ul>
+<p>$\frac{1}{N} \sum_{i=1}^N f(x_i) \frac{p(x_i)}{q(x_i)}$</p>
+<h3 id="📌-中文：-7"><a href="#📌-中文：-7" class="headerlink" title="📌 中文："></a>📌 中文：</h3><p><strong>重要性采样</strong> 是用来自一个<strong>易采样分布</strong> $q(x)$ 的样本，来估计在目标分布 $p(x)$ 下的期望：</p>
+<ul>
+<li>用样本权重 $\frac{p(x)}{q(x)}$ 调整偏差；</li>
+<li>可用于积分估计或期望估计；</li>
+<li>与拒绝采样相比，更适合估计但不一定生成样本。</li>
+</ul>
+<hr>
+<h3 id="🔁-对比-RS-vs-IS："><a href="#🔁-对比-RS-vs-IS：" class="headerlink" title="🔁 对比 RS vs IS："></a>🔁 对比 RS vs IS：</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>Rejection Sampling</th>
+<th>Importance Sampling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>目标</td>
+<td>采样</td>
+<td>估计期望</td>
+</tr>
+<tr>
+<td>原理</td>
+<td>接受-拒绝</td>
+<td>重加权</td>
+</tr>
+<tr>
+<td>是否丢弃样本</td>
+<td>是</td>
+<td>否</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>小维度、采样为主</td>
+<td>任意维度、期望估计为主</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="③-MCMC-Sampling-马尔可夫链蒙特卡洛采样"><a href="#③-MCMC-Sampling-马尔可夫链蒙特卡洛采样" class="headerlink" title="③ MCMC Sampling 马尔可夫链蒙特卡洛采样"></a>③ MCMC Sampling 马尔可夫链蒙特卡洛采样</h2><blockquote>
+<p><strong>MCMC：构造马尔可夫链来逼近目标分布</strong>，是复杂分布采样的通用方法。</p>
+</blockquote>
+<hr>
+<h3 id="基本思想（Basic-Idea）："><a href="#基本思想（Basic-Idea）：" class="headerlink" title="基本思想（Basic Idea）："></a>基本思想（Basic Idea）：</h3><h3 id="📌-EN-8"><a href="#📌-EN-8" class="headerlink" title="📌 EN:"></a>📌 EN:</h3><p>Build a <strong>Markov chain</strong> with the desired stationary distribution $p(x)$.<br> Run the chain long enough to let it converge, and sample from it.</p>
+<h3 id="📌-中文：-8"><a href="#📌-中文：-8" class="headerlink" title="📌 中文："></a>📌 中文：</h3><p>构造一个以 $p(x)$ 为平稳分布的<strong>马尔可夫链</strong>。<br> 通过不断采样与跳转，最终从这个链中抽样，得到符合 $p(x)$ 分布的样本。</p>
+<hr>
+<h3 id="三种典型方法："><a href="#三种典型方法：" class="headerlink" title="三种典型方法："></a>三种典型方法：</h3><h4 id="🔹-a-Metropolis-Hastings-MH-采样"><a href="#🔹-a-Metropolis-Hastings-MH-采样" class="headerlink" title="🔹 (a) Metropolis-Hastings (MH) 采样"></a>🔹 (a) Metropolis-Hastings (MH) 采样</h4><ul>
+<li>构造跳转候选 $q(x’|x)$，接受概率为：</li>
+</ul>
+<p>$\alpha = \min\left(1, \frac{p(x’)q(x|x’)}{p(x)q(x’|x)}\right)$</p>
+<ul>
+<li>可接受非对称 proposal；</li>
+<li>是 MCMC 中最通用的基础方法。</li>
+</ul>
+<hr>
+<h4 id="🔹-b-Gibbs-Sampling-吉布斯采样"><a href="#🔹-b-Gibbs-Sampling-吉布斯采样" class="headerlink" title="🔹 (b) Gibbs Sampling 吉布斯采样"></a>🔹 (b) Gibbs Sampling 吉布斯采样</h4><ul>
+<li>每次采样一个变量，条件于其余变量；</li>
+<li>是 MH 的特例，接受概率始终为 1；</li>
+<li>更适合多变量模型如贝叶斯网络、LDA 等。</li>
+<li>条件分布必须易采样</li>
+</ul>
+<hr>
+<h3 id="🔁-Gibbs-Sampling-vs-MH："><a href="#🔁-Gibbs-Sampling-vs-MH：" class="headerlink" title="🔁 Gibbs Sampling vs MH："></a>🔁 Gibbs Sampling vs MH：</h3><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>Metropolis–Hastings (MH)</th>
+<th>Gibbs Sampling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>本质类型</strong></td>
+<td>一般性的 MCMC 方法</td>
+<td>MH 的特例</td>
+</tr>
+<tr>
+<td><strong>更新方式</strong></td>
+<td>提议 $x’$，通过接受率 $\alpha$ 决定是否接受</td>
+<td>逐个维度直接从条件分布中采样，无拒绝</td>
+</tr>
+<tr>
+<td><strong>是否需要接受概率 $\alpha$</strong></td>
+<td>✅ 需要</td>
+<td>❌ 不需要（恒为1）</td>
+</tr>
+<tr>
+<td><strong>条件分布可不可知？</strong></td>
+<td>条件分布可以未知</td>
+<td>条件分布必须已知并能采样</td>
+</tr>
+<tr>
+<td><strong>维度更新策略</strong></td>
+<td>可整体更新、也可分量更新</td>
+<td>通常是<strong>轮流更新每个变量维度</strong>（坐标更新）</td>
+</tr>
+<tr>
+<td><strong>样本接受率</strong></td>
+<td>通常 &lt; 1，依赖提议分布</td>
+<td>恒为 1</td>
+</tr>
+<tr>
+<td><strong>效率依赖因素</strong></td>
+<td>提议分布的选择（太差则接受率低）</td>
+<td>变量相关性强时收敛慢</td>
+</tr>
+<tr>
+<td><strong>适用场景</strong></td>
+<td>适合一般复杂模型，灵活</td>
+<td>适合已知条件分布的模型，如贝叶斯网络、LDA</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="✅-总结-Recap（中英文对照）"><a href="#✅-总结-Recap（中英文对照）" class="headerlink" title="✅ 总结 Recap（中英文对照）"></a>✅ 总结 Recap（中英文对照）</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>英文解释</th>
+<th>中文解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Rejection Sampling</td>
+<td>Accept/reject samples from $q(x)$</td>
+<td>从提议分布采样后以一定概率接受样本</td>
+</tr>
+<tr>
+<td>Importance Sampling</td>
+<td>Use weighted average to estimate</td>
+<td>用权重调整估计目标分布下的期望</td>
+</tr>
+<tr>
+<td>MCMC Sampling</td>
+<td>Construct Markov chain → sample</td>
+<td>构造马尔可夫链逼近目标分布再采样</td>
+</tr>
+<tr>
+<td>MH 采样</td>
+<td>Accept/reject proposal with α</td>
+<td>使用接受率采样，通用灵活</td>
+</tr>
+<tr>
+<td>Gibbs 采样</td>
+<td>Sample each variable conditionally</td>
+<td>条件采样，每步接受，适合多变量模型</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h1 id="📘-CH5-Data-Stream-Mining-数据流挖掘"><a href="#📘-CH5-Data-Stream-Mining-数据流挖掘" class="headerlink" title="📘 CH5. Data Stream Mining 数据流挖掘"></a>📘 CH5. Data Stream Mining 数据流挖掘</h1><hr>
+<h3 id="✅-①-Challenges-of-DSM（数据流挖掘的挑战）"><a href="#✅-①-Challenges-of-DSM（数据流挖掘的挑战）" class="headerlink" title="✅ ① Challenges of DSM（数据流挖掘的挑战）"></a>✅ ① Challenges of DSM（数据流挖掘的挑战）</h3><h3 id="Single-Pass-Handling（单遍处理）"><a href="#Single-Pass-Handling（单遍处理）" class="headerlink" title="Single Pass Handling（单遍处理）"></a><strong>Single Pass Handling（单遍处理）</strong></h3><ul>
+<li>数据流是<strong>连续到达的</strong>，不能反复访问</li>
+<li>每个数据点<strong>只能看一遍</strong>，没有“读第二次”的机会</li>
+<li>要求算法<strong>实时、快速、一次性地处理新数据</strong></li>
+</ul>
+<h3 id="Memory-Limitation（内存限制）"><a href="#Memory-Limitation（内存限制）" class="headerlink" title="Memory Limitation（内存限制）"></a><strong>Memory Limitation（内存限制）</strong></h3><ul>
+<li>数据量可能是“无限流”或极大规模</li>
+<li><strong>无法将所有数据完整保存在内存中</strong></li>
+<li>只能用<strong>摘要（summary）结构</strong>，如滑动窗口、微簇、直方图、Sketch 等</li>
+</ul>
+<h3 id="Low-Time-Complexity（低时间复杂度）"><a href="#Low-Time-Complexity（低时间复杂度）" class="headerlink" title="Low Time Complexity（低时间复杂度）"></a><strong>Low Time Complexity（低时间复杂度）</strong></h3><ul>
+<li>流速极快，<strong>每个样本处理时间必须非常短</strong></li>
+<li>要求算法在 <strong>O(1)</strong> 或 <strong>近似常数时间</strong> 内完成：<ul>
+<li>分类（如 VFDT）</li>
+<li>聚类（如 Microcluster）</li>
+<li>概念漂移检测（如 ADWIN）</li>
+</ul>
+</li>
+</ul>
+<h3 id="Concept-Drift（概念漂移）"><a href="#Concept-Drift（概念漂移）" class="headerlink" title="Concept Drift（概念漂移）"></a><strong>Concept Drift（概念漂移）</strong></h3><ul>
+<li>数据分布可能随时间发生变化</li>
+<li>表现为 $P(C|X)$ 或 $P(X)$ 随时间演化</li>
+<li>如果不自适应，模型将“过时”，分类性能急剧下降</li>
+<li>必须具备<strong>检测变化 + 模型更新能力</strong></li>
+</ul>
+<hr>
+<h3 id="✅-②-What’s-Concept-Drift-（什么是概念漂移）"><a href="#✅-②-What’s-Concept-Drift-（什么是概念漂移）" class="headerlink" title="✅ ② What’s Concept Drift?（什么是概念漂移）"></a>✅ ② What’s Concept Drift?（什么是概念漂移）</h3><p>the concept drift means that <strong>the statistical properties of the target variable</strong>, which the model is trying to predict, <strong>change over time in unforeseen ways</strong>.the probability distribution changes.</p>
+<p>本质：<strong>分布 $P(C|X)$ 发生变化</strong>，即：</p>
+<ul>
+<li>类别标签条件概率随时间变化</li>
+<li>比如垃圾邮件的判断标准不断演化</li>
+</ul>
+<hr>
+<h3 id="✅-③-Concept-Drift-Detection（概念漂移检测）"><a href="#✅-③-Concept-Drift-Detection（概念漂移检测）" class="headerlink" title="✅ ③ Concept Drift Detection（概念漂移检测）"></a>✅ ③ Concept Drift Detection（概念漂移检测）</h3><h4 id="⭐-A-Distribution-based-检测（分布检测法）"><a href="#⭐-A-Distribution-based-检测（分布检测法）" class="headerlink" title="⭐ A. Distribution-based 检测（分布检测法）"></a>⭐ A. Distribution-based 检测（分布检测法）</h4><ul>
+<li><p>思路：比较新旧时间窗口数据的分布差异</p>
+<p>  Monitoring the change of data distributions between two fixed or adaptive windows of data. </p>
+</li>
+<li><p>方法：ADWIN、KLD、KS检验等</p>
+</li>
+<li><p>特点：<strong>模型无关</strong>、但对窗口大小敏感，难处理虚拟概念漂移</p>
+</li>
+</ul>
+<h4 id="⭐-B-Error-rate-based-检测（误差检测法）"><a href="#⭐-B-Error-rate-based-检测（误差检测法）" class="headerlink" title="⭐ B. Error-rate-based 检测（误差检测法）"></a>⭐ B. Error-rate-based 检测（误差检测法）</h4><ul>
+<li><p>思路：模型性能下降 → 怀疑概念漂移</p>
+<p>  Capture concept drift based on the change of the classification performance.</p>
+</li>
+<li><p>方法：DDM、EDDM、PHT</p>
+</li>
+<li><p>特点：<strong>依赖学习器性能曲线</strong>，对噪声敏感，难处理逐渐概念漂移</p>
+</li>
+</ul>
+<hr>
+<h3 id="✅-④-Data-Stream-Classification（数据流分类）"><a href="#✅-④-Data-Stream-Classification（数据流分类）" class="headerlink" title="✅ ④ Data Stream Classification（数据流分类）"></a>✅ ④ Data Stream Classification（数据流分类）</h3><ul>
+<li>核心方法：<ul>
+<li><strong>VFDT</strong>（Very Fast Decision Tree）</li>
+<li><strong>CVFDT</strong>（Concept-adapting VFDT）</li>
+<li><strong>SynchStream</strong>（基于代表样本流）  </li>
+</ul>
+</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>VFDT</th>
+<th>CVFDT</th>
+<th>SynchStream</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>是否支持漂移</td>
+<td>❌ 否</td>
+<td>✅ 是</td>
+<td>✅ 是（原型+漂移检测）</td>
+</tr>
+<tr>
+<td>内存效率</td>
+<td>✅ 高</td>
+<td>⚠️ 中</td>
+<td>✅ 较高（原型压缩）</td>
+</tr>
+<tr>
+<td>结构复杂度</td>
+<td>✅ 简单</td>
+<td>⚠️ 中</td>
+<td>❌ 高</td>
+</tr>
+<tr>
+<td>分类策略</td>
+<td>决策树</td>
+<td>滑动窗口 + 决策树</td>
+<td>KNN + 原型匹配</td>
+</tr>
+<tr>
+<td>使用场景</td>
+<td>静态数据流</td>
+<td>漂移数据流</td>
+<td>复杂动态场景，多概念检测</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>要求：<ul>
+<li>增量学习、在线更新</li>
+<li>能适应概念漂移和内存限制</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="✅-⑤-Open-set-Problems（开放集问题）"><a href="#✅-⑤-Open-set-Problems（开放集问题）" class="headerlink" title="✅ ⑤ Open-set Problems（开放集问题）"></a>✅ ⑤ Open-set Problems（开放集问题）</h3><ul>
+<li><p>指训练集和测试集可能<strong>不完全重合的类别空间</strong></p>
+<p>  开放集问题是指：测试集中可能出现<strong>训练时从未见过的类别</strong>。<br>   The open-set problem refers to the scenario where <strong>test data may include classes unseen during training</strong>.</p>
+</li>
+<li><p>在数据流中尤为严重（新类不断出现）</p>
+</li>
+<li><p>研究方向：<strong>新类检测、未知类识别</strong></p>
+</li>
+</ul>
+<hr>
+<h3 id="✅-⑥-Data-Stream-Clustering（数据流聚类）"><a href="#✅-⑥-Data-Stream-Clustering（数据流聚类）" class="headerlink" title="✅ ⑥ Data Stream Clustering（数据流聚类）"></a>✅ ⑥ Data Stream Clustering（数据流聚类）</h3><p>数据流聚类是指：对<strong>动态、连续到达的数据流</strong>进行<strong>实时、增量式的聚类分析</strong>。<br> <em>Data Stream Clustering</em> refers to the task of performing <strong>real-time, incremental clustering</strong> over <strong>dynamic and continuously arriving data streams</strong>.</p>
+<p>数据流聚类通常分为两个阶段：<br> Clustering is typically done in <strong>two stages</strong>:</p>
+<h5 id="①-在线阶段（Online-Phase）"><a href="#①-在线阶段（Online-Phase）" class="headerlink" title="① 在线阶段（Online Phase）"></a>① 在线阶段（Online Phase）</h5><p><strong>Online Micro-clustering</strong></p>
+<ul>
+<li>利用微簇（Micro-Cluster）对数据流进行<strong>压缩表示</strong></li>
+<li>Use <strong>micro-clusters</strong> to summarize incoming data in real time</li>
+<li>仅保存必要的统计信息（如数量、均值、方差）</li>
+</ul>
+<h5 id="②-离线阶段（Offline-Phase）"><a href="#②-离线阶段（Offline-Phase）" class="headerlink" title="② 离线阶段（Offline Phase）"></a>② 离线阶段（Offline Phase）</h5><p><strong>Offline Macro-clustering</strong></p>
+<ul>
+<li>用户可根据查询/分析需求，使用 k-means 等算法对微簇进行<strong>宏观聚类</strong></li>
+<li>Based on the micro-clusters, run full clustering algorithms (e.g., k-means) periodically or upon request</li>
+</ul>
+<h4 id="⭐-A-Framework（数据流聚类框架）"><a href="#⭐-A-Framework（数据流聚类框架）" class="headerlink" title="⭐ A. Framework（数据流聚类框架）"></a>⭐ A. Framework（数据流聚类框架）</h4><p>典型流程：</p>
+<ol>
+<li><p><strong>在线阶段 Online Phase</strong>：用 Micro-cluster 汇总流数据</p>
+<p> •Summarize the data into memory-efficient            data structures</p>
+</li>
+<li><p><strong>离线阶段 Offline Ohase</strong> ：对 Micro-cluster 聚类，生成宏观聚类结构</p>
+<p> •Use a clustering algorithm to find the data partition</p>
+</li>
+</ol>
+<p>→ 对应框架如 <strong>CluStream</strong>（经典模型）</p>
+<h4 id="⭐-B-Microcluster（微簇）"><a href="#⭐-B-Microcluster（微簇）" class="headerlink" title="⭐ B. Microcluster（微簇）"></a>⭐ B. Microcluster（微簇）</h4><ul>
+<li><p>是用于压缩原始数据流的统计单元</p>
+<p>   A Micro-Cluster is a set of individual data points that are close to each other and will be treated as a single unit in further offline Macro-clustering.</p>
+</li>
+<li><p>包含统计量：<code>(N, LS, SS)</code>（点数、线性和、平方和）</p>
+</li>
+<li><p>可以支持：</p>
+<ul>
+<li>动态更新</li>
+<li>多时间尺度快照（Pyramidal Time Frame）</li>
+</ul>
+</li>
+</ul>
+<p>你这张图总结的是第六章《Hadoop/Spark》的课程板书内容，下面我将其结构整理并用<strong>双语方式</strong>帮你讲解重点知识：</p>
+<hr>
+<h1 id="📘-CH6-Hadoop-Spark-概论"><a href="#📘-CH6-Hadoop-Spark-概论" class="headerlink" title="📘 CH6: Hadoop / Spark 概论"></a>📘 CH6: Hadoop / Spark 概论</h1><hr>
+<h3 id="✅-1-What’s-Hadoop-Spark"><a href="#✅-1-What’s-Hadoop-Spark" class="headerlink" title="✅ 1. What’s Hadoop / Spark?"></a>✅ 1. What’s Hadoop / Spark?</h3><p>Hadoop / Spark 是什么？</p>
+<p>Hadoop is a software framework for <strong>distributed processing</strong> of <strong>large datasets</strong> across <strong>large clusters</strong> of computers.</p>
+<blockquote>
+<p><strong>Hadoop 是一个用于在大规模计算机集群上对大数据集进行分布式处理的软件框架。</strong></p>
+</blockquote>
+<ul>
+<li><strong>Spark</strong> 是 Hadoop 的后继者，支持 <strong>内存计算</strong>，速度更快，编程更灵活<br>   <em>Spark is a fast and flexible cluster computing system that improves over Hadoop with in-memory processing.</em></li>
+</ul>
+<hr>
+<h3 id="✅-2-Design-Principles-of-Hadoop"><a href="#✅-2-Design-Principles-of-Hadoop" class="headerlink" title="✅ 2. Design Principles of Hadoop"></a>✅ 2. Design Principles of Hadoop</h3><p><strong>Hadoop 的设计原则</strong></p>
+<p>Need to process big data </p>
+<p>Need to parallelize computation across thousands of nodes</p>
+<p><strong>Commodity hardware</strong></p>
+<p>Large number of low-end cheap machines working in parallel to solve a computing problem</p>
+<p>Small number of high-end expensive machines</p>
+<p><strong>Automatic parallelization &amp; distribution</strong></p>
+<p>Hidden from the end-user</p>
+<p><strong>Fault tolerance and automatic recovery</strong></p>
+<p>Nodes/tasks will fail and will recover automatically</p>
+<p><strong>Clean and simple programming abstraction</strong></p>
+<p>Users only provide two functions “map” and “reduce”</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">NameNode（管理元数据）</span><br><span class="line">  ↑ Heartbeat（定期心跳通信）</span><br><span class="line">DataNodes（存储实际数据块）</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="✅-3-HDFS（Hadoop-Distributed-File-System）"><a href="#✅-3-HDFS（Hadoop-Distributed-File-System）" class="headerlink" title="✅ 3. HDFS（Hadoop Distributed File System）"></a>✅ 3. HDFS（Hadoop Distributed File System）</h3><p><strong>HDFS：分布式文件系统</strong></p>
+<ul>
+<li>将文件切分成多个 block 分布存储于多个 <strong>DataNode</strong></li>
+<li><strong>NameNode</strong> 维护目录结构和文件索引</li>
+<li>特点：大文件优化、写多读多、冗余副本容错</li>
+</ul>
+<p>当然，下面是对 <strong>HeartBeat（心跳机制）</strong> 在 Hadoop 架构中的作用的详细解释，附带<strong>中英文双语对照</strong>，便于你用于复习或报告展示。</p>
+<hr>
+<h2 id="❤️-HeartBeat-in-Hadoop"><a href="#❤️-HeartBeat-in-Hadoop" class="headerlink" title="❤️ HeartBeat in Hadoop"></a>❤️ HeartBeat in Hadoop</h2><p><strong>Hadoop 中的心跳机制</strong></p>
+<hr>
+<h3 id="📘-什么是-HeartBeat？"><a href="#📘-什么是-HeartBeat？" class="headerlink" title="📘 什么是 HeartBeat？"></a>📘 什么是 HeartBeat？</h3><blockquote>
+<p><strong>HeartBeat 是 DataNode 定期向 NameNode 发送的“存活信号”</strong>，用于告知其仍处于活跃状态。<br> <em>HeartBeat is a periodic signal sent from a DataNode to the NameNode to indicate that it is alive and functioning.</em></p>
+</blockquote>
+<hr>
+<h2 id="🔧-为什么需要-HeartBeat？"><a href="#🔧-为什么需要-HeartBeat？" class="headerlink" title="🔧 为什么需要 HeartBeat？"></a>🔧 为什么需要 HeartBeat？</h2><p><strong>Why is HeartBeat important?</strong></p>
+<p>在分布式系统中，节点可能因为故障掉线。为了保证系统能感知每个节点的健康状态，Hadoop 使用 HeartBeat：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>中英文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>节点存活监测</td>
+<td>NameNode 根据 HeartBeat 判断 DataNode 是否在线</td>
+</tr>
+<tr>
+<td>→ <em>Detects if a DataNode is alive</em></td>
+<td></td>
+</tr>
+<tr>
+<td>故障恢复触发</td>
+<td>若超时未收到 HeartBeat，则认为 DataNode 故障，开始数据副本恢复</td>
+</tr>
+<tr>
+<td>→ <em>Triggers block replication if DataNode fails</em></td>
+<td></td>
+</tr>
+<tr>
+<td>任务调度辅助</td>
+<td>Hadoop 可将 MapReduce 任务调度到“活跃的”DataNode 上执行</td>
+</tr>
+<tr>
+<td>→ <em>Used to aid in task assignment</em></td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h3 id="⏱️-默认心跳频率："><a href="#⏱️-默认心跳频率：" class="headerlink" title="⏱️ 默认心跳频率："></a>⏱️ 默认心跳频率：</h3><ul>
+<li>每 <strong>3 秒</strong> 发一次 HeartBeat（可配置）<br>   <em>Default is every 3 seconds</em></li>
+<li>如果 <strong>超过 10 分钟未收到</strong> → 该节点被视为失联<br>   <em>Considered dead if no heartbeat in 10 minutes (default)</em></li>
+</ul>
+<hr>
+<h2 id="🔄-HeartBeat-携带的信息"><a href="#🔄-HeartBeat-携带的信息" class="headerlink" title="🔄 HeartBeat 携带的信息"></a>🔄 HeartBeat 携带的信息</h2><p>HeartBeat 不只是“我还活着”，还会携带如下信息：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>信息项</th>
+<th>英文说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>存储使用情况</td>
+<td>Disk usage / free space</td>
+</tr>
+<tr>
+<td>数据块报告</td>
+<td>Which blocks the DataNode stores</td>
+</tr>
+<tr>
+<td>节点负载</td>
+<td>Load / CPU usage</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="🖼️-工作流程图简化："><a href="#🖼️-工作流程图简化：" class="headerlink" title="🖼️ 工作流程图简化："></a>🖼️ 工作流程图简化：</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   +------------------+</span><br><span class="line">   |     NameNode     |</span><br><span class="line">   +--------+---------+</span><br><span class="line">            ▲</span><br><span class="line">HeartBeat   |   Block Reports</span><br><span class="line">            |</span><br><span class="line">   +--------▼--------+</span><br><span class="line">   |     DataNode     |</span><br><span class="line">   +------------------+</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="✅-一句话总结："><a href="#✅-一句话总结：" class="headerlink" title="✅ 一句话总结："></a>✅ 一句话总结：</h2><blockquote>
+<p><strong>HeartBeat 是保障 Hadoop 分布式存储高可用性的“生命信号机制”，负责节点健康监测与数据副本恢复。</strong><br> <em>HeartBeat is the vital mechanism in Hadoop that ensures fault detection and triggers recovery in the HDFS cluster.</em></p>
+</blockquote>
+<hr>
+<h3 id="✅-4-MapReduce（计算框架）"><a href="#✅-4-MapReduce（计算框架）" class="headerlink" title="✅ 4. MapReduce（计算框架）"></a>✅ 4. MapReduce（计算框架）</h3><p><strong>MapReduce 计算模型</strong></p>
+<ul>
+<li>编程模式：将计算任务分成 <strong>Map</strong> 和 <strong>Reduce</strong> 两个阶段<br>   <em>Split → Map → Shuffle → Reduce → Output</em></li>
+</ul>
+<h4 id="📌-如何编写-Map-Reduce-函数？"><a href="#📌-如何编写-Map-Reduce-函数？" class="headerlink" title="📌 如何编写 Map/Reduce 函数？"></a>📌 如何编写 Map/Reduce 函数？</h4><p><strong>How to Write Map/Reduce Function</strong></p>
+<ul>
+<li>Map 函数：提取键值对</li>
+<li>Reduce 函数：对相同 key 的值集合进行聚合操作（如求和、计数等）</li>
+</ul>
+<hr>
+<h3 id="✅-5-Spark-编程模型"><a href="#✅-5-Spark-编程模型" class="headerlink" title="✅ 5. Spark 编程模型"></a>✅ 5. Spark 编程模型</h3><p><strong>Spark Programming Model</strong></p>
+<ul>
+<li><strong>RDD（弹性分布式数据集）</strong> 是 Spark 的核心抽象<br>   <em>RDD = Resilient Distributed Dataset</em></li>
+</ul>
+<h4 id="🔹-两类操作："><a href="#🔹-两类操作：" class="headerlink" title="🔹 两类操作："></a>🔹 两类操作：</h4><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型 Type</th>
+<th>说明 Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transformation</td>
+<td>转换操作（惰性，lazy）</td>
+</tr>
+<tr>
+<td>Action</td>
+<td>行动操作（触发计算）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rdd = sc.textFile(<span class="string">&quot;data.txt&quot;</span>)</span><br><span class="line">rdd2 = rdd.<span class="built_in">map</span>(<span class="keyword">lambda</span> x: x.upper())  <span class="comment"># Transformation</span></span><br><span class="line">rdd2.count()                         <span class="comment"># Action → 触发执行</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="✅-6-MapReduce-vs-Spark-对比"><a href="#✅-6-MapReduce-vs-Spark-对比" class="headerlink" title="✅ 6. MapReduce vs. Spark 对比"></a>✅ 6. MapReduce vs. Spark 对比</h3><p><strong>MapReduce 与 Spark 对比</strong></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>比较项 Comparison</th>
+<th>MapReduce</th>
+<th>Spark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>编程复杂度</td>
+<td>高，需写 Map 和 Reduce</td>
+<td>简洁，链式函数式编程</td>
+</tr>
+<tr>
+<td>性能</td>
+<td>慢，需反复读写磁盘</td>
+<td>快，支持内存迭代处理</td>
+</tr>
+<tr>
+<td>数据抽象</td>
+<td>无</td>
+<td>RDD、DataFrame</td>
+</tr>
+<tr>
+<td>支持机器学习</td>
+<td>弱（需外部框架）</td>
+<td>强（MLlib 内置）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="✅-总结一句话："><a href="#✅-总结一句话：" class="headerlink" title="✅ 总结一句话："></a>✅ 总结一句话：</h2><blockquote>
+<p><strong>Hadoop 提供了可靠的分布式数据存储和离线计算框架；Spark 在其基础上实现了高效的内存计算，适合更复杂的实时分析与机器学习任务。</strong><br> <em>Hadoop offers reliable storage and batch computing; Spark improves efficiency with in-memory processing and better developer APIs.</em></p>
+</blockquote>
+<hr>
+<p>如你需要为 Spark RDD 模型画图、生成函数结构图，或者举几个 MapReduce 的实际例子，我可以继续为你补充！</p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>Big Data Review</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://blog.jxlll.cc/2025/06/02/BigData/">http://blog.jxlll.cc/2025/06/02/BigData/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>JJxXxLL</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2025-06-02</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-03-07</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/review/">review</a></div><div class="post_share"><div class="social-share" data-image="/image/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2025/07/07/JAVA/example/" title="web"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">web</div></div></a></div><div class="next-post pull-right"><a href="/2025/03/20/SLADE/" title="SLADE"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">SLADE</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">JJxXxLL</div><div class="author-info__description">记录学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">63</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">21</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">15</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJxXxLL"><i class="fa-solid fa-eye"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJxXxLL" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:jxl552082093@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Chapter-1-Introduction-to-Big-Data-Mining"><span class="toc-number">1.</span> <span class="toc-text">Chapter 1 - Introduction to Big Data Mining</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-What%E2%80%99s-Big-Data"><span class="toc-number">1.0.1.</span> <span class="toc-text">1. What’s Big Data?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-The-4Vs-of-Big-Data%EF%BC%88%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7%EF%BC%89"><span class="toc-number">1.0.2.</span> <span class="toc-text">2. The 4Vs of Big Data（四个特性）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-What%E2%80%99s-Data-Mining"><span class="toc-number">1.0.3.</span> <span class="toc-text">3. What’s Data Mining?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-Main-Tasks-of-Data-Mining"><span class="toc-number">1.0.4.</span> <span class="toc-text">4. Main Tasks of Data Mining</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Chapter-2-Subspace-Learning"><span class="toc-number">2.</span> <span class="toc-text">Chapter 2 - Subspace Learning</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81Curse-of-Dimensionality%EF%BC%88%E7%BB%B4%E5%BA%A6%E7%81%BE%E9%9A%BE%EF%BC%89"><span class="toc-number">2.0.1.</span> <span class="toc-text">一、Curse of Dimensionality（维度灾难）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%E3%80%81Dimensionality-Reduction%EF%BC%88%E9%99%8D%E7%BB%B4%EF%BC%89"><span class="toc-number">2.0.2.</span> <span class="toc-text">二、Dimensionality Reduction（降维）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-Linear-Methods"><span class="toc-number">2.0.3.</span> <span class="toc-text">① Linear Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%8C-Principal-component-analysis-PCA%EF%BC%88%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90%EF%BC%89"><span class="toc-number">2.0.3.1.</span> <span class="toc-text">📌 Principal component analysis    PCA（主成分分析）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%8C-Multidimensional-scaling-MDS%EF%BC%88%E5%A4%9A%E7%BB%B4%E7%BC%A9%E6%94%BE%EF%BC%89"><span class="toc-number">2.0.3.2.</span> <span class="toc-text">📌 Multidimensional scaling           MDS（多维缩放）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A1-Nonlinear-Methods"><span class="toc-number">2.0.4.</span> <span class="toc-text">② Nonlinear Methods</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%85%E6%8B%AC%EF%BC%9A"><span class="toc-number">2.0.4.1.</span> <span class="toc-text">包括：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E3%80%81Subspace-Clustering%EF%BC%88%E5%AD%90%E7%A9%BA%E9%97%B4%E8%81%9A%E7%B1%BB%EF%BC%89"><span class="toc-number">2.0.5.</span> <span class="toc-text">三、Subspace Clustering（子空间聚类）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%91%A0-Sparse-Subspace-Clustering-SSC"><span class="toc-number">2.0.6.</span> <span class="toc-text">① Sparse Subspace Clustering (SSC)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF%EF%BC%9A"><span class="toc-number">2.0.6.1.</span> <span class="toc-text">思路：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%91%A1-Low-Rank-Representation-LRR"><span class="toc-number">2.0.6.2.</span> <span class="toc-text">② Low-Rank Representation (LRR)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%9C%85-Chapter-3-Hashing%EF%BC%88%E5%93%88%E5%B8%8C%E6%8A%80%E6%9C%AF%EF%BC%89%E8%AF%A6%E8%A7%A3"><span class="toc-number">3.</span> <span class="toc-text">✅ Chapter 3 - Hashing（哈希技术）详解</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%BB%E9%A2%98%E6%A0%B8%E5%BF%83%EF%BC%9A"><span class="toc-number">3.1.</span> <span class="toc-text">📌 主题核心：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-1-Why-%E5%8A%A8%E6%9C%BA%E4%B8%8E%E8%83%8C%E6%99%AF"><span class="toc-number">3.1.1.</span> <span class="toc-text">✅ 1. Why? 动机与背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-2-k-shingles%EF%BC%88%E6%88%96-k-grams%EF%BC%89"><span class="toc-number">3.1.2.</span> <span class="toc-text">✅ 2. k-shingles（或 k-grams）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-3-MinHash%EF%BC%88%E6%9C%80%E5%B0%8F%E5%93%88%E5%B8%8C%EF%BC%89%EF%BC%9AJaccard-%E7%9B%B8%E4%BC%BC%E5%BA%A6%E8%BF%91%E4%BC%BC%E8%AE%A1%E7%AE%97"><span class="toc-number">3.1.3.</span> <span class="toc-text">✅ 3. MinHash（最小哈希）：Jaccard 相似度近似计算</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A0-Definition%EF%BC%88%E5%AE%9A%E4%B9%89%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">① Definition（定义）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-EN"><span class="toc-number">3.2.1.</span> <span class="toc-text">📌 EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%AD%E6%96%87%EF%BC%9A"><span class="toc-number">3.2.2.</span> <span class="toc-text">📌 中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A1-Signature-Matrix%EF%BC%88%E7%AD%BE%E5%90%8D%E7%9F%A9%E9%98%B5%EF%BC%89"><span class="toc-number">3.3.</span> <span class="toc-text">② Signature Matrix（签名矩阵）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-EN-1"><span class="toc-number">3.3.1.</span> <span class="toc-text">📌 EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%AD%E6%96%87%EF%BC%9A-1"><span class="toc-number">3.3.2.</span> <span class="toc-text">📌 中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A2-Properties-of-Signature-Matrix-Approximation%EF%BC%88%E6%80%A7%E8%B4%A8%EF%BC%9A%E8%BF%91%E4%BC%BC%E6%80%A7%EF%BC%89"><span class="toc-number">3.4.</span> <span class="toc-text">③ Properties of Signature Matrix: Approximation（性质：近似性）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-EN-2"><span class="toc-number">3.4.1.</span> <span class="toc-text">📌 EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%AD%E6%96%87%EF%BC%9A-2"><span class="toc-number">3.4.2.</span> <span class="toc-text">📌 中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9C%85-%E6%80%BB%E7%BB%93-Recap"><span class="toc-number">3.5.</span> <span class="toc-text">✅ 总结 Recap</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-4-LSH%EF%BC%88Locality-Sensitive-Hashing%EF%BC%89%EF%BC%9A%E5%8A%A0%E9%80%9F%E7%9B%B8%E4%BC%BC%E6%9F%A5%E6%89%BE"><span class="toc-number">3.5.1.</span> <span class="toc-text">✅ 4. LSH（Locality Sensitive Hashing）：加速相似查找</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%AF-Objective%EF%BC%88%E7%9B%AE%E6%A0%87%EF%BC%89"><span class="toc-number">3.6.</span> <span class="toc-text">🎯 Objective（目标）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-EN-3"><span class="toc-number">3.6.1.</span> <span class="toc-text">📌 EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%AD%E6%96%87%EF%BC%9A-3"><span class="toc-number">3.6.2.</span> <span class="toc-text">📌 中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%A7%A0-Trick%EF%BC%88%E6%8A%80%E5%B7%A7%EF%BC%89"><span class="toc-number">3.7.</span> <span class="toc-text">🧠 Trick（技巧）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-EN-4"><span class="toc-number">3.7.1.</span> <span class="toc-text">📌 EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%AD%E6%96%87%EF%BC%9A-4"><span class="toc-number">3.7.2.</span> <span class="toc-text">📌 中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8A-%E6%95%B0%E5%AD%A6%E8%A7%A3%E9%87%8A"><span class="toc-number">3.8.</span> <span class="toc-text">📊 数学解释</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9C%85-%E5%B0%8F%E7%BB%93-Recap"><span class="toc-number">3.9.</span> <span class="toc-text">✅ 小结 Recap</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-5-Find-Similar-Item"><span class="toc-number">3.9.1.</span> <span class="toc-text">✅ 5. Find Similar Item</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-6-Learn-to-Hash%EF%BC%88%E5%AD%A6%E4%B9%A0%E5%93%88%E5%B8%8C%EF%BC%89"><span class="toc-number">3.9.2.</span> <span class="toc-text">✅ 6. Learn to Hash（学习哈希）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%AF-What-is-%E2%80%9CLearn-to-Hash%E2%80%9D"><span class="toc-number">3.10.</span> <span class="toc-text">🎯 What is “Learn to Hash”?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-EN-5"><span class="toc-number">3.10.1.</span> <span class="toc-text">📌 EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%AD%E6%96%87%EF%BC%9A-5"><span class="toc-number">3.10.2.</span> <span class="toc-text">📌 中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8C-%E6%96%B9%E6%B3%95%E4%B8%80%EF%BC%9ARandom-Projection-%E9%9A%8F%E6%9C%BA%E6%8A%95%E5%BD%B1"><span class="toc-number">3.11.</span> <span class="toc-text">📌 方法一：Random Projection 随机投影</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#EN"><span class="toc-number">3.11.1.</span> <span class="toc-text">EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%EF%BC%9A"><span class="toc-number">3.11.2.</span> <span class="toc-text">中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8C-%E6%96%B9%E6%B3%95%E4%BA%8C%EF%BC%9APCA-Hashing-%E4%B8%BB%E6%88%90%E5%88%86%E5%93%88%E5%B8%8C"><span class="toc-number">3.12.</span> <span class="toc-text">📌 方法二：PCA Hashing 主成分哈希</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#EN-1"><span class="toc-number">3.12.1.</span> <span class="toc-text">EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%EF%BC%9A-1"><span class="toc-number">3.12.2.</span> <span class="toc-text">中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8C-%E6%96%B9%E6%B3%95%E4%B8%89%EF%BC%9ASpectral-Hashing-%E8%B0%B1%E5%93%88%E5%B8%8C"><span class="toc-number">3.13.</span> <span class="toc-text">📌 方法三：Spectral Hashing 谱哈希</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#EN-2"><span class="toc-number">3.13.1.</span> <span class="toc-text">EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E6%96%87%EF%BC%9A-2"><span class="toc-number">3.13.2.</span> <span class="toc-text">中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9C%85-%E6%80%BB%E7%BB%93%E5%AF%B9%E6%AF%94%E8%A1%A8"><span class="toc-number">3.14.</span> <span class="toc-text">✅ 总结对比表</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%A7%BE-%E6%80%BB%E7%BB%93%E8%A1%A8"><span class="toc-number">3.15.</span> <span class="toc-text">🧾 总结表</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E2%9C%85-Chapter-4-Sampling%EF%BC%88%E9%87%87%E6%A0%B7%EF%BC%89"><span class="toc-number">4.</span> <span class="toc-text">✅ Chapter 4: Sampling（采样）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A0-Rejection-Sampling-%E6%8B%92%E7%BB%9D%E9%87%87%E6%A0%B7"><span class="toc-number">4.1.</span> <span class="toc-text">① Rejection Sampling 拒绝采样</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-EN-6"><span class="toc-number">4.1.1.</span> <span class="toc-text">📌 EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%AD%E6%96%87%EF%BC%9A-6"><span class="toc-number">4.1.2.</span> <span class="toc-text">📌 中文：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A1-Importance-Sampling-%E9%87%8D%E8%A6%81%E6%80%A7%E9%87%87%E6%A0%B7"><span class="toc-number">4.2.</span> <span class="toc-text">② Importance Sampling 重要性采样</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-EN-7"><span class="toc-number">4.2.1.</span> <span class="toc-text">📌 EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%AD%E6%96%87%EF%BC%9A-7"><span class="toc-number">4.2.2.</span> <span class="toc-text">📌 中文：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%81-%E5%AF%B9%E6%AF%94-RS-vs-IS%EF%BC%9A"><span class="toc-number">4.2.3.</span> <span class="toc-text">🔁 对比 RS vs IS：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%91%A2-MCMC-Sampling-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E9%93%BE%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B%E9%87%87%E6%A0%B7"><span class="toc-number">4.3.</span> <span class="toc-text">③ MCMC Sampling 马尔可夫链蒙特卡洛采样</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3%EF%BC%88Basic-Idea%EF%BC%89%EF%BC%9A"><span class="toc-number">4.3.1.</span> <span class="toc-text">基本思想（Basic Idea）：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-EN-8"><span class="toc-number">4.3.2.</span> <span class="toc-text">📌 EN:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%8C-%E4%B8%AD%E6%96%87%EF%BC%9A-8"><span class="toc-number">4.3.3.</span> <span class="toc-text">📌 中文：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%E7%A7%8D%E5%85%B8%E5%9E%8B%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-number">4.3.4.</span> <span class="toc-text">三种典型方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%94%B9-a-Metropolis-Hastings-MH-%E9%87%87%E6%A0%B7"><span class="toc-number">4.3.4.1.</span> <span class="toc-text">🔹 (a) Metropolis-Hastings (MH) 采样</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%94%B9-b-Gibbs-Sampling-%E5%90%89%E5%B8%83%E6%96%AF%E9%87%87%E6%A0%B7"><span class="toc-number">4.3.4.2.</span> <span class="toc-text">🔹 (b) Gibbs Sampling 吉布斯采样</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%94%81-Gibbs-Sampling-vs-MH%EF%BC%9A"><span class="toc-number">4.3.5.</span> <span class="toc-text">🔁 Gibbs Sampling vs MH：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9C%85-%E6%80%BB%E7%BB%93-Recap%EF%BC%88%E4%B8%AD%E8%8B%B1%E6%96%87%E5%AF%B9%E7%85%A7%EF%BC%89"><span class="toc-number">4.4.</span> <span class="toc-text">✅ 总结 Recap（中英文对照）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%98-CH5-Data-Stream-Mining-%E6%95%B0%E6%8D%AE%E6%B5%81%E6%8C%96%E6%8E%98"><span class="toc-number">5.</span> <span class="toc-text">📘 CH5. Data Stream Mining 数据流挖掘</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-%E2%91%A0-Challenges-of-DSM%EF%BC%88%E6%95%B0%E6%8D%AE%E6%B5%81%E6%8C%96%E6%8E%98%E7%9A%84%E6%8C%91%E6%88%98%EF%BC%89"><span class="toc-number">5.0.1.</span> <span class="toc-text">✅ ① Challenges of DSM（数据流挖掘的挑战）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Single-Pass-Handling%EF%BC%88%E5%8D%95%E9%81%8D%E5%A4%84%E7%90%86%EF%BC%89"><span class="toc-number">5.0.2.</span> <span class="toc-text">Single Pass Handling（单遍处理）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-Limitation%EF%BC%88%E5%86%85%E5%AD%98%E9%99%90%E5%88%B6%EF%BC%89"><span class="toc-number">5.0.3.</span> <span class="toc-text">Memory Limitation（内存限制）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Low-Time-Complexity%EF%BC%88%E4%BD%8E%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6%EF%BC%89"><span class="toc-number">5.0.4.</span> <span class="toc-text">Low Time Complexity（低时间复杂度）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Concept-Drift%EF%BC%88%E6%A6%82%E5%BF%B5%E6%BC%82%E7%A7%BB%EF%BC%89"><span class="toc-number">5.0.5.</span> <span class="toc-text">Concept Drift（概念漂移）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-%E2%91%A1-What%E2%80%99s-Concept-Drift-%EF%BC%88%E4%BB%80%E4%B9%88%E6%98%AF%E6%A6%82%E5%BF%B5%E6%BC%82%E7%A7%BB%EF%BC%89"><span class="toc-number">5.0.6.</span> <span class="toc-text">✅ ② What’s Concept Drift?（什么是概念漂移）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-%E2%91%A2-Concept-Drift-Detection%EF%BC%88%E6%A6%82%E5%BF%B5%E6%BC%82%E7%A7%BB%E6%A3%80%E6%B5%8B%EF%BC%89"><span class="toc-number">5.0.7.</span> <span class="toc-text">✅ ③ Concept Drift Detection（概念漂移检测）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90-A-Distribution-based-%E6%A3%80%E6%B5%8B%EF%BC%88%E5%88%86%E5%B8%83%E6%A3%80%E6%B5%8B%E6%B3%95%EF%BC%89"><span class="toc-number">5.0.7.1.</span> <span class="toc-text">⭐ A. Distribution-based 检测（分布检测法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90-B-Error-rate-based-%E6%A3%80%E6%B5%8B%EF%BC%88%E8%AF%AF%E5%B7%AE%E6%A3%80%E6%B5%8B%E6%B3%95%EF%BC%89"><span class="toc-number">5.0.7.2.</span> <span class="toc-text">⭐ B. Error-rate-based 检测（误差检测法）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-%E2%91%A3-Data-Stream-Classification%EF%BC%88%E6%95%B0%E6%8D%AE%E6%B5%81%E5%88%86%E7%B1%BB%EF%BC%89"><span class="toc-number">5.0.8.</span> <span class="toc-text">✅ ④ Data Stream Classification（数据流分类）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-%E2%91%A4-Open-set-Problems%EF%BC%88%E5%BC%80%E6%94%BE%E9%9B%86%E9%97%AE%E9%A2%98%EF%BC%89"><span class="toc-number">5.0.9.</span> <span class="toc-text">✅ ⑤ Open-set Problems（开放集问题）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-%E2%91%A5-Data-Stream-Clustering%EF%BC%88%E6%95%B0%E6%8D%AE%E6%B5%81%E8%81%9A%E7%B1%BB%EF%BC%89"><span class="toc-number">5.0.10.</span> <span class="toc-text">✅ ⑥ Data Stream Clustering（数据流聚类）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A0-%E5%9C%A8%E7%BA%BF%E9%98%B6%E6%AE%B5%EF%BC%88Online-Phase%EF%BC%89"><span class="toc-number">5.0.10.0.1.</span> <span class="toc-text">① 在线阶段（Online Phase）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E2%91%A1-%E7%A6%BB%E7%BA%BF%E9%98%B6%E6%AE%B5%EF%BC%88Offline-Phase%EF%BC%89"><span class="toc-number">5.0.10.0.2.</span> <span class="toc-text">② 离线阶段（Offline Phase）</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90-A-Framework%EF%BC%88%E6%95%B0%E6%8D%AE%E6%B5%81%E8%81%9A%E7%B1%BB%E6%A1%86%E6%9E%B6%EF%BC%89"><span class="toc-number">5.0.10.1.</span> <span class="toc-text">⭐ A. Framework（数据流聚类框架）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E2%AD%90-B-Microcluster%EF%BC%88%E5%BE%AE%E7%B0%87%EF%BC%89"><span class="toc-number">5.0.10.2.</span> <span class="toc-text">⭐ B. Microcluster（微簇）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%93%98-CH6-Hadoop-Spark-%E6%A6%82%E8%AE%BA"><span class="toc-number">6.</span> <span class="toc-text">📘 CH6: Hadoop &#x2F; Spark 概论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-1-What%E2%80%99s-Hadoop-Spark"><span class="toc-number">6.0.1.</span> <span class="toc-text">✅ 1. What’s Hadoop &#x2F; Spark?</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-2-Design-Principles-of-Hadoop"><span class="toc-number">6.0.2.</span> <span class="toc-text">✅ 2. Design Principles of Hadoop</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-3-HDFS%EF%BC%88Hadoop-Distributed-File-System%EF%BC%89"><span class="toc-number">6.0.3.</span> <span class="toc-text">✅ 3. HDFS（Hadoop Distributed File System）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9D%A4%EF%B8%8F-HeartBeat-in-Hadoop"><span class="toc-number">6.1.</span> <span class="toc-text">❤️ HeartBeat in Hadoop</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%F0%9F%93%98-%E4%BB%80%E4%B9%88%E6%98%AF-HeartBeat%EF%BC%9F"><span class="toc-number">6.1.1.</span> <span class="toc-text">📘 什么是 HeartBeat？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%A7-%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81-HeartBeat%EF%BC%9F"><span class="toc-number">6.2.</span> <span class="toc-text">🔧 为什么需要 HeartBeat？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%8F%B1%EF%B8%8F-%E9%BB%98%E8%AE%A4%E5%BF%83%E8%B7%B3%E9%A2%91%E7%8E%87%EF%BC%9A"><span class="toc-number">6.2.1.</span> <span class="toc-text">⏱️ 默认心跳频率：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%84-HeartBeat-%E6%90%BA%E5%B8%A6%E7%9A%84%E4%BF%A1%E6%81%AF"><span class="toc-number">6.3.</span> <span class="toc-text">🔄 HeartBeat 携带的信息</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%96%BC%EF%B8%8F-%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%E5%9B%BE%E7%AE%80%E5%8C%96%EF%BC%9A"><span class="toc-number">6.4.</span> <span class="toc-text">🖼️ 工作流程图简化：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9C%85-%E4%B8%80%E5%8F%A5%E8%AF%9D%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-number">6.5.</span> <span class="toc-text">✅ 一句话总结：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-4-MapReduce%EF%BC%88%E8%AE%A1%E7%AE%97%E6%A1%86%E6%9E%B6%EF%BC%89"><span class="toc-number">6.5.1.</span> <span class="toc-text">✅ 4. MapReduce（计算框架）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%93%8C-%E5%A6%82%E4%BD%95%E7%BC%96%E5%86%99-Map-Reduce-%E5%87%BD%E6%95%B0%EF%BC%9F"><span class="toc-number">6.5.1.1.</span> <span class="toc-text">📌 如何编写 Map&#x2F;Reduce 函数？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-5-Spark-%E7%BC%96%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="toc-number">6.5.2.</span> <span class="toc-text">✅ 5. Spark 编程模型</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%F0%9F%94%B9-%E4%B8%A4%E7%B1%BB%E6%93%8D%E4%BD%9C%EF%BC%9A"><span class="toc-number">6.5.2.1.</span> <span class="toc-text">🔹 两类操作：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E2%9C%85-6-MapReduce-vs-Spark-%E5%AF%B9%E6%AF%94"><span class="toc-number">6.5.3.</span> <span class="toc-text">✅ 6. MapReduce vs. Spark 对比</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9C%85-%E6%80%BB%E7%BB%93%E4%B8%80%E5%8F%A5%E8%AF%9D%EF%BC%9A"><span class="toc-number">6.6.</span> <span class="toc-text">✅ 总结一句话：</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/03/07/%E6%8B%BC%E5%9B%A2/%E9%94%99%E8%AF%AF3/" title="无题">无题</a><time datetime="2026-03-07T01:05:12.980Z" title="发表于 2026-03-07 09:05:12">2026-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/13/JAVA/redis/" title="数据库Redis">数据库Redis</a><time datetime="2026-01-13T01:18:32.000Z" title="发表于 2026-01-13 09:18:32">2026-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/13/JAVA/%E6%95%B0%E6%8D%AE%E5%BA%93/" title="数据库MySql">数据库MySql</a><time datetime="2026-01-13T01:18:32.000Z" title="发表于 2026-01-13 09:18:32">2026-01-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/10/JAVA/Spring/" title="Spring学习">Spring学习</a><time datetime="2026-01-10T01:18:32.000Z" title="发表于 2026-01-10 09:18:32">2026-01-10</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/01/04/%E6%8B%BC%E5%9B%A2/%E6%8B%BC%E5%9B%A23/" title="拼团3">拼团3</a><time datetime="2026-01-04T01:18:32.000Z" title="发表于 2026-01-04 09:18:32">2026-01-04</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By JJxXxLL</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer src="/js/cursor.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/编程训练/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 训练营记录 (16)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/文献学习/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 读文献 (23)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://blog.jxlll.cc/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-gpxxq7_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/项目/">项目</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">这是代码练习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-we7djr_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/文献学习/">文献学习</a><span class="categoryBar-list-count">23</span><span class="categoryBar-list-descr">这是文献学习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-o5revm_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/数据集/">数据集</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">这里还没想好</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/可视化/">可视化</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/编程训练/">编程训练</a><span class="categoryBar-list-count">16</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/考试复习/">考试复习</a><span class="categoryBar-list-count">7</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Spring/">Spring</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/JAVA/">JAVA</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Redis/">Redis</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/小型支付商城系统/">小型支付商城系统</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/组件/">组件</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Database/">Database</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/拼团/">拼团</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/报错/">报错</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/学习/">学习</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = '0ad15caa1a204ee89c6ad151329a6b50';
+  var qweather_api_host = 'nj6r6pm8pt.re.qweatherapi.com';
+  var ip_api_key = 'Kq1pRjB3WyDja7rhKcWV9f5QU8';
+  var gaud_map_key = 'ee76386f15646eecea6cffc073dfbff6';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '113.34532,23.15624';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/08/26/GraphCL/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-08-26</span><a class="blog-slider__title" href="2024/08/26/GraphCL/" alt="">Graph Contrastive Learning with Augmentations</a><div class="blog-slider__text">图学习</div><a class="blog-slider__button" href="2024/08/26/GraphCL/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/10/18/PCGNN/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-18</span><a class="blog-slider__title" href="2024/10/18/PCGNN/" alt="">PC-GNN</a><div class="blog-slider__text">欺诈检测</div><a class="blog-slider__button" href="2024/10/18/PCGNN/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="/js/swiper.min.js"></script><script defer data-pjax src="/js/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__pulse');
+    arr[i].setAttribute('data-wow-duration', '700ms');
+    arr[i].setAttribute('data-wow-delay', '500ms');
+    arr[i].setAttribute('data-wow-offset', '50');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
