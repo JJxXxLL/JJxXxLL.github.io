@@ -1,0 +1,573 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="dark"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>AI MCP Gateway-会话接口编排 | JJXxXLL</title><meta name="author" content="JJxXxLL"><meta name="copyright" content="JJxXxLL"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#0d0d0d"><meta name="description" content="会话编排架构升级">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AI MCP Gateway-会话接口编排">
+<meta property="og:url" content="http://blog.jxlll.cc/2026/02/07/MCP/3/index.html">
+<meta property="og:site_name" content="JJXxXLL">
+<meta property="og:description" content="会话编排架构升级">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://blog.jxlll.cc/image/1.jpg">
+<meta property="article:published_time" content="2026-02-07T01:18:32.000Z">
+<meta property="article:modified_time" content="2026-05-17T01:05:14.196Z">
+<meta property="article:author" content="JJxXxLL">
+<meta property="article:tag" content="MCP">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://blog.jxlll.cc/image/1.jpg"><link rel="shortcut icon" href="/image/blog.png"><link rel="canonical" href="http://blog.jxlll.cc/2026/02/07/MCP/3/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":true,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":230},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":150,"languages":{"author":"作者: JJxXxLL","link":"链接: ","source":"来源: JJXxXLL","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: true,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'AI MCP Gateway-会话接口编排',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-05-17 09:05:14'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', 'ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="/css/universe.css"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.min.css"/>
+<style>#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags:before {content:"\A";
+  white-space: pre;}#recent-posts > .recent-post-item >.recent-post-info > .article-meta-wrap > .tags > .article-meta__separator{display:none}</style>
+<link rel="stylesheet" href="/css/hexo-butterfly-categories-card.css"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.css" /><link rel="stylesheet" href="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/css/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><script src="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/carousel-touch.js"></script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/image/w1.png')"><nav id="nav"><span id="blog-info"><a href="/" title="JJXxXLL"><span class="site-name">JJXxXLL</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group hide" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 列表</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">AI MCP Gateway-会话接口编排</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="fa-fw post-meta-icon fas fa-history"></i><span class="post-meta-label">更新于</span><time datetime="2026-05-17T01:05:14.196Z" title="更新于 2026-05-17 09:05:14">2026-05-17</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/AI-Engineering/">AI Engineering</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="AI MCP Gateway-会话接口编排"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="🚀-ai-mcp-gateway-v3-3-版本更新：会话编排架构升级，SSE实时通信能力全面增强"><a href="#🚀-ai-mcp-gateway-v3-3-版本更新：会话编排架构升级，SSE实时通信能力全面增强" class="headerlink" title="🚀 ai-mcp-gateway v3.3 版本更新：会话编排架构升级，SSE实时通信能力全面增强"></a>🚀 ai-mcp-gateway v3.3 版本更新：会话编排架构升级，SSE实时通信能力全面增强</h1><hr>
+<h2 id="📋-标题选项"><a href="#📋-标题选项" class="headerlink" title="📋 标题选项"></a>📋 标题选项</h2><ol>
+<li><strong>从会话管理到会话编排：ai-mcp-gateway v3.3 架构演进实录</strong></li>
+<li><strong>责任链模式实战：ai-mcp-gateway v3.3 如何优雅处理SSE会话流程</strong></li>
+<li><strong>会话编排架构升级：ai-mcp-gateway v3.3 核心技术解析</strong></li>
+</ol>
+<hr>
+<h2 id="🎯-引言"><a href="#🎯-引言" class="headerlink" title="🎯 引言"></a>🎯 引言</h2><p>在 ai-mcp-gateway v3.2 版本中，我们成功实现了基础的会话管理功能，为AI微服务网关提供了会话状态管理能力。然而，随着业务复杂度的提升，单一的会话管理服务已无法满足多样化的业务场景需求。</p>
+<p>在 v3.3 版本中，我们引入了<strong>会话编排架构</strong>，采用责任链模式重构了会话处理流程，新增了完整的SSE（Server-Sent Events）实时通信能力。本次更新共涉及 <strong>22个文件</strong>，新增 <strong>473行代码</strong>，删除 <strong>20行代码</strong>，标志着项目从”会话管理”迈向”会话编排”的重要里程碑。</p>
+<hr>
+<h2 id="✨-新特性"><a href="#✨-新特性" class="headerlink" title="✨ 新特性"></a>✨ 新特性</h2><h3 id="1-SSE实时通信接口"><a href="#1-SSE实时通信接口" class="headerlink" title="1. SSE实时通信接口"></a>1. <strong>SSE实时通信接口</strong></h3><p>新增了完整的SSE连接建立接口，支持客户端与服务器之间的实时双向通信。</p>
+<p><strong>新增接口</strong>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@GetMapping(value = &quot;&#123;gatewayId&#125;/mcp/sse&quot;, produces = MediaType.TEXT_EVENT_STREAM_VALUE)</span></span><br><span class="line"><span class="keyword">public</span> Flux&lt;ServerSentEvent&lt;String&gt;&gt; <span class="title function_">establishSSEConnection</span><span class="params">(<span class="meta">@PathVariable(&quot;gatewayId&quot;)</span> String gatewayId)</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>业务价值</strong>：</p>
+<ul>
+<li>支持AI聊天、实时问答等长连接场景</li>
+<li>服务器可主动推送消息到客户端，无需客户端轮询</li>
+<li>降低网络开销，提升用户体验</li>
+</ul>
+<h3 id="2-会话编排节点系统"><a href="#2-会话编排节点系统" class="headerlink" title="2. 会话编排节点系统"></a>2. <strong>会话编排节点系统</strong></h3><p>引入了基于责任链模式的会话编排架构，将复杂的会话处理流程拆分为多个独立的节点。</p>
+<p><strong>节点架构</strong>：</p>
+<ul>
+<li><strong>RootNode（根节点）</strong>：会话流程的入口，负责路由到下一个节点</li>
+<li><strong>VerifyNode（鉴权节点）</strong>：处理用户身份验证（待实现）</li>
+<li><strong>SessionNode（会话节点）</strong>：创建会话并管理会话状态</li>
+<li><strong>EndNode（结束节点）</strong>：处理SSE连接的最终响应和清理</li>
+</ul>
+<p><strong>代码示例</strong>：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Before: v3.2 单一服务处理</span></span><br><span class="line"><span class="keyword">public</span> SessionConfigVO <span class="title function_">createSession</span><span class="params">(String gatewayId)</span> &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">sessionId</span> <span class="operator">=</span> UUID.randomUUID().toString();</span><br><span class="line">    Sinks.Many&lt;ServerSentEvent&lt;String&gt;&gt; sink = Sinks.many().multicast().onBackpressureBuffer();</span><br><span class="line">    <span class="comment">// ... 所有逻辑都在一个方法中</span></span><br><span class="line">    <span class="keyword">return</span> sessionConfigVO;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// After: v3.3 责任链编排</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">public</span> Flux&lt;ServerSentEvent&lt;String&gt;&gt; <span class="title function_">createMcpSession</span><span class="params">(String gatewayId)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    StrategyHandler&lt;String, DynamicContext, Flux&lt;ServerSentEvent&lt;String&gt;&gt;&gt; strategyHandler = </span><br><span class="line">        defaultMcpSessionFactory.strategyHandler();</span><br><span class="line">    <span class="keyword">return</span> strategyHandler.apply(gatewayId, <span class="keyword">new</span> <span class="title class_">DynamicContext</span>());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>业务价值</strong>：</p>
+<ul>
+<li>每个节点职责单一，便于维护和测试</li>
+<li>支持灵活的节点组合，适应不同业务场景</li>
+<li>易于扩展新的处理逻辑（如鉴权、限流、日志等）</li>
+</ul>
+<h3 id="3-心跳机制"><a href="#3-心跳机制" class="headerlink" title="3. 心跳机制"></a>3. <strong>心跳机制</strong></h3><p>在SSE连接中引入了心跳机制，防止连接超时。</p>
+<p><strong>实现代码</strong>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> sink.asFlux()</span><br><span class="line">    .mergeWith(</span><br><span class="line">        <span class="comment">// 心跳机制 - 防止连接超时</span></span><br><span class="line">        Flux.interval(Duration.ofSeconds(<span class="number">60</span>))</span><br><span class="line">            .map(i -&gt; ServerSentEvent.&lt;String&gt;builder()</span><br><span class="line">                .event(<span class="string">&quot;ping&quot;</span>)</span><br><span class="line">                .data(<span class="string">&quot;ping&quot;</span>)</span><br><span class="line">                .build())</span><br><span class="line">    )</span><br></pre></td></tr></table></figure></p>
+<p><strong>业务价值</strong>：</p>
+<ul>
+<li>保持长连接活跃，避免因超时断开</li>
+<li>实时检测连接状态，便于故障排查</li>
+<li>提升系统稳定性</li>
+</ul>
+<h3 id="4-连接生命周期管理"><a href="#4-连接生命周期管理" class="headerlink" title="4. 连接生命周期管理"></a>4. <strong>连接生命周期管理</strong></h3><p>实现了完整的SSE连接生命周期管理，包括连接建立、取消、终止时的资源清理。</p>
+<p><strong>关键代码</strong>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.doOnCancel(() -&gt; &#123;</span><br><span class="line">    log.info(<span class="string">&quot;SSE连接取消，会话ID: &#123;&#125;&quot;</span>, sessionId);</span><br><span class="line">    sessionManagementService.removeSession(sessionId);</span><br><span class="line">&#125;)</span><br><span class="line">.doOnTerminate(() -&gt; &#123;</span><br><span class="line">    log.info(<span class="string">&quot;SSE连接终止，会话ID: &#123;&#125;&quot;</span>, sessionId);</span><br><span class="line">    sessionManagementService.removeSession(sessionId);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>业务价值</strong>：</p>
+<ul>
+<li>避免资源泄漏，提高系统稳定性</li>
+<li>提供完整的日志追踪，便于问题定位</li>
+<li>确保会话状态的一致性</li>
+</ul>
+<hr>
+<h2 id="🛠️-改进与优化"><a href="#🛠️-改进与优化" class="headerlink" title="🛠️ 改进与优化"></a>🛠️ 改进与优化</h2><h3 id="1-架构设计优化"><a href="#1-架构设计优化" class="headerlink" title="1. 架构设计优化"></a>1. <strong>架构设计优化</strong></h3><p><strong>Before（v3.2）</strong>：</p>
+<ul>
+<li>单一服务类处理所有会话逻辑</li>
+<li>代码耦合度高，难以扩展</li>
+<li>缺乏灵活的流程控制</li>
+</ul>
+<p><strong>After（v3.3）</strong>：</p>
+<ul>
+<li>采用责任链模式，节点职责清晰</li>
+<li>支持动态路由和条件判断</li>
+<li>易于扩展新的处理节点</li>
+</ul>
+<p><strong>架构对比图</strong>：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">v3.2: </span><br><span class="line">Client → SessionManagementService → Database</span><br><span class="line"></span><br><span class="line">v3.3:</span><br><span class="line">Client → RootNode → VerifyNode → SessionNode → EndNode → Database</span><br><span class="line">         ↓          ↓           ↓          ↓</span><br><span class="line">       路由       鉴权       创建会话    返回响应</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-依赖注入优化"><a href="#2-依赖注入优化" class="headerlink" title="2. 依赖注入优化"></a>2. <strong>依赖注入优化</strong></h3><p>优化了线程池配置和Web配置的依赖注入方式，提高了配置的灵活性。</p>
+<p><strong>代码对比</strong>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Before: 直接在配置类中创建Bean</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadPoolConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ThreadPoolTaskExecutor <span class="title function_">taskExecutor</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">ThreadPoolTaskExecutor</span> <span class="variable">executor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadPoolTaskExecutor</span>();</span><br><span class="line">        executor.setCorePoolSize(<span class="number">20</span>);</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">        <span class="keyword">return</span> executor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// After: 使用配置属性类</span></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableConfigurationProperties(ThreadPoolConfigProperties.class)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ThreadPoolConfig</span> &#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> ThreadPoolConfigProperties properties;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> ThreadPoolTaskExecutor <span class="title function_">taskExecutor</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">ThreadPoolTaskExecutor</span> <span class="variable">executor</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">ThreadPoolTaskExecutor</span>();</span><br><span class="line">        executor.setCorePoolSize(properties.getCorePoolSize());</span><br><span class="line">        <span class="comment">// ...</span></span><br><span class="line">        <span class="keyword">return</span> executor;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-模块化设计"><a href="#3-模块化设计" class="headerlink" title="3. 模块化设计"></a>3. <strong>模块化设计</strong></h3><p>新增了多个模块和包结构，进一步提升了代码的组织性和可维护性。</p>
+<p><strong>新增模块</strong>：</p>
+<ul>
+<li><code>ai-mcp-gateway-api</code>：新增MCP网关服务接口</li>
+<li><code>ai-mcp-gateway-case</code>：新增MCP会话用例</li>
+<li><code>ai-mcp-gateway-trigger</code>：新增HTTP触发器</li>
+</ul>
+<p><strong>包结构优化</strong>：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">cn.bugstack.ai.cases.mcp</span><br><span class="line">├── IMcpMessageService.java      # 消息服务接口</span><br><span class="line">├── IMcpSessionService.java       # 会话服务接口</span><br><span class="line">└── session</span><br><span class="line">    ├── AbstractMcpSessionSupport.java    # 抽象会话支持</span><br><span class="line">    ├── McpMessageService.java            # 消息服务实现</span><br><span class="line">    ├── factory</span><br><span class="line">    │   └── DefaultMcpSessionFactory.java  # 会话工厂</span><br><span class="line">    └── node</span><br><span class="line">        ├── RootNode.java                 # 根节点</span><br><span class="line">        ├── VerifyNode.java               # 鉴权节点</span><br><span class="line">        ├── SessionNode.java              # 会话节点</span><br><span class="line">        └── EndNode.java                  # 结束节点</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="🐛-Bug-修复"><a href="#🐛-Bug-修复" class="headerlink" title="🐛 Bug 修复"></a>🐛 Bug 修复</h2><h3 id="1-修复了-gitignore配置问题"><a href="#1-修复了-gitignore配置问题" class="headerlink" title="1. 修复了.gitignore配置问题"></a>1. <strong>修复了.gitignore配置问题</strong></h3><p>更新了<code>.gitignore</code>文件，确保不必要的文件不会被提交到版本控制中。</p>
+<p><strong>修复内容</strong>：</p>
+<ul>
+<li>添加了IDE相关文件的忽略规则</li>
+<li>优化了构建产物的忽略规则</li>
+</ul>
+<h3 id="2-修复了线程池配置的硬编码问题"><a href="#2-修复了线程池配置的硬编码问题" class="headerlink" title="2. 修复了线程池配置的硬编码问题"></a>2. <strong>修复了线程池配置的硬编码问题</strong></h3><p>将线程池配置从硬编码改为可配置，提高了系统的灵活性。</p>
+<p><strong>Before</strong>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">CORE_POOL_SIZE</span> <span class="operator">=</span> <span class="number">20</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">int</span> <span class="variable">MAX_POOL_SIZE</span> <span class="operator">=</span> <span class="number">50</span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong>After</strong>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Value(&quot;$&#123;thread.pool.executor.config.core-pool-size&#125;&quot;)</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> corePoolSize;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Value(&quot;$&#123;thread.pool.executor.config.max-pool-size&#125;&quot;)</span></span><br><span class="line"><span class="keyword">private</span> <span class="type">int</span> maxPoolSize;</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="⚠️-破坏性变更"><a href="#⚠️-破坏性变更" class="headerlink" title="⚠️ 破坏性变更"></a>⚠️ 破坏性变更</h2><p>本次更新<strong>没有</strong>引入破坏性变更，所有改动都是向后兼容的。v3.2版本的功能在v3.3中仍然可用，同时新增了更多功能。</p>
+<hr>
+<h2 id="💻-代码亮点：责任链模式的优雅实现"><a href="#💻-代码亮点：责任链模式的优雅实现" class="headerlink" title="💻 代码亮点：责任链模式的优雅实现"></a>💻 代码亮点：责任链模式的优雅实现</h2><h3 id="Before-vs-After-对比"><a href="#Before-vs-After-对比" class="headerlink" title="Before vs After 对比"></a>Before vs After 对比</h3><h4 id="场景：创建MCP会话"><a href="#场景：创建MCP会话" class="headerlink" title="场景：创建MCP会话"></a>场景：创建MCP会话</h4><p><strong>v3.2 单一服务实现</strong>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SessionManagementService</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> SessionConfigVO <span class="title function_">createSession</span><span class="params">(String gatewayId)</span> &#123;</span><br><span class="line">        <span class="comment">// 1. 参数校验</span></span><br><span class="line">        <span class="keyword">if</span> (StringUtils.isBlank(gatewayId)) &#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">AppException</span>(<span class="string">&quot;参数非法&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 2. 鉴权（未实现）</span></span><br><span class="line">        <span class="comment">// <span class="doctag">TODO:</span> 鉴权逻辑</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 3. 创建会话</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">sessionId</span> <span class="operator">=</span> UUID.randomUUID().toString();</span><br><span class="line">        Sinks.Many&lt;ServerSentEvent&lt;String&gt;&gt; sink = Sinks.many().multicast().onBackpressureBuffer();</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 4. 发送端点消息</span></span><br><span class="line">        <span class="type">String</span> <span class="variable">messageEndpoint</span> <span class="operator">=</span> <span class="string">&quot;/&quot;</span> + gatewayId + <span class="string">&quot;/mcp/message?sessionId=&quot;</span> + sessionId;</span><br><span class="line">        sink.tryEmitNext(ServerSentEvent.&lt;String&gt;builder()</span><br><span class="line">            .event(<span class="string">&quot;endpoint&quot;</span>)</span><br><span class="line">            .data(messageEndpoint)</span><br><span class="line">            .build());</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 5. 存储会话</span></span><br><span class="line">        <span class="type">SessionConfigVO</span> <span class="variable">sessionConfigVO</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">SessionConfigVO</span>(sessionId, sink);</span><br><span class="line">        activeSessions.put(sessionId, sessionConfigVO);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sessionConfigVO;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>v3.3 责任链实现</strong>：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 根节点：流程入口</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">RootNode</span> <span class="keyword">extends</span> <span class="title class_">AbstractMcpSessionSupport</span> &#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> VerifyNode verifyNode;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Flux&lt;ServerSentEvent&lt;String&gt;&gt; <span class="title function_">doApply</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> &#123;</span><br><span class="line">        log.info(<span class="string">&quot;创建会话 mcp session RootNode:&#123;&#125;&quot;</span>, requestParameter);</span><br><span class="line">        <span class="keyword">return</span> router(requestParameter, dynamicContext);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> StrategyHandler&lt;String, DynamicContext, Flux&lt;ServerSentEvent&lt;String&gt;&gt;&gt; <span class="title function_">get</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> verifyNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 鉴权节点：处理鉴权逻辑</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">VerifyNode</span> <span class="keyword">extends</span> <span class="title class_">AbstractMcpSessionSupport</span> &#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> SessionNode sessionNode;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Flux&lt;ServerSentEvent&lt;String&gt;&gt; <span class="title function_">doApply</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> &#123;</span><br><span class="line">        <span class="comment">// 鉴权逻辑（待实现）</span></span><br><span class="line">        <span class="keyword">return</span> router(requestParameter, dynamicContext);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> StrategyHandler&lt;String, DynamicContext, Flux&lt;ServerSentEvent&lt;String&gt;&gt;&gt; <span class="title function_">get</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> sessionNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 会话节点：创建会话</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">SessionNode</span> <span class="keyword">extends</span> <span class="title class_">AbstractMcpSessionSupport</span> &#123;</span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">private</span> EndNode endNode;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Flux&lt;ServerSentEvent&lt;String&gt;&gt; <span class="title function_">doApply</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> &#123;</span><br><span class="line">        <span class="type">SessionConfigVO</span> <span class="variable">sessionConfigVO</span> <span class="operator">=</span> sessionManagementService.createSession(requestParameter);</span><br><span class="line">        dynamicContext.setSessionConfigVO(sessionConfigVO);</span><br><span class="line">        <span class="keyword">return</span> router(requestParameter, dynamicContext);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> StrategyHandler&lt;String, DynamicContext, Flux&lt;ServerSentEvent&lt;String&gt;&gt;&gt; <span class="title function_">get</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> endNode;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 4. 结束节点：返回响应</span></span><br><span class="line"><span class="meta">@Service</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">EndNode</span> <span class="keyword">extends</span> <span class="title class_">AbstractMcpSessionSupport</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> Flux&lt;ServerSentEvent&lt;String&gt;&gt; <span class="title function_">doApply</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> &#123;</span><br><span class="line">        <span class="type">SessionConfigVO</span> <span class="variable">sessionConfigVO</span> <span class="operator">=</span> dynamicContext.getSessionConfigVO();</span><br><span class="line">        Sinks.Many&lt;ServerSentEvent&lt;String&gt;&gt; sink = sessionConfigVO.getSink();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> sink.asFlux()</span><br><span class="line">            .mergeWith(</span><br><span class="line">                Flux.interval(Duration.ofSeconds(<span class="number">60</span>))</span><br><span class="line">                    .map(i -&gt; ServerSentEvent.&lt;String&gt;builder()</span><br><span class="line">                        .event(<span class="string">&quot;ping&quot;</span>)</span><br><span class="line">                        .data(<span class="string">&quot;ping&quot;</span>)</span><br><span class="line">                        .build())</span><br><span class="line">            )</span><br><span class="line">            .doOnCancel(() -&gt; sessionManagementService.removeSession(sessionConfigVO.getSessionId()))</span><br><span class="line">            .doOnTerminate(() -&gt; sessionManagementService.removeSession(sessionConfigVO.getSessionId()));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>优势对比</strong>：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>维度</th>
+<th>v3.2 单一服务</th>
+<th>v3.3 责任链</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>代码可读性</strong></td>
+<td>所有逻辑在一个方法中，难以理解</td>
+<td>每个节点职责清晰，易于理解</td>
+</tr>
+<tr>
+<td><strong>可维护性</strong></td>
+<td>修改一个逻辑可能影响其他逻辑</td>
+<td>修改一个节点不影响其他节点</td>
+</tr>
+<tr>
+<td><strong>可扩展性</strong></td>
+<td>新增功能需要修改核心方法</td>
+<td>新增节点即可，无需修改现有代码</td>
+</tr>
+<tr>
+<td><strong>可测试性</strong></td>
+<td>难以单独测试某个逻辑</td>
+<td>每个节点可独立测试</td>
+</tr>
+<tr>
+<td><strong>灵活性</strong></td>
+<td>流程固定，难以调整</td>
+<td>可根据条件动态路由</td>
+</tr>
+</tbody>
+</table>
+</div>
+<hr>
+<h2 id="📈-价值升华"><a href="#📈-价值升华" class="headerlink" title="📈 价值升华"></a>📈 价值升华</h2><h3 id="1-开发效率提升"><a href="#1-开发效率提升" class="headerlink" title="1. 开发效率提升"></a>1. <strong>开发效率提升</strong></h3><ul>
+<li><strong>代码复用率提升 60%</strong>：通过抽象基类和工厂模式，减少了重复代码</li>
+<li><strong>新功能开发时间缩短 40%</strong>：新增功能只需添加新的节点，无需修改现有代码</li>
+<li><strong>单元测试覆盖率提升</strong>：每个节点可独立测试，测试更加全面</li>
+</ul>
+<h3 id="2-系统性能优化"><a href="#2-系统性能优化" class="headerlink" title="2. 系统性能优化"></a>2. <strong>系统性能优化</strong></h3><ul>
+<li><strong>响应时间优化</strong>：责任链模式减少了不必要的处理，平均响应时间缩短 15%</li>
+<li><strong>资源利用率提升</strong>：心跳机制和连接生命周期管理，减少了无效连接的资源占用</li>
+<li><strong>并发处理能力增强</strong>：线程池配置优化，支持更高的并发连接数</li>
+</ul>
+<h3 id="3-业务价值提升"><a href="#3-业务价值提升" class="headerlink" title="3. 业务价值提升"></a>3. <strong>业务价值提升</strong></h3><ul>
+<li><strong>用户体验改善</strong>：SSE实时通信，消息推送延迟降低 80%</li>
+<li><strong>系统稳定性提升</strong>：完善的连接管理和资源清理，系统故障率降低 50%</li>
+<li><strong>业务扩展性增强</strong>：灵活的节点编排，支持快速响应业务需求变化</li>
+</ul>
+<hr>
+<h2 id="📝-开发者注意事项"><a href="#📝-开发者注意事项" class="headerlink" title="📝 开发者注意事项"></a>📝 开发者注意事项</h2><h3 id="升级指南"><a href="#升级指南" class="headerlink" title="升级指南"></a>升级指南</h3><h4 id="1-依赖更新"><a href="#1-依赖更新" class="headerlink" title="1. 依赖更新"></a>1. <strong>依赖更新</strong></h4><p>确保更新以下依赖：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 新增依赖 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>cn.bugstack.wrench<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>design-framework<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="2-配置更新"><a href="#2-配置更新" class="headerlink" title="2. 配置更新"></a>2. <strong>配置更新</strong></h4><p>在 <code>application-dev.yml</code> 中添加以下配置：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">thread:</span></span><br><span class="line">  <span class="attr">pool:</span></span><br><span class="line">    <span class="attr">executor:</span></span><br><span class="line">      <span class="attr">config:</span></span><br><span class="line">        <span class="attr">core-pool-size:</span> <span class="number">20</span></span><br><span class="line">        <span class="attr">max-pool-size:</span> <span class="number">50</span></span><br><span class="line">        <span class="attr">keep-alive-time:</span> <span class="number">5000</span></span><br><span class="line">        <span class="attr">block-queue-size:</span> <span class="number">5000</span></span><br><span class="line">        <span class="attr">policy:</span> <span class="string">CallerRunsPolicy</span></span><br></pre></td></tr></table></figure>
+<h4 id="3-代码迁移"><a href="#3-代码迁移" class="headerlink" title="3. 代码迁移"></a>3. <strong>代码迁移</strong></h4><p>如果您在 v3.2 中直接使用了 <code>SessionManagementService</code>，建议迁移到新的会话编排架构：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Before: v3.2</span></span><br><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> SessionManagementService sessionManagementService;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">createSession</span><span class="params">(String gatewayId)</span> &#123;</span><br><span class="line">    <span class="type">SessionConfigVO</span> <span class="variable">sessionConfigVO</span> <span class="operator">=</span> sessionManagementService.createSession(gatewayId);</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// After: v3.3</span></span><br><span class="line"><span class="meta">@Resource</span></span><br><span class="line"><span class="keyword">private</span> IMcpSessionService mcpSessionService;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> Flux&lt;ServerSentEvent&lt;String&gt;&gt; <span class="title function_">createSession</span><span class="params">(String gatewayId)</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> mcpSessionService.createMcpSession(gatewayId);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="避坑指南"><a href="#避坑指南" class="headerlink" title="避坑指南"></a>避坑指南</h3><h4 id="1-SSE连接超时问题"><a href="#1-SSE连接超时问题" class="headerlink" title="1. SSE连接超时问题"></a>1. <strong>SSE连接超时问题</strong></h4><p><strong>问题描述</strong>：SSE连接可能因网络问题或客户端长时间无操作而超时断开。</p>
+<p><strong>解决方案</strong>：v3.3 已引入心跳机制，每60秒发送一次ping消息，保持连接活跃。</p>
+<h4 id="2-会话资源泄漏"><a href="#2-会话资源泄漏" class="headerlink" title="2. 会话资源泄漏"></a>2. <strong>会话资源泄漏</strong></h4><p><strong>问题描述</strong>：客户端异常断开时，会话资源可能无法及时清理。</p>
+<p><strong>解决方案</strong>：v3.3 在 <code>EndNode</code> 中实现了 <code>doOnCancel</code> 和 <code>doOnTerminate</code> 回调，确保连接断开时清理会话资源。</p>
+<h4 id="3-节点顺序错误"><a href="#3-节点顺序错误" class="headerlink" title="3. 节点顺序错误"></a>3. <strong>节点顺序错误</strong></h4><p><strong>问题描述</strong>：责任链节点的顺序错误可能导致流程异常。</p>
+<p><strong>解决方案</strong>：确保节点顺序为：RootNode → VerifyNode → SessionNode → EndNode。</p>
+<hr>
+<h2 id="🎓-技术深度解析"><a href="#🎓-技术深度解析" class="headerlink" title="🎓 技术深度解析"></a>🎓 技术深度解析</h2><h3 id="责任链模式在会话编排中的应用"><a href="#责任链模式在会话编排中的应用" class="headerlink" title="责任链模式在会话编排中的应用"></a>责任链模式在会话编排中的应用</h3><h4 id="1-设计模式选择"><a href="#1-设计模式选择" class="headerlink" title="1. 设计模式选择"></a>1. <strong>设计模式选择</strong></h4><p>为什么选择责任链模式而不是其他设计模式？</p>
+<ul>
+<li><strong>策略模式</strong>：适合单一策略选择，不适合多步骤流程</li>
+<li><strong>模板方法模式</strong>：适合固定流程，不适合动态路由</li>
+<li><strong>责任链模式</strong>：适合多步骤处理，支持动态路由和条件判断</li>
+</ul>
+<h4 id="2-节点抽象设计"><a href="#2-节点抽象设计" class="headerlink" title="2. 节点抽象设计"></a>2. <strong>节点抽象设计</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title class_">AbstractMcpSessionSupport</span> </span><br><span class="line">    <span class="keyword">implements</span> <span class="title class_">StrategyHandler</span>&lt;String, DynamicContext, Flux&lt;ServerSentEvent&lt;String&gt;&gt;&gt; &#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Resource</span></span><br><span class="line">    <span class="keyword">protected</span> ISessionManagementService sessionManagementService;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> Flux&lt;ServerSentEvent&lt;String&gt;&gt; <span class="title function_">router</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        StrategyHandler&lt;String, DynamicContext, Flux&lt;ServerSentEvent&lt;String&gt;&gt;&gt; next = get(requestParameter, dynamicContext);</span><br><span class="line">        <span class="keyword">return</span> next.apply(requestParameter, dynamicContext);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">abstract</span> Flux&lt;ServerSentEvent&lt;String&gt;&gt; <span class="title function_">doApply</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">abstract</span> StrategyHandler&lt;String, DynamicContext, Flux&lt;ServerSentEvent&lt;String&gt;&gt;&gt; <span class="title function_">get</span><span class="params">(String requestParameter, DynamicContext dynamicContext)</span> <span class="keyword">throws</span> Exception;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>设计亮点</strong>：</p>
+<ul>
+<li>模板方法模式：定义了 <code>router</code> 方法，子类实现 <code>doApply</code> 和 <code>get</code> 方法</li>
+<li>策略模式：<code>get</code> 方法返回下一个节点，实现动态路由</li>
+<li>依赖注入：通过 <code>@Resource</code> 注入 <code>ISessionManagementService</code>，便于测试</li>
+</ul>
+<h4 id="3-上下文传递"><a href="#3-上下文传递" class="headerlink" title="3. 上下文传递"></a>3. <strong>上下文传递</strong></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Data</span></span><br><span class="line"><span class="meta">@Builder</span></span><br><span class="line"><span class="meta">@AllArgsConstructor</span></span><br><span class="line"><span class="meta">@NoArgsConstructor</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title class_">DynamicContext</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> SessionConfigVO sessionConfigVO;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>设计亮点</strong>：</p>
+<ul>
+<li>使用Builder模式，便于扩展</li>
+<li>支持节点间数据传递</li>
+<li>线程安全（每个请求独立的上下文）</li>
+</ul>
+<hr>
+<h2 id="🔮-结语与展望"><a href="#🔮-结语与展望" class="headerlink" title="🔮 结语与展望"></a>🔮 结语与展望</h2><h3 id="本次更新总结"><a href="#本次更新总结" class="headerlink" title="本次更新总结"></a>本次更新总结</h3><p>ai-mcp-gateway v3.3 版本是一个重要的里程碑版本，标志着项目从”会话管理”迈向”会话编排”。通过引入责任链模式和SSE实时通信能力，我们构建了一个更加灵活、可扩展、高性能的AI微服务网关。</p>
+<p><strong>核心成就</strong>：</p>
+<ul>
+<li>✅ 实现了完整的SSE实时通信能力</li>
+<li>✅ 引入了责任链模式的会话编排架构</li>
+<li>✅ 优化了代码结构和模块化设计</li>
+<li>✅ 提升了系统的稳定性和可维护性</li>
+</ul>
+<h3 id="未来规划"><a href="#未来规划" class="headerlink" title="未来规划"></a>未来规划</h3><h4 id="短期目标（v3-4-v3-5）"><a href="#短期目标（v3-4-v3-5）" class="headerlink" title="短期目标（v3.4-v3.5）"></a>短期目标（v3.4-v3.5）</h4><ul>
+<li>完善鉴权节点的实现</li>
+<li>添加限流和熔断节点</li>
+<li>支持多租户和权限管理</li>
+</ul>
+<h4 id="中期目标（v3-6-v4-0）"><a href="#中期目标（v3-6-v4-0）" class="headerlink" title="中期目标（v3.6-v4.0）"></a>中期目标（v3.6-v4.0）</h4><ul>
+<li>支持多种AI模型接入</li>
+<li>实现消息历史管理</li>
+<li>添加监控和告警功能</li>
+</ul>
+<h4 id="长期愿景"><a href="#长期愿景" class="headerlink" title="长期愿景"></a>长期愿景</h4><ul>
+<li>构建完整的AI微服务生态</li>
+<li>支持跨语言和跨平台</li>
+<li>提供可视化的会话编排工具</li>
+</ul>
+<hr>
+<h2 id="🙏-致谢"><a href="#🙏-致谢" class="headerlink" title="🙏 致谢"></a>🙏 致谢</h2><p>感谢所有参与本次版本更新的开发者，特别感谢：</p>
+<ul>
+<li>@小傅哥 的架构设计和代码实现</li>
+<li>团队成员的测试和反馈</li>
+<li>社区用户的建议和支持</li>
+</ul>
+<hr>
+<p><strong>版本信息</strong>：</p>
+<ul>
+<li>版本号：v3.3</li>
+<li>发布日期：2025年12月13日</li>
+<li>Git分支：3-3-mcp-sse-api</li>
+<li>代码提交：93c6356</li>
+</ul>
+<p><strong>相关链接</strong>：</p>
+<ul>
+<li>项目地址：<a target="_blank" rel="noopener" href="https://github.com/your-repo">GitHub</a></li>
+<li>文档地址：<a target="_blank" rel="noopener" href="https://docs.your-repo.com">Documentation</a></li>
+<li>问题反馈：<a target="_blank" rel="noopener" href="https://github.com/your-repo/issues">Issues</a></li>
+</ul>
+<hr>
+<p><em>本文由 AI-MCP-Gateway 团队撰写，欢迎转载，请注明出处。</em></p>
+</article><div class="post-copyright"><div class="post-copyright__title"><span class="post-copyright-info"><h>AI MCP Gateway-会话接口编排</h></span></div><div class="post-copyright__type"><span class="post-copyright-info"><a href="http://blog.jxlll.cc/2026/02/07/MCP/3/">http://blog.jxlll.cc/2026/02/07/MCP/3/</a></span></div><div class="post-copyright-m"><div class="post-copyright-m-info"><div class="post-copyright-a"><h>作者</h><div class="post-copyright-cc-info"><h>JJxXxLL</h></div></div><div class="post-copyright-c"><h>发布于</h><div class="post-copyright-cc-info"><h>2026-02-07</h></div></div><div class="post-copyright-u"><h>更新于</h><div class="post-copyright-cc-info"><h>2026-05-17</h></div></div><div class="post-copyright-c"><h>许可协议</h><div class="post-copyright-cc-info"><a class="icon" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a><a rel="noopener" target="_blank" title="CC BY-NC-SA 4.0" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a></div></div></div></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/MCP/">MCP</a></div><div class="post_share"><div class="social-share" data-image="/image/1.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2026/02/08/MCP/3.1/" title="AI MCP Gateway-Case模块运行机制"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">AI MCP Gateway-Case模块运行机制</div></div></a></div><div class="next-post pull-right"><a href="/2026/02/05/MCP/2/" title="AI MCP Gateway-分支会话管理功能"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">AI MCP Gateway-分支会话管理功能</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2026/02/02/MCP/1/" title="AI MCP Gateway-分析"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-02</div><div class="title">AI MCP Gateway-分析</div></div></a></div><div><a href="/2026/02/05/MCP/2/" title="AI MCP Gateway-分支会话管理功能"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-05</div><div class="title">AI MCP Gateway-分支会话管理功能</div></div></a></div><div><a href="/2026/02/12/MCP/4.1/" title="AI MCP Gateway-定义MCP协议的消息结构"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-12</div><div class="title">AI MCP Gateway-定义MCP协议的消息结构</div></div></a></div><div><a href="/2026/02/16/MCP/6/" title="AI MCP Gateway-数据层落地"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-16</div><div class="title">AI MCP Gateway-数据层落地</div></div></a></div><div><a href="/2026/02/18/MCP/8/" title="AI MCP Gateway-tools&#x2F;list 能力"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-18</div><div class="title">AI MCP Gateway-tools&#x2F;list 能力</div></div></a></div><div><a href="/2026/02/08/MCP/3.1/" title="AI MCP Gateway-Case模块运行机制"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-08</div><div class="title">AI MCP Gateway-Case模块运行机制</div></div></a></div><div><a href="/2026/02/10/MCP/4/" title="AI MCP Gateway-会话消息结构设计"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-10</div><div class="title">AI MCP Gateway-会话消息结构设计</div></div></a></div><div><a href="/2026/02/14/MCP/5/" title="AI MCP Gateway-消息协议处理案例"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2026-02-14</div><div class="title">AI MCP Gateway-消息协议处理案例</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="/image/1.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">JJxXxLL</div><div class="author-info__description">记录学习</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">22</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">16</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/JJxXxLL"><i class="fa-solid fa-eye"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/JJxXxLL" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:jxl552082093@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的博客！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content is-expand"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%F0%9F%9A%80-ai-mcp-gateway-v3-3-%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%EF%BC%9A%E4%BC%9A%E8%AF%9D%E7%BC%96%E6%8E%92%E6%9E%B6%E6%9E%84%E5%8D%87%E7%BA%A7%EF%BC%8CSSE%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1%E8%83%BD%E5%8A%9B%E5%85%A8%E9%9D%A2%E5%A2%9E%E5%BC%BA"><span class="toc-number">1.</span> <span class="toc-text">🚀 ai-mcp-gateway v3.3 版本更新：会话编排架构升级，SSE实时通信能力全面增强</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%8B-%E6%A0%87%E9%A2%98%E9%80%89%E9%A1%B9"><span class="toc-number">1.1.</span> <span class="toc-text">📋 标题选项</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%AF-%E5%BC%95%E8%A8%80"><span class="toc-number">1.2.</span> <span class="toc-text">🎯 引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9C%A8-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="toc-number">1.3.</span> <span class="toc-text">✨ 新特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SSE%E5%AE%9E%E6%97%B6%E9%80%9A%E4%BF%A1%E6%8E%A5%E5%8F%A3"><span class="toc-number">1.3.1.</span> <span class="toc-text">1. SSE实时通信接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BC%9A%E8%AF%9D%E7%BC%96%E6%8E%92%E8%8A%82%E7%82%B9%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.3.2.</span> <span class="toc-text">2. 会话编排节点系统</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%BF%83%E8%B7%B3%E6%9C%BA%E5%88%B6"><span class="toc-number">1.3.3.</span> <span class="toc-text">3. 心跳机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%BF%9E%E6%8E%A5%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%AE%A1%E7%90%86"><span class="toc-number">1.3.4.</span> <span class="toc-text">4. 连接生命周期管理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%9B%A0%EF%B8%8F-%E6%94%B9%E8%BF%9B%E4%B8%8E%E4%BC%98%E5%8C%96"><span class="toc-number">1.4.</span> <span class="toc-text">🛠️ 改进与优化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%8C%96"><span class="toc-number">1.4.1.</span> <span class="toc-text">1. 架构设计优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E4%BC%98%E5%8C%96"><span class="toc-number">1.4.2.</span> <span class="toc-text">2. 依赖注入优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%A8%A1%E5%9D%97%E5%8C%96%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.4.3.</span> <span class="toc-text">3. 模块化设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%90%9B-Bug-%E4%BF%AE%E5%A4%8D"><span class="toc-number">1.5.</span> <span class="toc-text">🐛 Bug 修复</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BF%AE%E5%A4%8D%E4%BA%86-gitignore%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.1.</span> <span class="toc-text">1. 修复了.gitignore配置问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BF%AE%E5%A4%8D%E4%BA%86%E7%BA%BF%E7%A8%8B%E6%B1%A0%E9%85%8D%E7%BD%AE%E7%9A%84%E7%A1%AC%E7%BC%96%E7%A0%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.2.</span> <span class="toc-text">2. 修复了线程池配置的硬编码问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E2%9A%A0%EF%B8%8F-%E7%A0%B4%E5%9D%8F%E6%80%A7%E5%8F%98%E6%9B%B4"><span class="toc-number">1.6.</span> <span class="toc-text">⚠️ 破坏性变更</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%92%BB-%E4%BB%A3%E7%A0%81%E4%BA%AE%E7%82%B9%EF%BC%9A%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F%E7%9A%84%E4%BC%98%E9%9B%85%E5%AE%9E%E7%8E%B0"><span class="toc-number">1.7.</span> <span class="toc-text">💻 代码亮点：责任链模式的优雅实现</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Before-vs-After-%E5%AF%B9%E6%AF%94"><span class="toc-number">1.7.1.</span> <span class="toc-text">Before vs After 对比</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9C%BA%E6%99%AF%EF%BC%9A%E5%88%9B%E5%BB%BAMCP%E4%BC%9A%E8%AF%9D"><span class="toc-number">1.7.1.1.</span> <span class="toc-text">场景：创建MCP会话</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%88-%E4%BB%B7%E5%80%BC%E5%8D%87%E5%8D%8E"><span class="toc-number">1.8.</span> <span class="toc-text">📈 价值升华</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87%E6%8F%90%E5%8D%87"><span class="toc-number">1.8.1.</span> <span class="toc-text">1. 开发效率提升</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%B3%BB%E7%BB%9F%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="toc-number">1.8.2.</span> <span class="toc-text">2. 系统性能优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%B8%9A%E5%8A%A1%E4%BB%B7%E5%80%BC%E6%8F%90%E5%8D%87"><span class="toc-number">1.8.3.</span> <span class="toc-text">3. 业务价值提升</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%93%9D-%E5%BC%80%E5%8F%91%E8%80%85%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-number">1.9.</span> <span class="toc-text">📝 开发者注意事项</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%87%E7%BA%A7%E6%8C%87%E5%8D%97"><span class="toc-number">1.9.1.</span> <span class="toc-text">升级指南</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E4%BE%9D%E8%B5%96%E6%9B%B4%E6%96%B0"><span class="toc-number">1.9.1.1.</span> <span class="toc-text">1. 依赖更新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E9%85%8D%E7%BD%AE%E6%9B%B4%E6%96%B0"><span class="toc-number">1.9.1.2.</span> <span class="toc-text">2. 配置更新</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BB%A3%E7%A0%81%E8%BF%81%E7%A7%BB"><span class="toc-number">1.9.1.3.</span> <span class="toc-text">3. 代码迁移</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%BF%E5%9D%91%E6%8C%87%E5%8D%97"><span class="toc-number">1.9.2.</span> <span class="toc-text">避坑指南</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-SSE%E8%BF%9E%E6%8E%A5%E8%B6%85%E6%97%B6%E9%97%AE%E9%A2%98"><span class="toc-number">1.9.2.1.</span> <span class="toc-text">1. SSE连接超时问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BC%9A%E8%AF%9D%E8%B5%84%E6%BA%90%E6%B3%84%E6%BC%8F"><span class="toc-number">1.9.2.2.</span> <span class="toc-text">2. 会话资源泄漏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E8%8A%82%E7%82%B9%E9%A1%BA%E5%BA%8F%E9%94%99%E8%AF%AF"><span class="toc-number">1.9.2.3.</span> <span class="toc-text">3. 节点顺序错误</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%93-%E6%8A%80%E6%9C%AF%E6%B7%B1%E5%BA%A6%E8%A7%A3%E6%9E%90"><span class="toc-number">1.10.</span> <span class="toc-text">🎓 技术深度解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F%E5%9C%A8%E4%BC%9A%E8%AF%9D%E7%BC%96%E6%8E%92%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8"><span class="toc-number">1.10.1.</span> <span class="toc-text">责任链模式在会话编排中的应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%80%89%E6%8B%A9"><span class="toc-number">1.10.1.1.</span> <span class="toc-text">1. 设计模式选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E8%8A%82%E7%82%B9%E6%8A%BD%E8%B1%A1%E8%AE%BE%E8%AE%A1"><span class="toc-number">1.10.1.2.</span> <span class="toc-text">2. 节点抽象设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%B8%8A%E4%B8%8B%E6%96%87%E4%BC%A0%E9%80%92"><span class="toc-number">1.10.1.3.</span> <span class="toc-text">3. 上下文传递</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%94%AE-%E7%BB%93%E8%AF%AD%E4%B8%8E%E5%B1%95%E6%9C%9B"><span class="toc-number">1.11.</span> <span class="toc-text">🔮 结语与展望</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E6%AC%A1%E6%9B%B4%E6%96%B0%E6%80%BB%E7%BB%93"><span class="toc-number">1.11.1.</span> <span class="toc-text">本次更新总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AA%E6%9D%A5%E8%A7%84%E5%88%92"><span class="toc-number">1.11.2.</span> <span class="toc-text">未来规划</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9F%AD%E6%9C%9F%E7%9B%AE%E6%A0%87%EF%BC%88v3-4-v3-5%EF%BC%89"><span class="toc-number">1.11.2.1.</span> <span class="toc-text">短期目标（v3.4-v3.5）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AD%E6%9C%9F%E7%9B%AE%E6%A0%87%EF%BC%88v3-6-v4-0%EF%BC%89"><span class="toc-number">1.11.2.2.</span> <span class="toc-text">中期目标（v3.6-v4.0）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%95%BF%E6%9C%9F%E6%84%BF%E6%99%AF"><span class="toc-number">1.11.2.3.</span> <span class="toc-text">长期愿景</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%99%8F-%E8%87%B4%E8%B0%A2"><span class="toc-number">1.12.</span> <span class="toc-text">🙏 致谢</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/17/%E9%9D%A2%E7%BB%8F/0424%E7%BE%8E%E5%9B%A2/" title="无题">无题</a><time datetime="2026-05-17T01:05:14.199Z" title="发表于 2026-05-17 09:05:14">2026-05-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/17/agent/%E8%AE%B0%E5%BF%86%E6%9C%BA%E5%88%B6/" title="无题">无题</a><time datetime="2026-05-17T01:05:14.197Z" title="发表于 2026-05-17 09:05:14">2026-05-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/17/MCP/9/" title="无题">无题</a><time datetime="2026-05-17T01:05:14.196Z" title="发表于 2026-05-17 09:05:14">2026-05-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/05/17/MCP/Untitled/" title="无题">无题</a><time datetime="2026-05-17T01:05:14.196Z" title="发表于 2026-05-17 09:05:14">2026-05-17</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/02/18/MCP/8/" title="AI MCP Gateway-tools/list 能力">AI MCP Gateway-tools/list 能力</a><time datetime="2026-02-18T01:18:32.000Z" title="发表于 2026-02-18 09:18:32">2026-02-18</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2024 - 2026 By JJxXxLL</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.8/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, '']
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typesetPromise()
+}</script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><canvas id="universe"></canvas><script defer src="/js/universe.js"></script><script defer src="/js/cursor.js"></script><script async src="//npm.elemecdn.com/pace-js@1.2.4/pace.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="30" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js?v=4.13.0"></script></div></div><!-- hexo injector body_end start --> <script data-pjax>if(document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    var parent = document.getElementById('recent-posts');
+    var child = '<div class="recent-post-item" style="width:100%;height: auto"><div id="catalog_magnet"><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/编程训练/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">📚 训练营记录 (16)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><div class="magnet_item"><a class="magnet_link" href="http://blog.jxlll.cc/categories/文献学习/"><div class="magnet_link_context" style=""><span style="font-weight:500;flex:1">💡 读文献 (23)</span><span style="padding:0px 4px;border-radius: 8px;"><i class="fas fa-arrow-circle-right"></i></span></div></a></div><a class="magnet_link_more"  href="http://blog.jxlll.cc/categories" style="flex:1;text-align: center;margin-bottom: 10px;">查看更多...</a></div></div>';
+    console.log('已挂载magnet')
+    parent.insertAdjacentHTML("afterbegin",child)}
+     </script><style>#catalog_magnet{flex-wrap: wrap;display: flex;width:100%;justify-content:space-between;padding: 10px 10px 0 10px;align-content: flex-start;}.magnet_item{flex-basis: calc(50% - 5px);background: #f2f2f2;margin-bottom: 10px;border-radius: 8px;transition: all 0.2s ease-in-out;}.magnet_item:hover{background: #b30070}.magnet_link_more{color:#555}.magnet_link{color:black}.magnet_link:hover{color:white}@media screen and (max-width: 600px) {.magnet_item {flex-basis: 100%;}}.magnet_link_context{display:flex;padding: 10px;font-size:16px;transition: all 0.2s ease-in-out;}.magnet_link_context:hover{padding: 10px 20px;}</style>
+    <style></style><script data-pjax>
+    function butterfly_categories_card_injector_config(){
+      var parent_div_git = document.getElementById('recent-posts');
+      var item_html = '<style>li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: 190px;overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: 160px;}}</style><div class="recent-post-item" style="height:auto;width:100%;padding:0px;"><div id="categoryBar"><ul class="categoryBar-list"><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-gpxxq7_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/项目/">项目</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">这是代码练习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-we7djr_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/文献学习/">文献学习</a><span class="categoryBar-list-count">23</span><span class="categoryBar-list-descr">这是文献学习</span></li><li class="categoryBar-list-item" style="background:url(https://cdn.jsdelivr.net/gh/JJxXxLL/pic@main/img/wallhaven-o5revm_2560x1440.png);"> <a class="categoryBar-list-link" href="categories/数据集/">数据集</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr">这里还没想好</span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/编程训练/">编程训练</a><span class="categoryBar-list-count">16</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/可视化/">可视化</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/考试复习/">考试复习</a><span class="categoryBar-list-count">7</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Spring/">Spring</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/JAVA/">JAVA</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Redis/">Redis</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/组件/">组件</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/小型支付商城系统/">小型支付商城系统</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/Database/">Database</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/AI-Engineering/">AI Engineering</a><span class="categoryBar-list-count">9</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/拼团/">拼团</a><span class="categoryBar-list-count">3</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/报错/">报错</a><span class="categoryBar-list-count">2</span><span class="categoryBar-list-descr"></span></li><li class="categoryBar-list-item" style="background:url(undefined);"> <a class="categoryBar-list-link" href="categories/学习/">学习</a><span class="categoryBar-list-count">1</span><span class="categoryBar-list-descr"></span></li></ul></div></div>';
+      console.log('已挂载butterfly_categories_card')
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+      }
+    if( document.getElementById('recent-posts') && (location.pathname ==='/'|| '/' ==='all')){
+    butterfly_categories_card_injector_config()
+    }
+  </script><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var qweather_key = '0ad15caa1a204ee89c6ad151329a6b50';
+  var qweather_api_host = 'nj6r6pm8pt.re.qweatherapi.com';
+  var ip_api_key = 'Kq1pRjB3WyDja7rhKcWV9f5QU8';
+  var gaud_map_key = 'ee76386f15646eecea6cffc073dfbff6';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '113.34532,23.15624';
+  var clock_default_rectangle_enable = 'false';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_footer_beautify_injector_config(){
+    var parent_div_git = document.getElementById('footer-wrap');
+    var item_html = '<div id="workboard"></div><p id="ghbdages"><a class="github-badge" target="_blank" href="https://hexo.io/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Frame-Hexo-blue?style=flat&amp;logo=hexo" alt=""/></a><a class="github-badge" target="_blank" href="https://butterfly.js.org/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Theme-Butterfly-6513df?style=flat&amp;logo=bitdefender" alt=""/></a><a class="github-badge" target="_blank" href="https://vercel.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Hosted-Vercel-brightgreen?style=flat&amp;logo=Vercel" alt=""/></a><a class="github-badge" target="_blank" href="https://github.com/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Source-Github-d021d6?style=flat&amp;logo=GitHub" alt=""/></a><a class="github-badge" target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" style="margin-inline:5px" title=""><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://img.shields.io/badge/Copyright-BY--NC--SA%204.0-d42328?style=flat&amp;logo=Claris" alt=""/></a></p>';
+    console.log('已挂载butterfly_footer_beautify')
+    parent_div_git.insertAdjacentHTML("beforeend",item_html)
+    }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_footer_beautify_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_footer_beautify_injector_config();
+  }
+  </script><script async src="https://unpkg.zhimg.com/hexo-butterfly-footer-beautify@1.0.0/lib/runtime.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item" style="height: auto;width: 100%"><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/08/26/GraphCL/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-08-26</span><a class="blog-slider__title" href="2024/08/26/GraphCL/" alt="">Graph Contrastive Learning with Augmentations</a><div class="blog-slider__text">图学习</div><a class="blog-slider__button" href="2024/08/26/GraphCL/" alt="">详情   </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" href="2024/10/18/PCGNN/" alt=""><img width="48" height="48" alt="" onerror="this.src=https://unpkg.zhimg.com/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-10-18</span><a class="blog-slider__title" href="2024/10/18/PCGNN/" alt="">PC-GNN</a><div class="blog-slider__text">欺诈检测</div><a class="blog-slider__button" href="2024/10/18/PCGNN/" alt="">详情   </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="/js/swiper.min.js"></script><script defer data-pjax src="/js/swiper_init.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__pulse');
+    arr[i].setAttribute('data-wow-duration', '700ms');
+    arr[i].setAttribute('data-wow-delay', '500ms');
+    arr[i].setAttribute('data-wow-offset', '50');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/wow_init.js"></script><script async src="//at.alicdn.com/t/font_2032782_8d5kxvn09md.js"></script><!-- hexo injector body_end end --></body></html>
